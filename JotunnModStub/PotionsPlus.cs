@@ -32,18 +32,22 @@ namespace PotionsPlus
             FlaskFortification();
             FlaskoftheGods();
             Magelight();
+            SecondWind();
             Grandtide();
             GrandSpiritual();
+            GrandStam();
+            GrandStealth();
+            Mediumtide();
             GrandSpiritual();
-            GrandSpiritual();
-            GrandSpiritual();
-            GrandSpiritual();
-            GrandSpiritual();
-            GrandSpiritual();
+            Mediumspiritual();
+            Mediumstam();
+            Lessertide();
+            Lesserspiritual();
+            Lesserstam();
             MeadToPotion();
            // FermenterTweak1();
            // CustomStatusEffect();
-           // ExamplePotionnewSE();
+           // ExamplePotionnewSE(); 
         }
 
         private void LoadAssets()
@@ -63,7 +67,7 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Obsidian", Amount = 2, AmountPerLevel = 2}
                     }
                 });
             ItemManager.Instance.AddItem(fortification);
@@ -139,7 +143,7 @@ namespace PotionsPlus
 
         private void GrandSpiritual()
         {
-            var grandspiritual_prefab = potions.LoadAsset<GameObject>("Grand_Spiritual_Healing_Potion");
+            var grandspiritual_prefab = potions.LoadAsset<GameObject>("Grand_Spiritual_Healing Potion");
             var grandspiritual = new CustomItem(grandspiritual_prefab, fixReference: false,
                 new ItemConfig
                 {
@@ -154,13 +158,13 @@ namespace PotionsPlus
             ItemManager.Instance.AddItem(grandspiritual);
         }
 
-        private void foopotion1()
+        private void GrandStam()
         {
-            var magelight_prefab = potions.LoadAsset<GameObject>("Flask_of_Magelight");
-            var magelight = new CustomItem(magelight_prefab, fixReference: false,
+            var grandstam_prefab = potions.LoadAsset<GameObject>("Grand_Stamina_Elixir");
+            var grandstam = new CustomItem(grandstam_prefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Flask of Magelight",
+                    Name = "Grand Stamina Elixir",
                     Amount = 1,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
@@ -168,16 +172,16 @@ namespace PotionsPlus
                         new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
                     }
                 });
-            ItemManager.Instance.AddItem(magelight);
+            ItemManager.Instance.AddItem(grandstam);
         }
 
-        private void foopotion2()
+        private void GrandStealth()
         {
-            var magelight_prefab = potions.LoadAsset<GameObject>("Flask_of_Magelight");
-            var magelight = new CustomItem(magelight_prefab, fixReference: false,
+            var grandstealth_prefab = potions.LoadAsset<GameObject>("Grand_Stealth_Elixir");
+            var grandstealth = new CustomItem(grandstealth_prefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Flask of Magelight",
+                    Name = "Grand Stealth Elixir",
                     Amount = 1,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
@@ -185,16 +189,16 @@ namespace PotionsPlus
                         new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
                     }
                 });
-            ItemManager.Instance.AddItem(magelight);
+            ItemManager.Instance.AddItem(grandstealth);
         }
 
-        private void foopotion3()
+        private void Mediumtide()
         {
-            var magelight_prefab = potions.LoadAsset<GameObject>("Flask_of_Magelight");
-            var magelight = new CustomItem(magelight_prefab, fixReference: false,
+            var mediumtide_prefab = potions.LoadAsset<GameObject>("Medium_Healing_Tide_Flask");
+            var mediumtide = new CustomItem(mediumtide_prefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Flask of Magelight",
+                    Name = "Medium Healing Tide Flask",
                     Amount = 1,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
@@ -202,8 +206,94 @@ namespace PotionsPlus
                         new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
                     }
                 });
-            ItemManager.Instance.AddItem(magelight);
+            ItemManager.Instance.AddItem(mediumtide);
         }
+
+        private void Mediumspiritual()
+        {
+            var mediumspiritual_prefab = potions.LoadAsset<GameObject>("Medium_Spiritual_Healing_Flask");
+            var mediumspiritual = new CustomItem(mediumspiritual_prefab, fixReference: false,
+                new ItemConfig
+                {
+                    Name = "Medium Spiritual Healing Flask",
+                    Amount = 1,
+                    CraftingStation = "piece_cauldron",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                    }
+                });
+            ItemManager.Instance.AddItem(mediumspiritual);
+        }
+
+        private void Mediumstam()
+        {
+            var mediumstam_prefab = potions.LoadAsset<GameObject>("Medium_Stamina_Flask");
+            var mediumstam = new CustomItem(mediumstam_prefab, fixReference: false,
+                new ItemConfig
+                {
+                    Name = "Medium Stamina Flask",
+                    Amount = 1,
+                    CraftingStation = "piece_cauldron",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                    }
+                });
+            ItemManager.Instance.AddItem(mediumstam);
+        }
+
+        private void Lessertide()
+        {
+            var lessertide_prefab = potions.LoadAsset<GameObject>("Lesser_Healing_Tide_Vial");
+            var lessertide = new CustomItem(lessertide_prefab, fixReference: false,
+                new ItemConfig
+                {
+                    Name = "Lesser Healing Tide Vial",
+                    Amount = 1,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                    }
+                });
+            ItemManager.Instance.AddItem(lessertide);
+        }
+
+        private void Lesserspiritual()
+        {
+            var lesserspiritual_prefab = potions.LoadAsset<GameObject>("Lesser_Spiritual_Healing_Vial");
+            var lesserspiritual = new CustomItem(lesserspiritual_prefab, fixReference: false,
+                new ItemConfig
+                {
+                    Name = "Lesser Spiritual Healing Vial",
+                    Amount = 1,
+                    CraftingStation = "piece_cauldron",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                    }
+                });
+            ItemManager.Instance.AddItem(lesserspiritual);
+        }
+
+        private void Lesserstam()
+        {
+            var lesserstam_prefab = potions.LoadAsset<GameObject>("Lesser_Stamina_Vial");
+            var lesserstam = new CustomItem(lesserstam_prefab, fixReference: false,
+                new ItemConfig
+                {
+                    Name = "Lesser Stamina Vial",
+                    Amount = 1,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                    }
+                });
+            ItemManager.Instance.AddItem(lesserstam);
+        }
+
 
         //custom item conversion example
 
