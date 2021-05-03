@@ -38,7 +38,6 @@ namespace PotionsPlus
             GrandStam();
             GrandStealth();
             Mediumtide();
-            GrandSpiritual();
             Mediumspiritual();
             Mediumstam();
             Lessertide();
@@ -48,7 +47,7 @@ namespace PotionsPlus
            // FermenterTweak1();
            // CustomStatusEffect();
            // ExamplePotionnewSE(); 
-        }
+        } 
 
         private void LoadAssets()
         {
@@ -79,7 +78,7 @@ namespace PotionsPlus
             var flaskofthegods = new CustomItem(flaskofthegods_prefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Flask of Fortification",
+                    Name = "Flask of The Gods",
                     Amount = 1,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
@@ -143,7 +142,7 @@ namespace PotionsPlus
 
         private void GrandSpiritual()
         {
-            var grandspiritual_prefab = potions.LoadAsset<GameObject>("Grand_Spiritual_Healing Potion");
+            var grandspiritual_prefab = potions.LoadAsset<GameObject>("Grand_Spiritual_Healing_Potion");
             var grandspiritual = new CustomItem(grandspiritual_prefab, fixReference: false,
                 new ItemConfig
                 {
