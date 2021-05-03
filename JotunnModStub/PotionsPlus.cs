@@ -65,11 +65,14 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Flask of Fortification",
-                    Amount = 4,
-                    CraftingStation = "fermenter",
+                    Amount = 1,
+                    CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Fortification_PotionBase", Amount = 1, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Obsidian", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Flint", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Stone", Amount = 8, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "MeadTasty", Amount = 1, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(fortification);
@@ -82,11 +85,14 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Flask of The Gods",
-                    Amount = 4,
-                    CraftingStation = "fermenter",
+                    Amount = 1,
+                    CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Gods_PotionBase", Amount = 1, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Carrot", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Thistle", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Flax", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "MeadTasty", Amount = 1, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(flaskofthegods);
@@ -99,11 +105,14 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Flask of Magelight",
-                    Amount = 4,
-                    CraftingStation = "fermenter",
+                    Amount = 1,
+                    CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Magelight_PotionBase", Amount = 1, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "GreydwarfEye", Amount = 8, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "FreezeGland", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "BoneFragments", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "MeadTasty", Amount = 1, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(magelight);
@@ -116,11 +125,14 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Flask of Second Wind",
-                    Amount = 4,
-                    CraftingStation = "fermenter",
+                    Amount = 1,
+                    CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "SecondWind_PotionBase", Amount = 1, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "SecondWind_PotionBase", Amount = 1, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Feathers", Amount = 6, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Ooze", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "FreezeGland", Amount = 2, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(secondwind);
@@ -319,7 +331,7 @@ namespace PotionsPlus
 
 
         //custom item conversion example
-
+        
         private void Potion0()
         {
             var meadbasefab = potions.LoadAsset<GameObject>("Fortification_PotionBase");
@@ -435,7 +447,7 @@ namespace PotionsPlus
                 FromItem = "SecondWind_PotionBase",
                 ToItem = "Flask_of_Second_Wind"
             });
-            ItemManager.Instance.AddItemConversion(FermenterTweak4);
+            ItemManager.Instance.AddItemConversion(FermenterTweak4); 
         }
 
 
