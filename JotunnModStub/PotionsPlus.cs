@@ -310,7 +310,7 @@ namespace PotionsPlus
                 {
                     Name = "Lesser Spiritual Healing Vial",
                     Amount = 1,
-                    CraftingStation = "piece_cauldron",
+                    CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
                         new RequirementConfig { Item = "Raspberry", Amount = 4, AmountPerLevel = 10},
