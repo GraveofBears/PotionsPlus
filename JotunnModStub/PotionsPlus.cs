@@ -98,7 +98,7 @@ namespace PotionsPlus
         private void Magelight()
         {
             var magelight_prefab = potions.LoadAsset<GameObject>("Flask_of_Magelight");
-            /*var magelight = new CustomItem(magelight_prefab, fixReference: false,
+            var magelight = new CustomItem(magelight_prefab, fixReference: false);/*,
                 new ItemConfig
                 {
                     Name = "Flask of Magelight",
@@ -109,8 +109,8 @@ namespace PotionsPlus
                         new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
                     }
                 });*/
-            PrefabManager.Instance.AddPrefab(magelight_prefab);
-            //ItemManager.Instance.AddItem(magelight);
+            //PrefabManager.Instance.AddPrefab(magelight_prefab);
+            ItemManager.Instance.AddItem(magelight);
         }
 
         private void SecondWind()
@@ -380,9 +380,9 @@ namespace PotionsPlus
 
         private void Conversionscript0()
         {
-            var FermenterTweak1 = new CustomItemConversion(new FermenterConversionConfig
+            var FermenterTweak1 = new CustomItemConversion(new SmelterConversionConfig
             {
-                Station = default,
+                Station = "fermenter",
                 FromItem = "potionbase0",
                 ToItem = "Flask_of_Magelight"
             });
@@ -392,7 +392,7 @@ namespace PotionsPlus
         {
             var FermenterTweak2 = new CustomItemConversion(new FermenterConversionConfig
             {
-                Station = default,
+                Station = "fermenter",
                 FromItem = "potionbase1",
                 ToItem = "Grand_Stealth_Elixir"
             });
@@ -403,7 +403,7 @@ namespace PotionsPlus
         {
             var FermenterTweak3 = new CustomItemConversion(new FermenterConversionConfig
             {
-                Station = default,
+                Station = "fermenter",
                 FromItem = "potionbase2",
                 ToItem = "Grand_Healing_Tide_Potion"
             });
@@ -414,7 +414,7 @@ namespace PotionsPlus
         {
             var FermenterTweak4 = new CustomItemConversion(new FermenterConversionConfig
             {
-                Station = default,
+                Station = "fermenter",
                 FromItem = "potionbase3",
                 ToItem = "Grand_Stamina_Elixir"
             });
