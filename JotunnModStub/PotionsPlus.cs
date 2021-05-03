@@ -60,7 +60,8 @@ namespace PotionsPlus
         //custom item addition example
         private void FlaskFortification()
         {
-             var fortification_prefab = potions.LoadAsset<GameObject>("Flask_of_Fortification");
+            var fortification_prefab = potions.LoadAsset<GameObject>("Flask_of_Fortification");
+            /*
             var fortification = new CustomItem(fortification_prefab, fixReference: false,
                 new ItemConfig
                 {
@@ -75,12 +76,14 @@ namespace PotionsPlus
                         new RequirementConfig { Item = "MeadTasty", Amount = 1, AmountPerLevel = 10}
                     }
                 });
-            ItemManager.Instance.AddItem(fortification);
+            */
+            PrefabManager.Instance.AddPrefab(fortification_prefab);
         }
 
         private void FlaskoftheGods()
         {
             var flaskofthegods_prefab = potions.LoadAsset<GameObject>("Flask_of_the_Gods");
+            /*
             var flaskofthegods = new CustomItem(flaskofthegods_prefab, fixReference: false,
                 new ItemConfig
                 {
@@ -95,12 +98,14 @@ namespace PotionsPlus
                         new RequirementConfig { Item = "MeadTasty", Amount = 1, AmountPerLevel = 10}
                     }
                 });
-            ItemManager.Instance.AddItem(flaskofthegods);
+            */
+            PrefabManager.Instance.AddPrefab(flaskofthegods_prefab);
         }
 
         private void Magelight()
         {
             var magelight_prefab = potions.LoadAsset<GameObject>("Flask_of_Magelight");
+            /*
             var magelight = new CustomItem(magelight_prefab, fixReference: false,
                 new ItemConfig
                 {
@@ -115,12 +120,15 @@ namespace PotionsPlus
                         new RequirementConfig { Item = "MeadTasty", Amount = 1, AmountPerLevel = 10}
                     }
                 });
-            ItemManager.Instance.AddItem(magelight);
+            */
+            PrefabManager.Instance.AddPrefab(magelight_prefab);
         }
+    
 
         private void SecondWind()
         {
             var secondwind_prefab = potions.LoadAsset<GameObject>("Flask_of_Second_Wind");
+            /*
             var secondwind = new CustomItem(secondwind_prefab, fixReference: false,
                 new ItemConfig
                 {
@@ -135,7 +143,8 @@ namespace PotionsPlus
                         new RequirementConfig { Item = "FreezeGland", Amount = 2, AmountPerLevel = 10}
                     }
                 });
-            ItemManager.Instance.AddItem(secondwind);
+            */
+            PrefabManager.Instance.AddPrefab(secondwind_prefab);
         }
 
         private void Grandtide()
