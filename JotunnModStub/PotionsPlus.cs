@@ -332,7 +332,7 @@ namespace PotionsPlus
             var potionbase = new CustomItem(meadbasefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Potion Base",
+                    Name = "Potion Base1",
                     Amount = 4,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
@@ -349,7 +349,7 @@ namespace PotionsPlus
             var potionbase = new CustomItem(meadbasefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Potion Base",
+                    Name = "Potion Base2",
                     Amount = 4,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
@@ -366,7 +366,7 @@ namespace PotionsPlus
             var potionbase = new CustomItem(meadbasefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Potion Base",
+                    Name = "Potion Base3",
                     Amount = 4,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
@@ -394,7 +394,7 @@ namespace PotionsPlus
             {
                 Station = default,
                 FromItem = "potionbase1",
-                ToItem = "Flask_of_Magelight"
+                ToItem = "Grand_Stealth_Elixir"
             });
             ItemManager.Instance.AddItemConversion(FermenterTweak);
         }
@@ -405,7 +405,7 @@ namespace PotionsPlus
             {
                 Station = default,
                 FromItem = "potionbase2",
-                ToItem = "Flask_of_Magelight"
+                ToItem = "Grand_Healing_Tide_Potion"
             });
             ItemManager.Instance.AddItemConversion(FermenterTweak);
         }
@@ -416,7 +416,7 @@ namespace PotionsPlus
             {
                 Station = default,
                 FromItem = "potionbase3",
-                ToItem = "Flask_of_Magelight"
+                ToItem = "Grand_Stamina_Elixir"
             });
             ItemManager.Instance.AddItemConversion(FermenterTweak);
         }
