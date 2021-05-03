@@ -44,6 +44,7 @@ namespace PotionsPlus
             Lesserspiritual();
             Lesserstam();
             MeadToPotion();
+            Conversionscript();
            // FermenterTweak1();
            // CustomStatusEffect();
            // ExamplePotionnewSE(); 
@@ -311,14 +312,17 @@ namespace PotionsPlus
                     }
                 });
 
+            ItemManager.Instance.AddItem(potionbase);
+        }
 
+        private void Conversionscript()
+        {
             var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
             {
-                Station = "Fermenter",
+                Station = default,
                 FromItem = "potionbase",
                 ToItem = "Flask_of_Magelight"
             });
-            ItemManager.Instance.AddItem(potionbase);
             ItemManager.Instance.AddItemConversion(FermenterTweak);
         }
 
