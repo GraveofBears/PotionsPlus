@@ -98,7 +98,7 @@ namespace PotionsPlus
         private void Magelight()
         {
             var magelight_prefab = potions.LoadAsset<GameObject>("Flask_of_Magelight");
-            var magelight = new CustomItem(magelight_prefab, fixReference: false);/*,
+            var magelight = new CustomItem(magelight_prefab, fixReference: false,
                 new ItemConfig
                 {
                     Name = "Flask of Magelight",
@@ -108,8 +108,7 @@ namespace PotionsPlus
                     {
                         new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
                     }
-                });*/
-            //PrefabManager.Instance.AddPrefab(magelight_prefab);
+                });
             ItemManager.Instance.AddItem(magelight);
         }
 
