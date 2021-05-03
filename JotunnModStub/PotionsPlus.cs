@@ -50,9 +50,6 @@ namespace PotionsPlus
             Conversionscript1();
             Conversionscript2();
             Conversionscript3();
-           // FermenterTweak1();
-           // CustomStatusEffect();
-           // ExamplePotionnewSE(); 
         } 
 
         private void LoadAssets()
@@ -421,57 +418,5 @@ namespace PotionsPlus
         }
 
 
-
-        /*
-                private void FermenterTweak1()
-                {
-                    var Tweakmyfermenter = new CustomItemConversion(new FermenterConversionConfig
-                    {
-                        Station = default,
-                        FromItem = "thinghereforbaseneedstobeprefabname",
-                        ToItem = "prefabnamefermenterspitsout"
-                    });
-                    ItemManager.Instance.AddItemConversion(Tweakmyfermenter);
-                }
-        */
-
-        /*       //example with extra brokedown itemdrop via code to assign TTL via code 
-               private void ExamplePotionnewSE()
-               {
-                   var secondwind_prefab = potions.LoadAsset<GameObject>("Flask_of_Second_Wind");
-                   var secondwind = new CustomItem(secondwind_prefab, fixReference: false,
-                       new ItemConfig
-                       {
-                           Name = "Flask of Second Wind",
-                           Amount = 1,
-                           CraftingStation = "piece_cauldron",
-                           Requirements = new[]
-                           {
-                               new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
-                           }
-                       });
-                   var itemDrop = secondwind.ItemDrop;
-                   itemDrop.m_itemData.m_shared.m_consumeStatusEffect = PotionEffect.StatusEffect;
-                   ItemManager.Instance.AddItem(secondwind);
-               }
-        */
-        /*
-
-               //this is a custom status effect example to allow any input via code to the status effect
-               private void CustomStatusEffect()
-               {
-                   StatusEffect effect = ScriptableObject.CreateInstance<StatusEffect>();
-                   effect.name = "Test SE";
-                   effect.m_name = "StonedAF";
-                   effect.m_startMessageType = MessageHud.MessageType.TopLeft;
-                   effect.m_startMessage = "Feeling nice mon";
-                   effect.m_stopMessageType = MessageHud.MessageType.TopLeft;
-                   effect.m_stopMessage = "coming down mon";
-                   effect.m_icon = AssetUtils.LoadSpriteFromFile("JotunnModStub/Assets/odinspot.png");
-                   effect.m_ttl = 100000; //eventually you replace this with a variable call to the cfg file so that it will just read the cfg file for the #
-                   PotionEffect = new CustomStatusEffect(effect, fixReference: false);
-
-                   ItemManager.Instance.AddStatusEffect(PotionEffect);
-               }*/
     }
 }
