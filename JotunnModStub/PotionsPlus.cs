@@ -65,11 +65,11 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Flask of Fortification",
-                    Amount = 1,
-                    CraftingStation = "piece_cauldron",
+                    Amount = 4,
+                    CraftingStation = "fermenter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Obsidian", Amount = 2, AmountPerLevel = 2}
+                        new RequirementConfig { Item = "Fortification_PotionBase", Amount = 1, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(fortification);
@@ -82,11 +82,11 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Flask of The Gods",
-                    Amount = 1,
-                    CraftingStation = "piece_cauldron",
+                    Amount = 4,
+                    CraftingStation = "fermenter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Gods_PotionBase", Amount = 1, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(flaskofthegods);
@@ -99,11 +99,11 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Flask of Magelight",
-                    Amount = 1,
-                    CraftingStation = "piece_cauldron",
+                    Amount = 4,
+                    CraftingStation = "fermenter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Magelight_PotionBase", Amount = 1, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(magelight);
@@ -116,11 +116,11 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Flask of Second Wind",
-                    Amount = 1,
-                    CraftingStation = "piece_cauldron",
+                    Amount = 4,
+                    CraftingStation = "fermenter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "SecondWind_PotionBase", Amount = 1, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(secondwind);
@@ -137,7 +137,10 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Cloudberry", Amount = 6, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Needle", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Barley", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Ooze", Amount = 2, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(grandtide);
@@ -154,7 +157,10 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Cloudberry", Amount = 6, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Flax", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "WolfFang", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Ooze", Amount = 4, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(grandspiritual);
@@ -171,7 +177,10 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Cloudberry", Amount = 8, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Carrot", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Turnip", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "LoxMeat", Amount = 2, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(grandstam);
@@ -188,7 +197,10 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "FreezeGland", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Flax", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Feathers", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Carrot", Amount = 2, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(grandstealth);
@@ -205,7 +217,9 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Resin", Amount = 6, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Bloodbag", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Blueberries", Amount = 4, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(mediumtide);
@@ -222,7 +236,9 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Bloodbag", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "BoneFragments", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Ooze", Amount = 2, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(mediumspiritual);
@@ -239,7 +255,9 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Resin", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Bloodbag", Amount = 2, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Blueberries", Amount = 4, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(mediumstam);
@@ -256,7 +274,8 @@ namespace PotionsPlus
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Raspberry", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Honey", Amount = 2, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(lessertide);
@@ -273,7 +292,8 @@ namespace PotionsPlus
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Raspberry", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Dandelion", Amount = 2, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(lesserspiritual);
@@ -290,7 +310,8 @@ namespace PotionsPlus
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Mushroom", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Honey", Amount = 2, AmountPerLevel = 10}
                     }
                 });
             ItemManager.Instance.AddItem(lesserstam);
@@ -301,39 +322,37 @@ namespace PotionsPlus
 
         private void Potion0()
         {
-            var meadbasefab = potions.LoadAsset<GameObject>("potionbase0");
+            var meadbasefab = potions.LoadAsset<GameObject>("Fortification_PotionBase");
             var potionbase = new CustomItem(meadbasefab, fixReference: true,
                 new ItemConfig
                 {
-                    Name = "Potion Base",
+                    Name = "Fortification PotionBase",
                     Amount = 4,
                     CraftingStation = "piece_cauldron",
                     Requirements = new []
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10},
-                        new RequirementConfig { Item = "Stone", Amount = 10, AmountPerLevel = 10},
-                        new RequirementConfig { Item = "Dandelion", Amount = 10, AmountPerLevel = 10},
-                        new RequirementConfig { Item = "Blueberries", Amount = 10, AmountPerLevel = 10},
-                        new RequirementConfig { Item = "Obsidian", Amount = 10, AmountPerLevel = 10},
-                        new RequirementConfig { Item = "Bronze", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Obsidian", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Flint", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Stone", Amount = 8, AmountPerLevel = 10}
                     }
                 });
 
             ItemManager.Instance.AddItem(potionbase);
-        }
-         
+        } 
         private void Potion1()
         {
-            var meadbasefab = potions.LoadAsset<GameObject>("potionbase1");
+            var meadbasefab = potions.LoadAsset<GameObject>("Gods_PotionBase");
             var potionbase = new CustomItem(meadbasefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Potion Base1",
+                    Name = "Gods PotionBase",
                     Amount = 4,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Carrot", Amount = 6, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Thistle", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Flax", Amount = 4, AmountPerLevel = 10}
                     }
                 });
 
@@ -341,16 +360,18 @@ namespace PotionsPlus
         }
         private void Potion2()
         {
-            var meadbasefab = potions.LoadAsset<GameObject>("potionbase2");
+            var meadbasefab = potions.LoadAsset<GameObject>("Magelight_PotionBase");
             var potionbase = new CustomItem(meadbasefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Potion Base2",
+                    Name = "Magelight PotionBase",
                     Amount = 4,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "GreydwarfEye", Amount = 8, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "FreezeGland", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "BoneFragments", Amount = 4, AmountPerLevel = 10}
                     }
                 });
 
@@ -358,16 +379,18 @@ namespace PotionsPlus
         }
         private void Potion3()
         {
-            var meadbasefab = potions.LoadAsset<GameObject>("potionbase3");
+            var meadbasefab = potions.LoadAsset<GameObject>("SecondWind_PotionBase");
             var potionbase = new CustomItem(meadbasefab, fixReference: false,
                 new ItemConfig
                 {
-                    Name = "Potion Base3",
+                    Name = "SecondWind PotionBase",
                     Amount = 4,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                        new RequirementConfig { Item = "Feathers", Amount = 6, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Ooze", Amount = 4, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "FreezeGland", Amount = 2, AmountPerLevel = 10}
                     }
                 });
 
@@ -378,9 +401,9 @@ namespace PotionsPlus
         {
             var FermenterTweak1 = new CustomItemConversion(new SmelterConversionConfig
             {
-                Station = "fermenter",
-                FromItem = "potionbase0",
-                ToItem = "Flask_of_Magelight"
+                Station = "fermenter",            
+                FromItem = "Fortification_PotionBase",
+                ToItem = "Flask_of_Fortification"
             });
             ItemManager.Instance.AddItemConversion(FermenterTweak1);
         }
@@ -389,30 +412,28 @@ namespace PotionsPlus
             var FermenterTweak2 = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = "fermenter",
-                FromItem = "potionbase1",
-                ToItem = "Grand_Stealth_Elixir"
+                FromItem = "Gods_PotionBase",
+                ToItem = "Flask_of_the_Gods"
             });
             ItemManager.Instance.AddItemConversion(FermenterTweak2);
         }
-
         private void Conversionscript2()
         {
             var FermenterTweak3 = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = "fermenter",
-                FromItem = "potionbase2",
-                ToItem = "Grand_Healing_Tide_Potion"
+                FromItem = "Magelight_PotionBase",
+                ToItem = "Flask_of_Magelight"
             });
             ItemManager.Instance.AddItemConversion(FermenterTweak3);
         }
-
         private void Conversionscript3()
         {
             var FermenterTweak4 = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = "fermenter",
-                FromItem = "potionbase3",
-                ToItem = "Grand_Stamina_Elixir"
+                FromItem = "SecondWind_PotionBase",
+                ToItem = "Flask_of_Second_Wind"
             });
             ItemManager.Instance.AddItemConversion(FermenterTweak4);
         }
