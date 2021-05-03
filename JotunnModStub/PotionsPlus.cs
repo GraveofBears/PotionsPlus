@@ -99,7 +99,7 @@ namespace PotionsPlus
         private void Magelight()
         {
             var magelight_prefab = potions.LoadAsset<GameObject>("Flask_of_Magelight");
-            var magelight = new CustomItem(magelight_prefab, fixReference: false,
+            /*var magelight = new CustomItem(magelight_prefab, fixReference: false,
                 new ItemConfig
                 {
                     Name = "Flask of Magelight",
@@ -109,8 +109,9 @@ namespace PotionsPlus
                     {
                         new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
                     }
-                });
-            ItemManager.Instance.AddItem(magelight);
+                });*/
+            PrefabManager.Instance.AddPrefab(magelight_prefab);
+            //ItemManager.Instance.AddItem(magelight);
         }
 
         private void SecondWind()
@@ -380,45 +381,45 @@ namespace PotionsPlus
 
         private void Conversionscript0()
         {
-            var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
+            var FermenterTweak1 = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = default,
                 FromItem = "potionbase0",
                 ToItem = "Flask_of_Magelight"
             });
-            ItemManager.Instance.AddItemConversion(FermenterTweak);
+            ItemManager.Instance.AddItemConversion(FermenterTweak1);
         }
         private void Conversionscript1()
         {
-            var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
+            var FermenterTweak2 = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = default,
                 FromItem = "potionbase1",
                 ToItem = "Grand_Stealth_Elixir"
             });
-            ItemManager.Instance.AddItemConversion(FermenterTweak);
+            ItemManager.Instance.AddItemConversion(FermenterTweak2);
         }
 
         private void Conversionscript2()
         {
-            var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
+            var FermenterTweak3 = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = default,
                 FromItem = "potionbase2",
                 ToItem = "Grand_Healing_Tide_Potion"
             });
-            ItemManager.Instance.AddItemConversion(FermenterTweak);
+            ItemManager.Instance.AddItemConversion(FermenterTweak3);
         }
 
         private void Conversionscript3()
         {
-            var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
+            var FermenterTweak4 = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = default,
                 FromItem = "potionbase3",
                 ToItem = "Grand_Stamina_Elixir"
             });
-            ItemManager.Instance.AddItemConversion(FermenterTweak);
+            ItemManager.Instance.AddItemConversion(FermenterTweak4);
         }
 
 
