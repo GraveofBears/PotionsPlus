@@ -24,7 +24,6 @@ namespace PotionsPlus
         public const string PluginVersion = "0.0.1";
 
         private AssetBundle potions;
-        public CustomStatusEffect PotionEffect;
 
         private void Awake()
         {
