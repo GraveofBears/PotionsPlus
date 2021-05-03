@@ -348,7 +348,7 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Fortification PotionBase",
-                    Amount = 4,
+                    Amount = 1,
                     CraftingStation = "piece_cauldron",
                     Requirements = new []
                     {
@@ -367,7 +367,7 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Gods PotionBase",
-                    Amount = 4,
+                    Amount = 1,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
@@ -386,7 +386,7 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "Magelight PotionBase",
-                    Amount = 4,
+                    Amount = 1,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
@@ -405,7 +405,7 @@ namespace PotionsPlus
                 new ItemConfig
                 {
                     Name = "SecondWind PotionBase",
-                    Amount = 4,
+                    Amount = 1,
                     CraftingStation = "piece_cauldron",
                     Requirements = new[]
                     {
@@ -420,7 +420,7 @@ namespace PotionsPlus
 
         private void Conversionscript0()
         {
-            var FermenterTweak1 = new CustomItemConversion(new SmelterConversionConfig
+            var FermenterTweak1 = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = "fermenter",            
                 FromItem = "Fortification_PotionBase",
