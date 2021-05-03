@@ -43,8 +43,14 @@ namespace PotionsPlus
             Lessertide();
             Lesserspiritual();
             Lesserstam();
-            MeadToPotion();
-            Conversionscript();
+            Potion0();
+            Potion1();
+            Potion2();
+            Potion3();
+            Conversionscript0();
+            Conversionscript1();
+            Conversionscript2();
+            Conversionscript3();
            // FermenterTweak1();
            // CustomStatusEffect();
            // ExamplePotionnewSE(); 
@@ -297,16 +303,73 @@ namespace PotionsPlus
 
         //custom item conversion example
 
-        private void MeadToPotion()
+        private void Potion0()
         {
-            var meadbasefab = potions.LoadAsset<GameObject>("potionbase");
-            var potionbase = new CustomItem(meadbasefab, fixReference: false,
+            var meadbasefab = potions.LoadAsset<GameObject>("potionbase0");
+            var potionbase = new CustomItem(meadbasefab, fixReference: true,
                 new ItemConfig
                 {
                     Name = "Potion Base",
                     Amount = 4,
                     CraftingStation = "piece_cauldron",
                     Requirements = new []
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Stone", Amount = 10, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Dandelion", Amount = 10, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Blueberries", Amount = 10, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Obsidian", Amount = 10, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "Bronze", Amount = 10, AmountPerLevel = 10}
+                    }
+                });
+
+            ItemManager.Instance.AddItem(potionbase);
+        }
+         
+        private void Potion1()
+        {
+            var meadbasefab = potions.LoadAsset<GameObject>("potionbase1");
+            var potionbase = new CustomItem(meadbasefab, fixReference: false,
+                new ItemConfig
+                {
+                    Name = "Potion Base",
+                    Amount = 4,
+                    CraftingStation = "piece_cauldron",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                    }
+                });
+
+            ItemManager.Instance.AddItem(potionbase);
+        }
+        private void Potion2()
+        {
+            var meadbasefab = potions.LoadAsset<GameObject>("potionbase2");
+            var potionbase = new CustomItem(meadbasefab, fixReference: false,
+                new ItemConfig
+                {
+                    Name = "Potion Base",
+                    Amount = 4,
+                    CraftingStation = "piece_cauldron",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                    }
+                });
+
+            ItemManager.Instance.AddItem(potionbase);
+        }
+        private void Potion3()
+        {
+            var meadbasefab = potions.LoadAsset<GameObject>("potionbase3");
+            var potionbase = new CustomItem(meadbasefab, fixReference: false,
+                new ItemConfig
+                {
+                    Name = "Potion Base",
+                    Amount = 4,
+                    CraftingStation = "piece_cauldron",
+                    Requirements = new[]
                     {
                         new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
                     }
@@ -315,67 +378,101 @@ namespace PotionsPlus
             ItemManager.Instance.AddItem(potionbase);
         }
 
-        private void Conversionscript()
+        private void Conversionscript0()
         {
             var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = default,
-                FromItem = "potionbase",
+                FromItem = "potionbase0",
+                ToItem = "Flask_of_Magelight"
+            });
+            ItemManager.Instance.AddItemConversion(FermenterTweak);
+        }
+        private void Conversionscript1()
+        {
+            var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
+            {
+                Station = default,
+                FromItem = "potionbase1",
                 ToItem = "Flask_of_Magelight"
             });
             ItemManager.Instance.AddItemConversion(FermenterTweak);
         }
 
-/*
-        private void FermenterTweak1()
+        private void Conversionscript2()
         {
-            var Tweakmyfermenter = new CustomItemConversion(new FermenterConversionConfig
+            var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
             {
                 Station = default,
-                FromItem = "thinghereforbaseneedstobeprefabname",
-                ToItem = "prefabnamefermenterspitsout"
+                FromItem = "potionbase2",
+                ToItem = "Flask_of_Magelight"
             });
-            ItemManager.Instance.AddItemConversion(Tweakmyfermenter);
+            ItemManager.Instance.AddItemConversion(FermenterTweak);
         }
-*/
 
- /*       //example with extra brokedown itemdrop via code to assign TTL via code 
-        private void ExamplePotionnewSE()
+        private void Conversionscript3()
         {
-            var secondwind_prefab = potions.LoadAsset<GameObject>("Flask_of_Second_Wind");
-            var secondwind = new CustomItem(secondwind_prefab, fixReference: false,
-                new ItemConfig
+            var FermenterTweak = new CustomItemConversion(new FermenterConversionConfig
+            {
+                Station = default,
+                FromItem = "potionbase3",
+                ToItem = "Flask_of_Magelight"
+            });
+            ItemManager.Instance.AddItemConversion(FermenterTweak);
+        }
+
+
+
+        /*
+                private void FermenterTweak1()
                 {
-                    Name = "Flask of Second Wind",
-                    Amount = 1,
-                    CraftingStation = "piece_cauldron",
-                    Requirements = new[]
+                    var Tweakmyfermenter = new CustomItemConversion(new FermenterConversionConfig
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
-                    }
-                });
-            var itemDrop = secondwind.ItemDrop;
-            itemDrop.m_itemData.m_shared.m_consumeStatusEffect = PotionEffect.StatusEffect;
-            ItemManager.Instance.AddItem(secondwind);
-        }
- */
- /*
+                        Station = default,
+                        FromItem = "thinghereforbaseneedstobeprefabname",
+                        ToItem = "prefabnamefermenterspitsout"
+                    });
+                    ItemManager.Instance.AddItemConversion(Tweakmyfermenter);
+                }
+        */
 
-        //this is a custom status effect example to allow any input via code to the status effect
-        private void CustomStatusEffect()
-        {
-            StatusEffect effect = ScriptableObject.CreateInstance<StatusEffect>();
-            effect.name = "Test SE";
-            effect.m_name = "StonedAF";
-            effect.m_startMessageType = MessageHud.MessageType.TopLeft;
-            effect.m_startMessage = "Feeling nice mon";
-            effect.m_stopMessageType = MessageHud.MessageType.TopLeft;
-            effect.m_stopMessage = "coming down mon";
-            effect.m_icon = AssetUtils.LoadSpriteFromFile("JotunnModStub/Assets/odinspot.png");
-            effect.m_ttl = 100000; //eventually you replace this with a variable call to the cfg file so that it will just read the cfg file for the #
-            PotionEffect = new CustomStatusEffect(effect, fixReference: false);
+        /*       //example with extra brokedown itemdrop via code to assign TTL via code 
+               private void ExamplePotionnewSE()
+               {
+                   var secondwind_prefab = potions.LoadAsset<GameObject>("Flask_of_Second_Wind");
+                   var secondwind = new CustomItem(secondwind_prefab, fixReference: false,
+                       new ItemConfig
+                       {
+                           Name = "Flask of Second Wind",
+                           Amount = 1,
+                           CraftingStation = "piece_cauldron",
+                           Requirements = new[]
+                           {
+                               new RequirementConfig { Item = "Wood", Amount = 10, AmountPerLevel = 10}
+                           }
+                       });
+                   var itemDrop = secondwind.ItemDrop;
+                   itemDrop.m_itemData.m_shared.m_consumeStatusEffect = PotionEffect.StatusEffect;
+                   ItemManager.Instance.AddItem(secondwind);
+               }
+        */
+        /*
 
-            ItemManager.Instance.AddStatusEffect(PotionEffect);
-        }*/
+               //this is a custom status effect example to allow any input via code to the status effect
+               private void CustomStatusEffect()
+               {
+                   StatusEffect effect = ScriptableObject.CreateInstance<StatusEffect>();
+                   effect.name = "Test SE";
+                   effect.m_name = "StonedAF";
+                   effect.m_startMessageType = MessageHud.MessageType.TopLeft;
+                   effect.m_startMessage = "Feeling nice mon";
+                   effect.m_stopMessageType = MessageHud.MessageType.TopLeft;
+                   effect.m_stopMessage = "coming down mon";
+                   effect.m_icon = AssetUtils.LoadSpriteFromFile("JotunnModStub/Assets/odinspot.png");
+                   effect.m_ttl = 100000; //eventually you replace this with a variable call to the cfg file so that it will just read the cfg file for the #
+                   PotionEffect = new CustomStatusEffect(effect, fixReference: false);
+
+                   ItemManager.Instance.AddStatusEffect(PotionEffect);
+               }*/
     }
 }
