@@ -42,7 +42,7 @@ namespace PotionsPlus
             Lessertide();
             Lesserspiritual();
             Lesserstam();
-            opalchemy();
+            Opalchemy();
 
         } 
 
@@ -332,7 +332,7 @@ namespace PotionsPlus
             ItemManager.Instance.AddItem(lesserstam);
         }
         
-       private void opalchemy()
+       private void Opalchemy()
         {
             var opalchemy_prefab = potions.LoadAsset<GameObject>("opalchemy");
             var opalchemy = new CustomItem(lesserstam_prefab, fixReference: false,
