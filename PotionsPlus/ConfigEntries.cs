@@ -135,10 +135,8 @@ namespace PotionsPlus
             _lesserTideTtl = Config.Bind("Lesser Tide", "TTL", 120, "The time toe last");
             _lesserSpTtl = Config.Bind("Lesser Spiritual Tide", "TTL", 120, "The time toe last");
             _lesserstamTtl = Config.Bind("Lesser Stamina", "TTL", 120, "The time toe last");
-            
-            //TODO: Add the TTL for all potion types in here as Config.Bind()'s
 
-            
+
             #region Second Wind Config
             _secondWindCooldown = Config.Bind("Second Wind", "Cooldown", 10, "Cooldown Timer for Second Wind");
             _grandTideCooldownTimer = Config.Bind("Grand Spiritual Tide", "Cooldown", 0, "Cooldown Timer for Second Wind");
