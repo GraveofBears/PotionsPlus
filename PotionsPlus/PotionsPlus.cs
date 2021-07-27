@@ -69,6 +69,22 @@ namespace PotionsPlus
         private void LoadAssets()
         {
             _assetBundle = AssetUtils.LoadAssetBundleFromResources("potions", Assembly.GetExecutingAssembly());
+            var green = _assetBundle.LoadAsset<GameObject>("greeneffect");
+            var magelight = _assetBundle.LoadAsset<GameObject>("Magelight");
+            var potionaudi = _assetBundle.LoadAsset<GameObject>("potionaudio");
+            var purp = _assetBundle.LoadAsset<GameObject>("purpleeffect");
+            var blue = _assetBundle.LoadAsset<GameObject>("VFX_BluePotionDrink");
+            var greenfx = _assetBundle.LoadAsset<GameObject>("VFX_GreenPotionDrink");
+            var purpfx = _assetBundle.LoadAsset<GameObject>("VFX_PurplePotionDrink");
+            var redfx = _assetBundle.LoadAsset<GameObject>("VFX_RedPotionDrink");
+            PrefabManager.Instance.AddPrefab(green);
+            PrefabManager.Instance.AddPrefab(magelight);
+            PrefabManager.Instance.AddPrefab(potionaudi);
+            PrefabManager.Instance.AddPrefab(purp);
+            PrefabManager.Instance.AddPrefab(blue);
+            PrefabManager.Instance.AddPrefab(greenfx);
+            PrefabManager.Instance.AddPrefab(purpfx);
+            PrefabManager.Instance.AddPrefab(redfx);
         }
 
         //custom item addition example

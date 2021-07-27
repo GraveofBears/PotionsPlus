@@ -130,6 +130,11 @@ namespace PotionsPlus
             _grandstamTtl = Config.Bind("Grand Stamina Elixir", "TTL", 240, "The time to last");
             _grandStealthTtl = Config.Bind("Grand Stealth Elixir", "TTL", 120, "The time to last");
             _medTideTtl = Config.Bind("Medium Healing Tide", "TTL", 120, "The time toe last");
+            _medSpTtl = Config.Bind("Medium Spiritual Tide", "TTL", 120, "The time toe last");
+            _medstamTtl = Config.Bind("Medium Stamina", "TTL", 120, "The time toe last");
+            _lesserTideTtl = Config.Bind("Lesser Tide", "TTL", 120, "The time toe last");
+            _lesserSpTtl = Config.Bind("Lesser Spiritual Tide", "TTL", 120, "The time toe last");
+            _lesserstamTtl = Config.Bind("Lesser Stamina", "TTL", 120, "The time toe last");
             
             //TODO: Add the TTL for all potion types in here as Config.Bind()'s
 

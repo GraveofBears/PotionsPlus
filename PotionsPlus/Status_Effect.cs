@@ -135,8 +135,11 @@ namespace PotionsPlus
                     };
             _secondWindSestat.m_staminaRegenMultiplier = _secondWindRegen.Value;
             _secondWindSestat.ModifyStaminaRegen(ref _secondWindSestat.m_staminaRegenMultiplier);
-            _secondWindSestat.ModifyJumpStaminaUsage(Player.m_localPlayer.m_jumpStaminaUsage, ref _secondWindSestat.m_jumpStaminaUseModifier);
-            _secondWindSestat.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _secondWindSestat.m_runStaminaDrainModifier);
+            if(Player.m_localPlayer != null)
+            {
+                _secondWindSestat.ModifyJumpStaminaUsage(Player.m_localPlayer.m_jumpStaminaUsage, ref _secondWindSestat.m_jumpStaminaUseModifier);
+                _secondWindSestat.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _secondWindSestat.m_runStaminaDrainModifier);
+            }
             _seSecondWind = new CustomStatusEffect(_secondWindSestat, false);
             ItemManager.Instance.AddStatusEffect(_seSecondWind);
 
@@ -226,8 +229,12 @@ namespace PotionsPlus
             _grandstamSE.m_jumpStaminaUseModifier = _grandstamjump.Value;
             _grandstamSE.m_runStaminaDrainModifier = _grandstamrun.Value;
             _grandstamSE.ModifyStaminaRegen(ref _grandstamSE.m_staminaRegenMultiplier);
-            _grandstamSE.ModifyJumpStaminaUsage(Player.m_localPlayer.m_jumpStaminaUsage ,ref _grandstamSE.m_jumpStaminaUseModifier);
-            _grandstamSE.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _grandstamSE.m_runStaminaDrainModifier);
+            if (Player.m_localPlayer != null)
+            {
+                _grandstamSE.ModifyJumpStaminaUsage(Player.m_localPlayer.m_jumpStaminaUsage ,ref _grandstamSE.m_jumpStaminaUseModifier);
+                _grandstamSE.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _grandstamSE.m_runStaminaDrainModifier);
+
+            }
             _grandstamSE.m_icon = _grandstam.ItemDrop.m_itemData.m_shared.m_icons.FirstOrDefault();
             _grandstamSE.m_tooltip = "A boost of stamina over time";
             _grandstamSE.m_cooldownIcon = true;
@@ -243,7 +250,10 @@ namespace PotionsPlus
             _grandstealthSE.m_name = "Grand Stealth Elixir";
             _grandstealthSE.m_tooltip = "A boost to your stealth short term, be almost invisible to enemies";
             _grandstealthSE.m_stealthModifier = _grandstealthstealthmod.Value;
-            _grandstealthSE.ModifyStealth(Player.m_localPlayer.m_stealthFactor,ref _grandstealthSE.m_stealthModifier);
+            if(Player.m_localPlayer != null)
+            {
+                _grandstealthSE.ModifyStealth(Player.m_localPlayer.m_stealthFactor,ref _grandstealthSE.m_stealthModifier);
+            }
             _grandstealthSE.m_ttl = _grandStealthTtl.Value;
             _grandstealthSE.m_cooldown = _grandstealthcooldown.Value;
             _grandstealthSE.m_cooldownIcon = true;
@@ -319,9 +329,13 @@ namespace PotionsPlus
             _mediumstamSe.m_staminaDrainPerSec =_medstaminaDps.Value;
             _mediumstamSe.m_jumpStaminaUseModifier =_medstamjump.Value;
             _mediumstamSe.m_runStaminaDrainModifier =_medstamrun.Value;
+            if (Player.m_localPlayer != null)
+            {
+                _mediumstamSe.ModifyJumpStaminaUsage(Player.m_localPlayer.m_jumpStaminaUsage ,ref _mediumstamSe.m_jumpStaminaUseModifier);
+                _mediumstamSe.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _mediumstamSe.m_runStaminaDrainModifier);
+
+            }
             _mediumstamSe.ModifyStaminaRegen(ref _mediumstamSe.m_staminaRegenMultiplier);
-            _mediumstamSe.ModifyJumpStaminaUsage(Player.m_localPlayer.m_jumpStaminaUsage ,ref _mediumstamSe.m_jumpStaminaUseModifier);
-            _mediumstamSe.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _mediumstamSe.m_runStaminaDrainModifier);
             _mediumstamSe.m_icon = _mediumstam.ItemDrop.m_itemData.m_shared.m_icons.FirstOrDefault();
             _mediumstamSe.m_tooltip = "A boost of stamina over time";
             _mediumstamSe.m_cooldownIcon = true;
@@ -400,8 +414,12 @@ namespace PotionsPlus
             _lesserstamSe.m_jumpStaminaUseModifier =_lesserstamjump.Value;
             _lesserstamSe.m_runStaminaDrainModifier =_lesserstamrun.Value;
             _lesserstamSe.ModifyStaminaRegen(ref _lesserstamSe.m_staminaRegenMultiplier);
-            _lesserstamSe.ModifyJumpStaminaUsage(Player.m_localPlayer.m_jumpStaminaUsage ,ref _lesserstamSe.m_jumpStaminaUseModifier);
-            _lesserstamSe.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _lesserstamSe.m_runStaminaDrainModifier);
+            if (Player.m_localPlayer != null)
+            {
+                _lesserstamSe.ModifyJumpStaminaUsage(Player.m_localPlayer.m_jumpStaminaUsage ,ref _lesserstamSe.m_jumpStaminaUseModifier);
+                _lesserstamSe.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _lesserstamSe.m_runStaminaDrainModifier);
+
+            }
             _lesserstamSe.m_icon = _lesserstam.ItemDrop.m_itemData.m_shared.m_icons.FirstOrDefault();
             _lesserstamSe.m_tooltip = "A boost of stamina over time";
             _lesserstamSe.m_cooldownIcon = true;
