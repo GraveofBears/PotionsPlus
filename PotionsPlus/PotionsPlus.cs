@@ -167,7 +167,7 @@ namespace PotionsPlus
                     CraftingStation = "opalchemy",
                     Requirements = new[]
                     {
-                        //new RequirementConfig { Item = "SecondWind_PotionBase", Amount = 1, AmountPerLevel = 10},
+                        new RequirementConfig { Item = "MeadTasty", Amount = 1, AmountPerLevel = 10},
                         new RequirementConfig { Item = "Feathers", Amount = 6, AmountPerLevel = 10},
                         new RequirementConfig { Item = "Ooze", Amount = 4, AmountPerLevel = 10},
                         new RequirementConfig { Item = "FreezeGland", Amount = 2, AmountPerLevel = 10}
