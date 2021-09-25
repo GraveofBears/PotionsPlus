@@ -1,0 +1,91 @@
+ManifestFileVersion: 0
+CRC: 2448000811
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 94e4776a375b83041e51b927e0a1886a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1dea7b83742f689757a5a24d839bbf7f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 164e63914560c2848a3b2b25ac258a6d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d90a0ab21ebe46c45a2c1c66e094bce6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 808b37a44867a2541ac7e4233899304b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a85ad675e4f7ad94d9c4b0d351f4a2d9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 43089fe86f1302043aaff23c8dd21eb5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b2b2677a004f6d84b9f05ea2a53817b3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9dbacd0bf29b20b489c2ec243aa275f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fbed321eb0901a34a97f504c3856e7c3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f316165fb4a179e478bb69f716c7bde2, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/PotionsPlus/Potion/Prefabs/Grand_Stealth_Elixir.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Medium_Spiritual_Healing_Flask.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Second_Wind.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Lesser_Healing_Tide_Vial.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Grand_Spiritual_Healing_Potion.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Medium_Healing_Tide_Flask.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Lesser_Stamina_Vial.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Lesser_Spiritual_Healing_Vial.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_the_Gods.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Medium_Stamina_Flask.prefab
+- Assets/PotionsPlus/Potion/Prefabs/opalchemy.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Grand_Stamina_Elixir.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Grand_Healing_Tide_Potion.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Magelight.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Fortification.prefab
+Dependencies: []
