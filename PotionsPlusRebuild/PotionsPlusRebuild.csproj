@@ -8,8 +8,8 @@
     <ProjectGuid>{E2CAA4E9-505B-4F77-B96D-D1616D4A8178}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PotionsPlusRebuild</RootNamespace>
-    <AssemblyName>PotionsPlusRebuild</AssemblyName>
+    <RootNamespace>PotionsPlus</RootNamespace>
+    <AssemblyName>PotionsPlus</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -28,7 +28,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -89,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AssetsEmbedded\potions" />
+    <None Include="Assets\Translations\English\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="DoPrebuild.props" />
     <None Include="Environment.props" />
     <None Include="packages.config" />
@@ -113,7 +116,7 @@
     <Error Condition="!Exists('..\packages\JotunnLib.2.3.4\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.3.4\build\JotunnLib.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)PotionsPlusRebuild.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlusRebuild.dll
+    <PostBuildEvent>REM copy /Y "$(TargetDir)PotionsPlus.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlus.dll
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

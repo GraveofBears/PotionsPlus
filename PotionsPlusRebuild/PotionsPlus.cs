@@ -1,12 +1,12 @@
-﻿using System;
-using System.Reflection;
-using BepInEx;
+﻿using BepInEx;
 using JetBrains.Annotations;
 using Jotunn;
 using Jotunn.Configs;
 using Jotunn.Entities;
 using Jotunn.Managers;
 using Jotunn.Utils;
+using System;
+using System.Reflection;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
@@ -24,6 +24,7 @@ namespace PotionsPlus
     private AssetBundle _assetBundle;
     private const string PotionsPlusCraftingStation = "opalchemy";
 
+    [UsedImplicitly]
     private void Awake()
     {
       try
@@ -51,22 +52,6 @@ namespace PotionsPlus
         LesserSpiritualTideVial();
         LesserStaminaVial();
 
-
-        // FlaskOfFortificationSe();
-        // MagelightSe();
-        // SecondWindSe(); //*
-        // GodsSe();
-        // GrandTideSe();
-        // GrandSpiritualSe();
-        // GrandStaminaSe();
-        // GrandStealthSe();
-        // MediumTideSe();
-        // MedSpiritualSe();
-        // MedStaminaSe();
-        // LesserTideSe();
-        // LesserSpiritualSe();
-        // LesserStaminaSe();
-
         _assetBundle.Unload(false);
       }
       catch (Exception e)
@@ -92,9 +77,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.FlaskOfFortification
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -144,9 +127,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.FlaskOfTheGods
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -188,9 +169,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.FlaskOfMagelight
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -232,9 +211,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.FlaskOfSecondWind
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -280,9 +257,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.GrandHealingTideElixir
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -324,9 +299,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.GrandSpiritualTideElixir
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -368,9 +341,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.GrandStaminaElixir
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -412,9 +383,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.GrandStealthElixir
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -460,9 +429,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.MediumHealingTidePotion
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -506,9 +473,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.MediumSpiritualTidePotion
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -546,9 +511,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.MediumStaminaPotion
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -590,9 +553,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.LesserHealingTideVial
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -626,9 +587,7 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.LesserSpiritualTideVial
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
@@ -662,15 +621,14 @@ namespace PotionsPlus
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
-          Name = PotionNames.LesserStaminaVial
-          , Amount = 1
-          , CraftingStation = PotionsPlusCraftingStation
+          CraftingStation = PotionsPlusCraftingStation
           , Requirements = new[]
           {
             new RequirementConfig
             {
               Item = "Mushroom", Amount = 4, AmountPerLevel = 10
-            }, new RequirementConfig
+            }
+            , new RequirementConfig
             {
               Item = "Honey", Amount = 2, AmountPerLevel = 10
             }
@@ -690,17 +648,20 @@ namespace PotionsPlus
     {
       try
       {
-        var opalchemyPiecePrefab = _assetBundle.LoadAsset<GameObject>("opalchemy");
+        var prefab = _assetBundle.LoadAsset<GameObject>("opalchemy");
 
-        var opalchemyPiece = new CustomPiece(opalchemyPiecePrefab,
+        if (prefab == null)
+        {
+          throw new NullReferenceException(nameof(prefab));
+        }
+
+        var customPiece = new CustomPiece(prefab,
           false,
           new PieceConfig
           {
             Enabled = true
             , PieceTable = "Hammer"
-            // , Name = "Alchemy Table"
             , CraftingStation = "piece_workbench"
-            // , Description = "A special brewing stand to make your potions...."
             , Requirements = new[]
             {
               new RequirementConfig
@@ -712,7 +673,7 @@ namespace PotionsPlus
             }
           });
 
-        PieceManager.Instance.AddPiece(opalchemyPiece);
+        PieceManager.Instance.AddPiece(customPiece);
       }
       catch (Exception ex)
       {
@@ -720,48 +681,5 @@ namespace PotionsPlus
         Jotunn.Logger.LogError(ex);
       }
     }
-
-    # region SE Configuration items
-
-    private EffectList _buildsounds;
-
-    private CustomStatusEffect _sePotion1;
-    private SE_Stats _potion1 = ScriptableObject.CreateInstance<SE_Stats>();
-
-
-    private CustomStatusEffect _seGrandSpiritual;
-    private SE_Stats _grandSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
-    private CustomItem _grandspiritual;
-
-
-    private CustomItem _grandstam;
-    private SE_Stats _grandstamSE = ScriptableObject.CreateInstance<SE_Stats>();
-    private CustomStatusEffect _seGrandStam;
-
-    private CustomItem _grandstealth;
-    private SE_Stats _grandstealthSE = ScriptableObject.CreateInstance<SE_Stats>();
-    private CustomStatusEffect _seGrandStealth;
-
-    private CustomItem _mediumspiritual;
-    private SE_Stats _mediumSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
-    private CustomStatusEffect _seMediumSpiritual;
-
-    private CustomItem _mediumstam;
-    private SE_Stats _mediumstamSe = ScriptableObject.CreateInstance<SE_Stats>();
-    private CustomStatusEffect _seMediumStam;
-
-    private CustomItem _lessertide;
-    private SE_Stats _lessertideSe = ScriptableObject.CreateInstance<SE_Stats>();
-    private CustomStatusEffect _seLesserTide;
-
-    private CustomItem _lesserspiritual;
-    private SE_Stats _lesserSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
-    private CustomStatusEffect _seLesserSpiritual;
-
-    private CustomItem _lesserstam;
-    private SE_Stats _lesserstamSe = ScriptableObject.CreateInstance<SE_Stats>();
-    private CustomStatusEffect _seLesserStam;
-
-    #endregion
   }
 }
