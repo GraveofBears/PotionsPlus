@@ -209,6 +209,26 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
+        var itemDrop = prefab.GetComponent<ItemDrop>();
+
+        if (itemDrop == null)
+        {
+          throw new NullReferenceException(nameof(itemDrop));
+        }
+
+        var statusEffect = itemDrop.m_itemData.m_shared.m_consumeStatusEffect as SE_Stats;
+
+        if (statusEffect == null)
+        {
+          throw new NullReferenceException(nameof(statusEffect));
+        }
+
+        statusEffect.m_cooldown = _secondWindCooldown.Value;
+        statusEffect.m_ttl = _secondWindTtl.Value;
+        statusEffect.m_runStaminaDrainModifier = _secondWindrunDrain.Value;
+        statusEffect.m_jumpStaminaUseModifier = _secondWindjumpDrain.Value;
+        statusEffect.m_staminaRegenMultiplier = _secondWindRegen.Value;
+
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
           CraftingStation = PotionsPlusCraftingStation

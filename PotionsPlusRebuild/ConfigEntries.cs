@@ -117,55 +117,12 @@ namespace PotionsPlus
     private ConfigEntry<int> _lesserstamrun;
     private ConfigEntry<int> _lesserstamregen;
 
-    public static class PotionNames
-    {
-      public static string FlaskOfFortification = "Flask of Fortification";
-      public static string FlaskOfMagelight = "Flask of Magelight";
-      public static string FlaskOfSecondWind = "Flask of Second Wind";
-      public static string FlaskOfTheGods = "Flask of the Gods";
-
-      public static string GrandHealingTideElixir = "Grand Healing Tide Elixir";
-      public static string GrandSpiritualTideElixir = "Grand Spiritual Tide Elixir";
-      public static string GrandStaminaElixir = "Grand Stamina Elixir";
-      public static string GrandStealthElixir = "Grand Stealth Elixir";
-
-      public static string MediumHealingTidePotion = "Medium Healing Tide Potion";
-      public static string MediumSpiritualTidePotion = "Medium Spiritual Tide Potion";
-      public static string MediumStaminaPotion = "Medium Stamina Potion";
-
-      public static string LesserHealingTideVial = "Lesser Healing Tide Vial";
-      public static string LesserSpiritualTideVial = "Lesser Spiritual Tide Vial";
-      public static string LesserStaminaVial = "Lesser Stamina Vial";
-    }
-
-    public static class ConfigKeyNames
-    {
-      public static string Duration = nameof(Duration);
-      public static string Cooldown = nameof(Cooldown);
-      public static string HealOverTime = "Heal Over Time";
-      public static string JumpDrain = "Jump Drain";
-      public static string RunDrain = "Run Drain";
-      public static string StaminaRegenFactor = "Stamina regen factor";
-      public static string HealthRegenFactor = "Health regen multiplier";
-      public static string HealthOverTimeDuration = "Health over time duration";
-      public static string HealthOverTimeInterval = "Health over time interval";
-      public static string HeathOverTimeTicks = "Heath over time ticks";
-      public static string HealthOverTimeTimer = "Health over time timer";
-      public static string HeathOverTimeTickPerHp = "Heath over time tick per hp";
-      public static string StealthModifier = "Stealth modifier";
-      public static string StaminaOverTime = "Stamina over time";
-      public static string StaminaDrainPerSecond = "Stamina Drain Per Second";
-      public static string JumpStaminaDrainFactor = "Jump stamina drain factor";
-      public static string RunStaminaDrainFactor = "Run stamina drain factor";
-      public static string StaminaRegenFactorOverall = "Stamina regen factor overall";
-    }
-
     private void ConfigEntries()
     {
       Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
       _fortificationTtl = Config.Bind(PotionNames.FlaskOfFortification, ConfigKeyNames.Duration, 300, $"Duration for the {PotionNames.FlaskOfFortification}");
       _magelightTtl = Config.Bind(PotionNames.FlaskOfMagelight, ConfigKeyNames.Duration, 300, $"Duration for {PotionNames.FlaskOfMagelight}");
-      _secondWindTtl = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.FlaskOfSecondWind}");
+      
       _godsTTl = Config.Bind(PotionNames.FlaskOfTheGods, ConfigKeyNames.Duration, 300, $"Duration for {PotionNames.FlaskOfTheGods}");
       _grandTideTtl = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.GrandHealingTideElixir}");
       _grandSpTtl = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.Duration, 240, $"Duration for {PotionNames.GrandSpiritualTideElixir}");
@@ -179,9 +136,8 @@ namespace PotionsPlus
       _lesserstamTtl = Config.Bind(PotionNames.LesserStaminaVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserStaminaVial}");
 
       #region Second Wind Config
-
-      _secondWindCooldown = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.Cooldown, 10, "Cooldown Timer for Second Wind");
-      _grandTideCooldownTimer = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.Cooldown, 0, "Cooldown Timer for Second Wind");
+      _secondWindTtl = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.Duration, 120, $"Duration");
+      _secondWindCooldown = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.Cooldown, 0, "Cooldown Timer");
       _secondWindjumpDrain = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.JumpDrain, -0.25f, "Jump drain multiplicative factor for stamina drain");
       _secondWindrunDrain = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.RunDrain, -0.25f, "Run drain multiplicative factor for stamina drain");
       _secondWindRegen = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.StaminaRegenFactor, 1.05f, "Overall multiplicative factor for stamina regen during potion");
@@ -201,6 +157,7 @@ namespace PotionsPlus
       #endregion
 
       #region GrandHealingTideElixir
+      _grandTideCooldownTimer = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.Cooldown, 0, "Cooldown Timer for Second Wind");
 
       _grandTideregen = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.HealthRegenFactor, 1f, "The multiplier used for health regeneration during consumption");
       _grandHealovertime = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.HealOverTime, 95, "The volume of health to heal");
@@ -313,6 +270,49 @@ namespace PotionsPlus
       _lesserstamregen = Config.Bind(PotionNames.MediumStaminaPotion, ConfigKeyNames.StaminaRegenFactorOverall, 10, "Overall stamina regen factor while consumed");
 
       #endregion
+    }
+
+    public static class PotionNames
+    {
+      public static string FlaskOfFortification = "Flask of Fortification";
+      public static string FlaskOfMagelight = "Flask of Magelight";
+      public static string FlaskOfSecondWind = "Flask of Second Wind";
+      public static string FlaskOfTheGods = "Flask of the Gods";
+
+      public static string GrandHealingTideElixir = "Grand Healing Tide Potion";
+      public static string GrandSpiritualTideElixir = "Grand Spiritual Healing Potion";
+      public static string GrandStaminaElixir = "Grand Stamina Elixir";
+      public static string GrandStealthElixir = "Grand Stealth Elixir";
+
+      public static string MediumHealingTidePotion = "Medium Healing Tide Flask";
+      public static string MediumSpiritualTidePotion = "Medium Spiritual Healing Flask";
+      public static string MediumStaminaPotion = "Medium Stamina Flask";
+
+      public static string LesserHealingTideVial = "Lesser Healing Tide Vial";
+      public static string LesserSpiritualTideVial = "Lesser Spiritual Healing Vial";
+      public static string LesserStaminaVial = "Lesser Stamina Vial";
+    }
+
+    public static class ConfigKeyNames
+    {
+      public static string Duration = nameof(Duration);
+      public static string Cooldown = nameof(Cooldown);
+      public static string HealOverTime = "Heal Over Time";
+      public static string JumpDrain = "Jump Drain";
+      public static string RunDrain = "Run Drain";
+      public static string StaminaRegenFactor = "Stamina regen factor";
+      public static string HealthRegenFactor = "Health regen multiplier";
+      public static string HealthOverTimeDuration = "Health over time duration";
+      public static string HealthOverTimeInterval = "Health over time interval";
+      public static string HeathOverTimeTicks = "Heath over time ticks";
+      public static string HealthOverTimeTimer = "Health over time timer";
+      public static string HeathOverTimeTickPerHp = "Heath over time tick per hp";
+      public static string StealthModifier = "Stealth modifier";
+      public static string StaminaOverTime = "Stamina over time";
+      public static string StaminaDrainPerSecond = "Stamina Drain Per Second";
+      public static string JumpStaminaDrainFactor = "Jump stamina drain factor";
+      public static string RunStaminaDrainFactor = "Run stamina drain factor";
+      public static string StaminaRegenFactorOverall = "Stamina regen factor overall";
     }
   }
 }
