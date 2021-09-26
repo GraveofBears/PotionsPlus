@@ -11,6 +11,7 @@ namespace PotionsPlus
     private static ConfigEntry<int> _healthTimer;
     private static ConfigEntry<int> _cooldown;
 
+    public ConfigEntry<int> _elementsTtl;
     public ConfigEntry<int> _fortificationTtl;
     public ConfigEntry<int> _magelightTtl;
 
@@ -120,6 +121,7 @@ namespace PotionsPlus
     private void ConfigEntries()
     {
       Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
+      _elementsTtl = Config.Bind(PotionNames.FlaskOfElements, ConfigKeyNames.Duration, 300, $"Duration for the {PotionNames.FlaskOfElements}");
       _fortificationTtl = Config.Bind(PotionNames.FlaskOfFortification, ConfigKeyNames.Duration, 300, $"Duration for the {PotionNames.FlaskOfFortification}");
       _magelightTtl = Config.Bind(PotionNames.FlaskOfMagelight, ConfigKeyNames.Duration, 300, $"Duration for {PotionNames.FlaskOfMagelight}");
       
@@ -274,6 +276,7 @@ namespace PotionsPlus
 
     public static class PotionNames
     {
+      public static string FlaskOfElements = "Flask of Elements";    
       public static string FlaskOfFortification = "Flask of Fortification";
       public static string FlaskOfMagelight = "Flask of Magelight";
       public static string FlaskOfSecondWind = "Flask of Second Wind";
