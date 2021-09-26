@@ -34,6 +34,7 @@ namespace PotionsPlus
         ConfigEntries();
         OdinPotionsAlchemyCraftingStation();
 
+        FlaskElements();
         FlaskFortification();
         FlaskOfTheGods();
         FlaskOfMagelight();
@@ -62,6 +63,58 @@ namespace PotionsPlus
     }
 
     #region Flasks
+    
+            private void FlaskElements()
+        {
+            try
+            {
+                Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
+
+                var prefab = _assetBundle.LoadAsset<GameObject>("Flask_of_Elements");
+                if (prefab == null)
+                {
+                    throw new NullReferenceException(nameof(prefab));
+                }
+
+                ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
+                {
+                    CraftingStation = PotionsPlusCraftingStation
+                  ,
+                    Requirements = new[]
+                  {
+            new RequirementConfig
+            {
+              Item = "FreezeGland"
+              , Amount = 2
+              , AmountPerLevel = 10
+            }
+            , new RequirementConfig
+            {
+              Item = "ElderBark"
+              , Amount = 4
+              , AmountPerLevel = 10
+            }
+            , new RequirementConfig
+            {
+              Item = "Entrails"
+              , Amount = 8
+              , AmountPerLevel = 10
+            }
+            , new RequirementConfig
+            {
+              Item = "MeadTasty"
+              , Amount = 1
+              , AmountPerLevel = 10
+            }
+          }
+                }));
+            }
+            catch (Exception e)
+            {
+                Jotunn.Logger.LogError($"[{MethodBase.GetCurrentMethod().DeclaringType?.Name}] {e.Message}");
+                Jotunn.Logger.LogError(e);
+            }
+        }
 
     private void FlaskFortification()
     {
