@@ -53,6 +53,8 @@ namespace PotionsPlus
         LesserHealingTideVial();
         LesserSpiritualTideVial();
         LesserStaminaVial();
+        
+        PotionMeadbase();
 
         _assetBundle.Unload(false);
       }
@@ -715,6 +717,41 @@ namespace PotionsPlus
         Jotunn.Logger.LogError(e);
       }
     }
+    
+        private void PotionMeadbase()
+        {
+            try
+            {
+                Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
+                var prefab = _assetBundle.LoadAsset<GameObject>("Potion_Meadbase");
+                if (prefab == null)
+                {
+                    throw new NullReferenceException(nameof(prefab));
+                }
+
+                ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
+                {
+                    CraftingStation = PotionsPlusCraftingStation
+                  ,
+                    Requirements = new[]
+                  {
+            new RequirementConfig
+            {
+              Item = "Mushroom", Amount = 4, AmountPerLevel = 10
+            }
+            , new RequirementConfig
+            {
+              Item = "Honey", Amount = 2, AmountPerLevel = 10
+            }
+          }
+                }));
+            }
+            catch (Exception e)
+            {
+                Jotunn.Logger.LogError($"[{MethodBase.GetCurrentMethod().DeclaringType?.Name}] {e.Message}");
+                Jotunn.Logger.LogError(e);
+            }
+        }
 
     #endregion
 
