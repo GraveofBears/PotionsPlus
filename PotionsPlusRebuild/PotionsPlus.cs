@@ -33,6 +33,7 @@ namespace PotionsPlus
         _assetBundle = AssetUtils.LoadAssetBundleFromResources("potions", typeof(PotionsPlus).Assembly);
         ConfigEntries();
         OdinPotionsAlchemyCraftingStation();
+        OdinPotionsCauldron();
 
         FlaskElements();
         FlaskFortification();
@@ -753,6 +754,46 @@ namespace PotionsPlus
         Jotunn.Logger.LogError($"Issue Loading OP Alchemy Table");
         Jotunn.Logger.LogError(ex);
       }
-    }
+            }  
+    private void OdinPotionsCauldron()
+            {
+                try
+                {
+                    var prefab = _assetBundle.LoadAsset<GameObject>("opcauldron");
+
+                    if (prefab == null)
+                    {
+                        throw new NullReferenceException(nameof(prefab));
+                    }
+
+                    var customPiece = new CustomPiece(prefab,
+                      false,
+                      new PieceConfig
+                      {
+                          Enabled = true
+                        ,
+                          PieceTable = "Hammer"
+                        ,
+                          CraftingStation = "piece_workbench"
+                        ,
+                          Requirements = new[]
+                        {
+              new RequirementConfig
+              {
+                Amount = 1
+                , Item = "Wood"
+                , AmountPerLevel = 1
+              }
+                        }
+                      });
+
+                    PieceManager.Instance.AddPiece(customPiece);
+                }
+                catch (Exception ex)
+                {
+                    Jotunn.Logger.LogError($"Issue Loading OP Alchemy Table");
+                    Jotunn.Logger.LogError(ex);
+                }
+           }
   }
 }
