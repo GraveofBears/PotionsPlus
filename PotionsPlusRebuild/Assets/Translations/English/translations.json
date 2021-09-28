@@ -1,6 +1,6 @@
 ﻿{
   "pp_flask_elements": "Flask of Elements",
-  "pp_flask_fort_description": "You feel resistant to lost forms of magic. Increase resistance to Spirit and Lightning attacks for 5 min.",
+  "pp_flask_elements_description": "You feel resistant to lost forms of magic. Increase resistance to Spirit and Lightning attacks for 5 min.",
   "pp_flask_fort": "Flask of Fortification",
   "pp_flask_fort_description": "Your skin feels like stone. Greatly increases your fortification for 5 min.",
   "pp_flask_magelight": "Flask of Magelight",
@@ -31,5 +31,9 @@
   "pp_vial_stam_description": "You gain a second wind, instantly restoring 45 stamina.",
   "pp_alchemy_table": "Alchemy Table",
   "pp_alchemy_table_description": "Alchemy Table for Potions"
+  "pp_potion_cauldron": "Potion Cauldron",
+  "pp_potion_cauldron_description": "A special Cauldron for crafting Potion Base",
+  "pp_potion_mead": "Potion Base",
+  "pp_potion_mead_description": "A special Mead developed as a base for higher quality potions."
 }
   
