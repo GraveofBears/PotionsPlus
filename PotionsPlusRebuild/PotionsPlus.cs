@@ -292,7 +292,7 @@ namespace PotionsPlus
           {
             new RequirementConfig
             {
-              Item = "MeadTasty", Amount = 1, AmountPerLevel = 10
+              Item = "FreezeGland", Amount = 2, AmountPerLevel = 10
             }
             , new RequirementConfig
             {
@@ -304,7 +304,7 @@ namespace PotionsPlus
             }
             , new RequirementConfig
             {
-              Item = "FreezeGland", Amount = 2, AmountPerLevel = 10
+              Item = "Potion_Meadbase", Amount = 1, AmountPerLevel = 10
             }
           }
         }));
@@ -737,7 +737,7 @@ namespace PotionsPlus
                   {
             new RequirementConfig
             {
-              Item = "Mushroom", Amount = 4, AmountPerLevel = 10
+              Item = "YmirRemains", Amount = 4, AmountPerLevel = 10
             }
             , new RequirementConfig
             {
@@ -779,7 +779,7 @@ namespace PotionsPlus
               {
                 Amount = 1
                 , Item = "Wood"
-                , AmountPerLevel = 1
+                , AmountPerLevel = 8
               }
             }
           });
@@ -819,7 +819,7 @@ namespace PotionsPlus
               {
                 Amount = 1
                 , Item = "Iron"
-                , AmountPerLevel = 1
+                , AmountPerLevel = 4
               }
                         }
                       });
