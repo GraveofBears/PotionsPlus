@@ -105,7 +105,7 @@ namespace PotionsPlus
             }
             , new RequirementConfig
             {
-              Item = "MeadTasty"
+              Item = "Potion_Meadbase"
               , Amount = 1
               , AmountPerLevel = 10
             }
@@ -156,7 +156,7 @@ namespace PotionsPlus
             }
             , new RequirementConfig
             {
-              Item = "MeadTasty"
+              Item = "Potion_Meadbase"
               , Amount = 1
               , AmountPerLevel = 10
             }
@@ -200,7 +200,7 @@ namespace PotionsPlus
             }
             , new RequirementConfig
             {
-              Item = "MeadTasty", Amount = 1, AmountPerLevel = 10
+              Item = "Potion_Meadbase", Amount = 1, AmountPerLevel = 10
             }
           }
         }));
@@ -242,7 +242,7 @@ namespace PotionsPlus
             }
             , new RequirementConfig
             {
-              Item = "MeadTasty", Amount = 1, AmountPerLevel = 10
+              Item = "Potion_Meadbase", Amount = 1, AmountPerLevel = 10
             }
           }
         }));
@@ -818,7 +818,7 @@ namespace PotionsPlus
               new RequirementConfig
               {
                 Amount = 1
-                , Item = "Wood"
+                , Item = "Iron"
                 , AmountPerLevel = 1
               }
                         }
