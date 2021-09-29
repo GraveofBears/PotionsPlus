@@ -777,8 +777,8 @@ namespace PotionsPlus
             {
               new RequirementConfig
               {
-                Amount = 1
-                , Item = "Wood"
+                Amount = 8
+                , Item = "Stone"
                 , AmountPerLevel = 8
               }
             }
@@ -817,7 +817,7 @@ namespace PotionsPlus
                         {
               new RequirementConfig
               {
-                Amount = 1
+                Amount = 4
                 , Item = "Iron"
                 , AmountPerLevel = 4
               }
