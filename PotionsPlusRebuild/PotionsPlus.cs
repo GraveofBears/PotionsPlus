@@ -25,6 +25,7 @@ namespace PotionsPlus
     private const string PotionsPlusCraftingStation = "opalchemy";
 
     [UsedImplicitly]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("CodeQuality", "IDE0051:Remove unused private members", Justification = "UsedImplicitly")]
     private void Awake()
     {
       try
@@ -53,7 +54,7 @@ namespace PotionsPlus
         LesserHealingTideVial();
         LesserSpiritualTideVial();
         LesserStaminaVial();
-        
+
         PotionMeadbase();
 
         _assetBundle.Unload(false);
@@ -66,25 +67,24 @@ namespace PotionsPlus
     }
 
     #region Flasks
-    
-            private void FlaskElements()
+
+    private void FlaskElements()
+    {
+      try
+      {
+        Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
+
+        var prefab = _assetBundle.LoadAsset<GameObject>("Flask_of_Elements");
+        if (prefab == null)
         {
-            try
-            {
-                Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
+          throw new NullReferenceException(nameof(prefab));
+        }
 
-                var prefab = _assetBundle.LoadAsset<GameObject>("Flask_of_Elements");
-                if (prefab == null)
-                {
-                    throw new NullReferenceException(nameof(prefab));
-                }
-
-                ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
-                {
-                    CraftingStation = PotionsPlusCraftingStation
-                  ,
-                    Requirements = new[]
-                  {
+        ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
+        {
+          CraftingStation = PotionsPlusCraftingStation
+          , Requirements = new[]
+          {
             new RequirementConfig
             {
               Item = "FreezeGland"
@@ -110,14 +110,14 @@ namespace PotionsPlus
               , AmountPerLevel = 10
             }
           }
-                }));
-            }
-            catch (Exception e)
-            {
-                Jotunn.Logger.LogError($"[{MethodBase.GetCurrentMethod().DeclaringType?.Name}] {e.Message}");
-                Jotunn.Logger.LogError(e);
-            }
-        }
+        }));
+      }
+      catch (Exception e)
+      {
+        Jotunn.Logger.LogError($"[{MethodBase.GetCurrentMethod().DeclaringType?.Name}] {e.Message}");
+        Jotunn.Logger.LogError(e);
+      }
+    }
 
     private void FlaskFortification()
     {
@@ -717,24 +717,23 @@ namespace PotionsPlus
         Jotunn.Logger.LogError(e);
       }
     }
-    
-        private void PotionMeadbase()
-        {
-            try
-            {
-                Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
-                var prefab = _assetBundle.LoadAsset<GameObject>("Potion_Meadbase");
-                if (prefab == null)
-                {
-                    throw new NullReferenceException(nameof(prefab));
-                }
 
-                ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
-                {
-                    CraftingStation = PotionsPlusCraftingStation
-                  ,
-                    Requirements = new[]
-                  {
+    private void PotionMeadbase()
+    {
+      try
+      {
+        Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
+        var prefab = _assetBundle.LoadAsset<GameObject>("Potion_Meadbase");
+        if (prefab == null)
+        {
+          throw new NullReferenceException(nameof(prefab));
+        }
+
+        ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
+        {
+          CraftingStation = PotionsPlusCraftingStation
+          , Requirements = new[]
+          {
             new RequirementConfig
             {
               Item = "YmirRemains", Amount = 4, AmountPerLevel = 10
@@ -744,14 +743,14 @@ namespace PotionsPlus
               Item = "Honey", Amount = 2, AmountPerLevel = 10
             }
           }
-                }));
-            }
-            catch (Exception e)
-            {
-                Jotunn.Logger.LogError($"[{MethodBase.GetCurrentMethod().DeclaringType?.Name}] {e.Message}");
-                Jotunn.Logger.LogError(e);
-            }
-        }
+        }));
+      }
+      catch (Exception e)
+      {
+        Jotunn.Logger.LogError($"[{MethodBase.GetCurrentMethod().DeclaringType?.Name}] {e.Message}");
+        Jotunn.Logger.LogError(e);
+      }
+    }
 
     #endregion
 
@@ -791,46 +790,44 @@ namespace PotionsPlus
         Jotunn.Logger.LogError($"Issue Loading OP Alchemy Table");
         Jotunn.Logger.LogError(ex);
       }
-            }  
+    }
+
     private void OdinPotionsCauldron()
+    {
+      try
+      {
+        var prefab = _assetBundle.LoadAsset<GameObject>("opcauldron");
+
+        if (prefab == null)
+        {
+          throw new NullReferenceException(nameof(prefab));
+        }
+
+        var customPiece = new CustomPiece(prefab,
+          false,
+          new PieceConfig
+          {
+            Enabled = true
+            , PieceTable = "Hammer"
+            , CraftingStation = "piece_workbench"
+            , Requirements = new[]
             {
-                try
-                {
-                    var prefab = _assetBundle.LoadAsset<GameObject>("opcauldron");
-
-                    if (prefab == null)
-                    {
-                        throw new NullReferenceException(nameof(prefab));
-                    }
-
-                    var customPiece = new CustomPiece(prefab,
-                      false,
-                      new PieceConfig
-                      {
-                          Enabled = true
-                        ,
-                          PieceTable = "Hammer"
-                        ,
-                          CraftingStation = "piece_workbench"
-                        ,
-                          Requirements = new[]
-                        {
               new RequirementConfig
               {
                 Amount = 4
                 , Item = "Iron"
                 , AmountPerLevel = 4
               }
-                        }
-                      });
+            }
+          });
 
-                    PieceManager.Instance.AddPiece(customPiece);
-                }
-                catch (Exception ex)
-                {
-                    Jotunn.Logger.LogError($"Issue Loading OP Alchemy Table");
-                    Jotunn.Logger.LogError(ex);
-                }
-           }
+        PieceManager.Instance.AddPiece(customPiece);
+      }
+      catch (Exception ex)
+      {
+        Jotunn.Logger.LogError($"Issue Loading OP Alchemy Table");
+        Jotunn.Logger.LogError(ex);
+      }
+    }
   }
 }

@@ -124,7 +124,7 @@ namespace PotionsPlus
       _elementsTtl = Config.Bind(PotionNames.FlaskOfElements, ConfigKeyNames.Duration, 300, $"Duration for the {PotionNames.FlaskOfElements}");
       _fortificationTtl = Config.Bind(PotionNames.FlaskOfFortification, ConfigKeyNames.Duration, 300, $"Duration for the {PotionNames.FlaskOfFortification}");
       _magelightTtl = Config.Bind(PotionNames.FlaskOfMagelight, ConfigKeyNames.Duration, 300, $"Duration for {PotionNames.FlaskOfMagelight}");
-      
+
       _godsTTl = Config.Bind(PotionNames.FlaskOfTheGods, ConfigKeyNames.Duration, 300, $"Duration for {PotionNames.FlaskOfTheGods}");
       _grandTideTtl = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.GrandHealingTideElixir}");
       _grandSpTtl = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.Duration, 240, $"Duration for {PotionNames.GrandSpiritualTideElixir}");
@@ -138,6 +138,7 @@ namespace PotionsPlus
       _lesserstamTtl = Config.Bind(PotionNames.LesserStaminaVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserStaminaVial}");
 
       #region Second Wind Config
+
       _secondWindTtl = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.Duration, 120, $"Duration");
       _secondWindCooldown = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.Cooldown, 0, "Cooldown Timer");
       _secondWindjumpDrain = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.JumpDrain, -0.25f, "Jump drain multiplicative factor for stamina drain");
@@ -159,6 +160,7 @@ namespace PotionsPlus
       #endregion
 
       #region GrandHealingTideElixir
+
       _grandTideCooldownTimer = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.Cooldown, 0, "Cooldown Timer for Second Wind");
 
       _grandTideregen = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.HealthRegenFactor, 1f, "The multiplier used for health regeneration during consumption");
@@ -276,7 +278,7 @@ namespace PotionsPlus
 
     public static class PotionNames
     {
-      public static string FlaskOfElements = "Flask of Elements";    
+      public static string FlaskOfElements = "Flask of Elements";
       public static string FlaskOfFortification = "Flask of Fortification";
       public static string FlaskOfMagelight = "Flask of Magelight";
       public static string FlaskOfSecondWind = "Flask of Second Wind";
