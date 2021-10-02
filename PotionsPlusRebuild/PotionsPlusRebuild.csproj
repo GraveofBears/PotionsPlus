@@ -117,7 +117,7 @@
     <Error Condition="!Exists('..\packages\JotunnLib.2.3.4\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.3.4\build\JotunnLib.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)PotionsPlus.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlus.dll
+    <PostBuildEvent>REM copy /Y "$(TargetDir)PotionsPlus.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlus.dll
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
