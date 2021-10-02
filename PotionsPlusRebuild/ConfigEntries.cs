@@ -118,6 +118,9 @@ namespace PotionsPlus
     private ConfigEntry<int> _lesserstamrun;
     private ConfigEntry<int> _lesserstamregen;
 
+    public ConfigEntry<bool> AlchemySkillEnable;
+    public ConfigEntry<bool> AlchemySkillBonusWhenCraftingEnabled;
+
     private void ConfigEntries()
     {
       Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
@@ -136,6 +139,9 @@ namespace PotionsPlus
       _lesserTideTtl = Config.Bind(PotionNames.LesserHealingTideVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserHealingTideVial}");
       _lesserSpTtl = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserSpiritualTideVial}");
       _lesserstamTtl = Config.Bind(PotionNames.LesserStaminaVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserStaminaVial}");
+
+      AlchemySkillEnable = Config.Bind("Alchemy Skill", "Enable Alchemy Skill", true, new ConfigDescription("Enable Alchemy skill.", null, new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 1 }));
+      AlchemySkillBonusWhenCraftingEnabled = Config.Bind("Alchemy Skill", "Enable Alchemy Bonus", true, new ConfigDescription("Enable Alchemy Bonus when crafting.", null, new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 2 }));
 
       #region Second Wind Config
 

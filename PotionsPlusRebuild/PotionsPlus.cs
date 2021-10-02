@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using HarmonyLib;
 using JetBrains.Annotations;
 using Jotunn;
 using Jotunn.Configs;
@@ -6,8 +7,10 @@ using Jotunn.Entities;
 using Jotunn.Managers;
 using Jotunn.Utils;
 using System;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 // ReSharper disable once CheckNamespace
 namespace PotionsPlus
@@ -19,10 +22,18 @@ namespace PotionsPlus
   {
     private const string PluginGuid = "com.odinplus.potionsplus";
     public const string PluginName = "PotionsPlus";
-    public const string PluginVersion = "2.0.1";
+    public const string PluginVersion = "2.1.0";
 
     private AssetBundle _assetBundle;
     private const string PotionsPlusCraftingStation = "opalchemy";
+    public static PotionsPlus Instance;
+    private Harmony _harmony;
+    public Skills.SkillType PotionsPlusAlchemySkill;
+
+    public PotionsPlus()
+    {
+      Instance = this;
+    }
 
     [UsedImplicitly]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("CodeQuality", "IDE0051:Remove unused private members", Justification = "UsedImplicitly")]
@@ -57,7 +68,11 @@ namespace PotionsPlus
 
         PotionMeadbase();
 
+        AddToSkills();
+
         _assetBundle.Unload(false);
+
+        _harmony = Harmony.CreateAndPatchAll(typeof(PotionsPlus).Assembly, PluginGuid);
       }
       catch (Exception e)
       {
@@ -65,6 +80,208 @@ namespace PotionsPlus
         Jotunn.Logger.LogError(e);
       }
     }
+
+    [UsedImplicitly]
+    private void OnDestroy()
+    {
+      _harmony?.UnpatchSelf();
+    }
+
+    #region Alchemy Skill
+
+    /// <summary>
+    /// Adds the Alchemy skill to the game.
+    /// </summary>
+    private void AddToSkills()
+    {
+      
+      if (AlchemySkillEnable.Value)
+      {
+        PotionsPlusAlchemySkill = SkillManager.Instance.AddSkill(new SkillConfig
+        {
+          Identifier = $"{PluginGuid}.skill.druidry"
+          , Name = "$pp_potion_skill_name"
+          , Description = "$pp_potion_skill_description"
+          , Icon = _assetBundle.LoadAsset<Sprite>("AlcSkill")
+          , IncreaseStep = 1f,
+        });
+      }
+    }
+
+    /// <summary>
+    /// Raises Alchemy skills
+    /// </summary>
+    private void RaiseAlchemySkill()
+    {
+      PrintAlchemySkillInfo();
+      Player.m_localPlayer.RaiseSkill(PotionsPlusAlchemySkill);
+      LogDebug($"Alchemy Skill Raised");
+      PrintAlchemySkillInfo();
+    }
+
+    /// <summary>
+    /// Print to the log details about the current alchemy crafting skill level if a DEBUG Build
+    /// </summary>
+    [System.Diagnostics.Conditional("DEBUG")]
+    private void PrintAlchemySkillInfo()
+    {
+      LogDebug($"[Skill Level Info] Current Level: {Player.m_localPlayer.GetSkills().m_skillData.FirstOrDefault(s => s.Key == PotionsPlusAlchemySkill).Value?.m_level ?? 0} ({(Player.m_localPlayer.GetSkills().m_skillData.FirstOrDefault(s => s.Key == PotionsPlusAlchemySkill).Value?.GetLevelPercentage() ?? 0) * 100}%), " +
+               $"Next Level: {Player.m_localPlayer.GetSkills().m_skillData.FirstOrDefault(s => s.Key == PotionsPlusAlchemySkill).Value?.m_accumulator ?? 0}/{Player.m_localPlayer.GetSkills().m_skillData.FirstOrDefault(s => s.Key == PotionsPlusAlchemySkill).Value?.GetNextLevelRequirement() ?? 0}");
+    }
+
+    /// <summary>
+    /// Check if the current crafting station is one used for alchemy.
+    /// </summary>
+    /// <param name="currentCraftingStationName">Name of the crafting station</param>
+    /// <returns>true if the current crafting station is one used for alchemy else false</returns>
+    private bool IsValidAlchemyCraftingStation(string currentCraftingStationName)
+    {
+      LogDebug($"currentCraftingStationName : {currentCraftingStationName}");
+      switch (currentCraftingStationName)
+      {
+        case "opalchemy(Clone)":
+          return true;
+      }
+
+      return false;
+    }
+
+    /// <summary>
+    /// Check if the item is being added via crafting.
+    /// </summary>
+    /// <param name="crafterID">Id of the player who is crafting</param>
+    /// <param name="crafterName">Name of the player who is crafting</param>
+    /// <returns></returns>
+    private bool IsFromCrafting(long crafterID, string crafterName)
+    {
+      return !string.IsNullOrEmpty(crafterName) && crafterID >= 1;
+    }
+
+    /// <summary>
+    /// Check if an item is a Consumable Type
+    /// </summary>
+    /// <param name="prefabName">Name of the item</param>
+    /// <returns>true if the item is a Consumable else false.</returns>
+    private bool IsConsumable(string prefabName)
+    {
+      var itemPrefab = ObjectDB.instance.GetItemPrefab(prefabName);
+      if (itemPrefab == null) return false;
+      var itemDrop = itemPrefab.GetComponent<ItemDrop>();
+      if (itemDrop == null) return false;
+      return itemDrop.m_itemData.m_shared.m_itemType == ItemDrop.ItemData.ItemType.Consumable;
+    }
+
+    /// <summary>
+    /// Patch for AddItem method.
+    /// </summary>
+    /// <param name="itemName">Name of the item</param>
+    /// <param name="stack">Stack size</param>
+    /// <param name="quality">Quality level</param>
+    /// <param name="variant">Variant to use</param>
+    /// <param name="crafterID">Id of the player who is crafting</param>
+    /// <param name="crafterName">Name of the player who is crafting</param>
+    public void OnInventoryAddItemPostFix(string itemName, int stack, int quality, int variant, long crafterID, string crafterName)
+    {
+      if (_isAddingExtraItem) return; // Recursive loop detection. 
+      LogDebug($"itemName: {itemName}, crafterID: {crafterID}, crafterName: {crafterName}");
+
+      LogDebug($"AlchemySkillEnable.Value : {AlchemySkillEnable?.Value}");
+      if (!AlchemySkillEnable?.Value ?? false) return;
+      LogDebug($"IsFromCrafting(crafterID, crafterName) : {IsFromCrafting(crafterID, crafterName)}");
+      if (!IsFromCrafting(crafterID, crafterName)) return; // Item is being bought from trader.
+      LogDebug($"IsConsumable(itemName) : {IsConsumable(itemName)}");
+      if (!IsConsumable(itemName)) return;
+      LogDebug($"IsValidAlchemyCraftingStation(Player.m_localPlayer.GetCurrentCraftingStation()?.name) : {IsValidAlchemyCraftingStation(Player.m_localPlayer.GetCurrentCraftingStation()?.name)}");
+      if (!IsValidAlchemyCraftingStation(Player.m_localPlayer.GetCurrentCraftingStation()?.name)) return;
+
+      LogDebug($"AlchemySkillBonusWhenCraftingEnabled.Value : {AlchemySkillBonusWhenCraftingEnabled?.Value}");
+      if (AlchemySkillBonusWhenCraftingEnabled?.Value ?? false)
+      {
+        var skillLevel = Player.m_localPlayer.GetSkills().m_skillData.FirstOrDefault(s => s.Key == PotionsPlusAlchemySkill).Value?.m_level ?? 0;
+        LogDebug($"skillLevel : {skillLevel}");
+        // 1-100% chance to craft an extra item. 1% per level of skill.
+        if (IsCrafterLucky(skillLevel))
+        {
+          LogDebug($"[1][Start] -------------- ");
+          AddExtraItem(itemName);
+          LogDebug($"[1][End] ---------------- ");
+        }
+
+        // Max 25% chance to craft a 2nd extra after getting to skill level 25.
+        if (skillLevel > 25f && IsCrafterLucky(skillLevel / 4))
+        {
+          LogDebug($"[2][Start] -------------- ");
+          AddExtraItem(itemName);
+          LogDebug($"[2][End] ---------------- ");
+        }
+      }
+
+      if (!AlchemySkillEnable.Value) return;
+      RaiseAlchemySkill();
+    }
+
+    /// <summary>
+    /// Adds an extra item to the player inventory.
+    /// Checks that the player has room in their
+    /// inventory before trying to add the item.
+    /// </summary>
+    /// <param name="itemName"></param>
+    private void AddExtraItem(string itemName)
+    {
+      var itemPrefab = ObjectDB.instance.GetItemPrefab(itemName);
+      if (!Player.m_localPlayer.GetInventory().CanAddItem(itemPrefab, 1)) return;
+      LogDebug($"Trying to add extra item: {itemName}");
+      AddItem(itemName);
+      LogDebug($"Added extra item: {itemName}");
+    }
+
+    /// <summary>
+    /// AddItem Recursive loop flag
+    /// </summary>
+    private static bool _isAddingExtraItem;
+
+    /// <summary>
+    /// Adds an item to the players inventory.
+    /// All checks for the player having space for a new
+    /// item must be done before calling this method.
+    /// 
+    /// This is a recursive loop because the AddItem
+    /// method is being patched. To break it, we are
+    /// setting a flag to track this.
+    /// </summary>
+    /// <param name="itemName">Name of item to add.</param>
+    private void AddItem(string itemName)
+    {
+      _isAddingExtraItem = true; // Recursive loop flag.
+      Player.m_localPlayer.GetInventory().AddItem(itemName, 1, 1, 0, Player.m_localPlayer.GetPlayerID(), Player.m_localPlayer.GetPlayerName());
+      _isAddingExtraItem = false; // Reset flag.
+    }
+
+    /// <summary>
+    /// Calculate crafter's luck.
+    /// </summary>
+    /// <param name="skillLevel">Current skill level</param>
+    /// <returns>true if crafter is lucky else false</returns>
+    private bool IsCrafterLucky(float skillLevel)
+    {
+      if (skillLevel < 1) return false;
+      var rand = Random.Range(1, 100);
+      LogDebug($"Skill Level: {skillLevel} - Rand: {rand}");
+      LogDebug($"rand < skillLevel : {rand < skillLevel}");
+      return rand < skillLevel;
+    }
+
+    /// <summary>
+    /// Writes Debug messages if a DEBUG Build
+    /// </summary>
+    /// <param name="msg">Message to print to the log.</param>
+    [System.Diagnostics.Conditional("DEBUG")]
+    public static void LogDebug(string msg)
+    {
+      Jotunn.Logger.LogDebug(msg);
+    }
+
+    #endregion
 
     #region Flasks
 
