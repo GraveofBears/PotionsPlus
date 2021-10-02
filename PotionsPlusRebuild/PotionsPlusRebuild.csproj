@@ -98,7 +98,6 @@
     <None Include="packages.config" />
     <None Include="Package\manifest.json" />
     <None Include="Package\README.md" />
-    <None Include="Potions Plus Unity.unitypackage" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\icon.png" />

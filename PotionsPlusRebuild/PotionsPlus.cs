@@ -22,7 +22,7 @@ namespace PotionsPlus
   {
     private const string PluginGuid = "com.odinplus.potionsplus";
     public const string PluginName = "PotionsPlus";
-    public const string PluginVersion = "2.1.0";
+    public const string PluginVersion = "2.1.2";
 
     private AssetBundle _assetBundle;
     private const string PotionsPlusCraftingStation = "opalchemy";
@@ -54,16 +54,16 @@ namespace PotionsPlus
         FlaskOfSecondWind();
 
         GrandHealingTideElixir();
-        GrandSpiritualTideElixir();
+        GrandSpiritualHealingElixir();
         GrandStaminaElixir();
         GrandStealthElixir();
 
         MediumHealingTidePotion();
-        MediumSpiritualTidePotion();
+        MediumSpiritualHealingPotion();
         MediumStaminaPotion();
 
         LesserHealingTideVial();
-        LesserSpiritualTideVial();
+        LesserSpiritualHealingVial();
         LesserStaminaVial();
 
         PotionMeadbase();
@@ -579,7 +579,7 @@ namespace PotionsPlus
       }
     }
 
-    private void GrandSpiritualTideElixir()
+    private void GrandSpiritualHealingElixir()
     {
       try
       {
@@ -753,7 +753,7 @@ namespace PotionsPlus
       }
     }
 
-    private void MediumSpiritualTidePotion()
+    private void MediumSpiritualHealingPotion()
     {
       try
       {
@@ -867,7 +867,7 @@ namespace PotionsPlus
       }
     }
 
-    private void LesserSpiritualTideVial()
+    private void LesserSpiritualHealingVial()
     {
       try
       {
