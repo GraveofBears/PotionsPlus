@@ -34,6 +34,8 @@
   "pp_potion_cauldron": "Potion Cauldron",
   "pp_potion_cauldron_description": "A special Cauldron for crafting Potion Base",
   "pp_potion_mead": "Potion Base",
-  "pp_potion_mead_description": "A special Mead developed as a base for higher quality potions."
+  "pp_potion_mead_description": "A special Mead developed as a base for higher quality potions.",
+  "pp_potion_skill_name": "Alchemy",
+  "pp_potion_skill_description": "A form of chemistry and speculative philosophy that attempts to discover elixirs and a method for transmuting base metals into gold."
 }
   
