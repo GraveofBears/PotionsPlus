@@ -37,6 +37,7 @@ namespace PotionsPlus
             Jotunn.Logger.LogDebug("Player is null");
             return;
           }
+
           PotionsPlus.Instance.OnInventoryAddItemPostFix(name, stack, quality, variant, crafterID, crafterName);
         }
         catch (Exception e)

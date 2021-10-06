@@ -98,9 +98,13 @@
     <None Include="packages.config" />
     <None Include="Package\manifest.json" />
     <None Include="Package\README.md" />
+    <None Include="Potions Plus Unity.unitypackage" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="StatusEffects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureEnvironmentPropsImport" BeforeTargets="PrepareForBuild">
@@ -116,7 +120,7 @@
     <Error Condition="!Exists('..\packages\JotunnLib.2.3.4\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.3.4\build\JotunnLib.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)PotionsPlus.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlus.dll
+    <PostBuildEvent>REM copy /Y "$(TargetDir)PotionsPlus.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlus.dll
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
