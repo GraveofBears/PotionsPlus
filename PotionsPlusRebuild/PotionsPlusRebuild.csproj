@@ -83,10 +83,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlchemySkill.cs" />
     <Compile Include="ConfigEntries.cs" />
+    <Compile Include="Names\CraftingStationNames.cs" />
+    <Compile Include="Names\ItemDropNames.cs" />
     <Compile Include="Patch.cs" />
     <Compile Include="PotionsPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AssetsEmbedded\potions" />
@@ -98,9 +102,13 @@
     <None Include="packages.config" />
     <None Include="Package\manifest.json" />
     <None Include="Package\README.md" />
+    <None Include="Potions Plus Unity.unitypackage" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="StatusEffects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureEnvironmentPropsImport" BeforeTargets="PrepareForBuild">
@@ -116,7 +124,8 @@
     <Error Condition="!Exists('..\packages\JotunnLib.2.3.4\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.3.4\build\JotunnLib.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>REM copy /Y "$(TargetDir)PotionsPlus.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlus.dll
+    <PostBuildEvent>copy /Y "$(TargetDir)PotionsPlus.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlus.dll
+copy /Y "$(TargetDir)Assets\Translations\English\translations.json" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\Assets\Translations\English\translations.json
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
