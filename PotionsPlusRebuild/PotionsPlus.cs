@@ -42,6 +42,14 @@ namespace PotionsPlus
       {
         Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
         _assetBundle = AssetUtils.LoadAssetBundleFromResources("potions", typeof(PotionsPlus).Assembly);
+
+#if DEBUG
+        foreach (var assetName in _assetBundle.GetAllAssetNames())
+        {
+          Jotunn.Logger.LogInfo(assetName);
+        }
+#endif
+
         ConfigEntries();
         OdinPotionsAlchemyCraftingStation();
         OdinPotionsCauldron();
@@ -69,7 +77,7 @@ namespace PotionsPlus
         PhilosopherStoneGreen();
         PhilosopherStoneRed();
         PhilosopherStoneBlue();
-        // PhilosopherStonePurple();
+        PhilosopherStonePurple();
         PhilosopherStoneBlack();
 
         AddToSkills();
@@ -830,26 +838,10 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
-        var itemDrop = prefab.GetComponent<ItemDrop>();
-        itemDrop.m_itemData.m_shared.m_equipStatusEffect = null;
+        // var itemDrop = prefab.GetComponent<ItemDrop>();
+        // itemDrop.m_itemData.m_shared.m_equipStatusEffect = null;
 
-        ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
-        {
-          CraftingStation = CraftingStationNames.AlchemyTable
-          , Requirements = new[]
-          {
-            new RequirementConfig
-            {
-              Item = ItemDropNames.YmirRemains
-              , Amount = 4
-            }
-            , new RequirementConfig
-            {
-              Item = ItemDropNames.PotionMeadbase
-              , Amount = 2
-            }
-          }
-        }));
+        ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
       catch (Exception e)
       {
@@ -869,23 +861,7 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
-        ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
-        {
-          CraftingStation = CraftingStationNames.AlchemyTable
-          , Requirements = new[]
-          {
-            new RequirementConfig
-            {
-              Item = ItemDropNames.YmirRemains
-              , Amount = 4
-            }
-            , new RequirementConfig
-            {
-              Item = ItemDropNames.PotionMeadbase
-              , Amount = 2
-            }
-          }
-        }));
+        ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
       catch (Exception e)
       {
@@ -905,23 +881,7 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
-        ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
-        {
-          CraftingStation = CraftingStationNames.AlchemyTable
-          , Requirements = new[]
-          {
-            new RequirementConfig
-            {
-              Item = ItemDropNames.YmirRemains
-              , Amount = 4
-            }
-            , new RequirementConfig
-            {
-              Item = ItemDropNames.PotionMeadbase
-              , Amount = 2
-            }
-          }
-        }));
+        ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
       catch (Exception e)
       {
@@ -941,23 +901,25 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
-        ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
-        {
-          CraftingStation = CraftingStationNames.AlchemyTable
-          , Requirements = new[]
-          {
-            new RequirementConfig
-            {
-              Item = ItemDropNames.YmirRemains
-              , Amount = 4
-            }
-            , new RequirementConfig
-            {
-              Item = ItemDropNames.PotionMeadbase
-              , Amount = 2
-            }
-          }
-        }));
+        // var itemDrop = prefab.GetComponent<ItemDrop>();
+        // var se = itemDrop.m_itemData.m_shared.m_equipStatusEffect as SE_Stats;
+        // Jotunn.Logger.LogDebug($"se == null : {se == null}");
+        // Jotunn.Logger.LogDebug($"se?.m_name : {se?.m_name}");
+        // Jotunn.Logger.LogDebug($"se?.m_speedModifier : {se?.m_speedModifier}");
+        // Jotunn.Logger.LogDebug($"se?.m_addMaxCarryWeight : {se?.m_addMaxCarryWeight}");
+        // Jotunn.Logger.LogDebug($"se?.m_mods == null : {se?.m_mods == null}");
+        // Jotunn.Logger.LogDebug($"se?.m_mods?.Count : {se?.m_mods?.Count}");
+        //
+        // if (se?.m_mods != null)
+        // {
+        //   foreach (var damageModPair in se.m_mods)
+        //   {
+        //     Jotunn.Logger.LogDebug($"damageModPair.m_type : {damageModPair.m_type}");
+        //     Jotunn.Logger.LogDebug($"damageModPair.m_modifier : {damageModPair.m_modifier}");
+        //   }
+        // }
+
+        ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
       catch (Exception e)
       {
@@ -977,23 +939,7 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
-        ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
-        {
-          CraftingStation = CraftingStationNames.AlchemyTable
-          , Requirements = new[]
-          {
-            new RequirementConfig
-            {
-              Item = ItemDropNames.YmirRemains
-              , Amount = 4
-            }
-            , new RequirementConfig
-            {
-              Item = ItemDropNames.PotionMeadbase
-              , Amount = 2
-            }
-          }
-        }));
+        ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
       catch (Exception e)
       {
