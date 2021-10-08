@@ -12,6 +12,7 @@ namespace PotionsPlus
   {
     private Skills.SkillType _potionsPlusAlchemySkill;
     private SE_Stats _se_AlchSkillProc;
+    private SE_Stats _se_CheatDeath;
 
     /// <summary>
     /// Adds the Alchemy skill to the game.
@@ -273,12 +274,46 @@ namespace PotionsPlus
       statusEffect.m_raiseSkillModifier = PhilosopherStoneXpGain.Value;
     }
 
-    private void AlchemySkillProc()
+    private void LoadStatusEffects()
     {
       try
       {
-        if (!AlchemySkillEnable.Value) return;
+        _se_CheatDeath = _assetBundle.LoadAsset<SE_Stats>("CheatDeath");
         _se_AlchSkillProc = _assetBundle.LoadAsset<SE_Stats>("AlcSkillProc");
+      }
+      catch (Exception e)
+      {
+        Jotunn.Logger.LogError(e);
+      }
+    }
+
+    public void OnPlayerAboutToDie(ref Character character, ref float health)
+    {
+      try
+      {
+        if (character != Player.m_localPlayer) return;
+        var category = "pp_philstone";
+        if (Player.m_localPlayer.GetSEMan().GetStatusEffects().All(se => se.m_category != category)) return;
+        
+        var equippedPhilosopherStone = ((Humanoid)character).GetInventory().GetAllItems().FirstOrDefault(i => i.m_equiped 
+                                                                                                             && i.m_shared.m_itemType == ItemDrop.ItemData.ItemType.Utility
+                                                                                                             && i.m_shared.m_equipStatusEffect.m_category == category
+                                                                                                  );
+        if (equippedPhilosopherStone != null)
+        {
+          ((Humanoid)character).GetInventory().RemoveOneItem(equippedPhilosopherStone);
+          var se = _se_CheatDeath;
+          se.m_ttl = 10f;
+          Player.m_localPlayer.GetSEMan().AddStatusEffect(se);
+          // character.Heal(character.GetMaxHealth());
+          health = character.GetMaxHealth();
+        }
+
+        var se_pp_philstone = Player.m_localPlayer.GetSEMan().GetStatusEffects().FirstOrDefault(se => se.m_category == category);
+        if (se_pp_philstone != null)
+        {
+          Player.m_localPlayer.GetSEMan().RemoveStatusEffect(se_pp_philstone);
+        }
       }
       catch (Exception e)
       {
