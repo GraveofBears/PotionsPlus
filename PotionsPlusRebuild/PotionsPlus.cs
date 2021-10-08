@@ -74,7 +74,7 @@ namespace PotionsPlus
 
         PotionMeadbase();
         AddToSkills();
-        AlchemySkillProc(); 
+        LoadStatusEffects(); 
         PhilosopherStoneGreen();
         PhilosopherStoneRed();
         PhilosopherStoneBlue();

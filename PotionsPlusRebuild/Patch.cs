@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using JetBrains.Annotations;
 using System;
+using System.Linq;
 
 namespace PotionsPlus
 {
@@ -44,6 +45,16 @@ namespace PotionsPlus
         {
           Jotunn.Logger.LogError(e);
         }
+      }
+    }
+
+    [HarmonyPatch(typeof(Character), nameof(Character.SetHealth))]
+    public class PatchCharacterSetHealth
+    {
+      private static void Prefix(ref Character __instance, ref float health)
+      {
+        if (__instance != Player.m_localPlayer || !(health <= 0)) return;
+        PotionsPlus.Instance.OnPlayerAboutToDie(ref __instance, ref health);
       }
     }
   }
