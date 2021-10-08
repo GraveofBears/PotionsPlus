@@ -74,13 +74,12 @@ namespace PotionsPlus
         LesserStaminaVial();
 
         PotionMeadbase();
+        AddToSkills();
         PhilosopherStoneGreen();
         PhilosopherStoneRed();
         PhilosopherStoneBlue();
         PhilosopherStonePurple();
         PhilosopherStoneBlack();
-
-        AddToSkills();
 
         _assetBundle.Unload(false);
 
@@ -94,6 +93,7 @@ namespace PotionsPlus
     }
 
     [UsedImplicitly]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("CodeQuality", "IDE0051:Remove unused private members", Justification = "UsedImplicitly")]
     private void OnDestroy()
     {
       try
@@ -838,8 +838,9 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
-        // var itemDrop = prefab.GetComponent<ItemDrop>();
-        // itemDrop.m_itemData.m_shared.m_equipStatusEffect = null;
+        var itemDrop = prefab.GetComponent<ItemDrop>();
+        var statusEffect = itemDrop.m_itemData.m_shared.m_equipStatusEffect as SE_Stats;
+        AddRaiseSkillModifier(ref statusEffect);
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
@@ -861,6 +862,10 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
+        var itemDrop = prefab.GetComponent<ItemDrop>();
+        var statusEffect = itemDrop.m_itemData.m_shared.m_equipStatusEffect as SE_Stats;
+        AddRaiseSkillModifier(ref statusEffect);
+
         ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
       catch (Exception e)
@@ -880,6 +885,10 @@ namespace PotionsPlus
         {
           throw new NullReferenceException(nameof(prefab));
         }
+
+        var itemDrop = prefab.GetComponent<ItemDrop>();
+        var statusEffect = itemDrop.m_itemData.m_shared.m_equipStatusEffect as SE_Stats;
+        AddRaiseSkillModifier(ref statusEffect);
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
@@ -901,23 +910,9 @@ namespace PotionsPlus
           throw new NullReferenceException(nameof(prefab));
         }
 
-        // var itemDrop = prefab.GetComponent<ItemDrop>();
-        // var se = itemDrop.m_itemData.m_shared.m_equipStatusEffect as SE_Stats;
-        // Jotunn.Logger.LogDebug($"se == null : {se == null}");
-        // Jotunn.Logger.LogDebug($"se?.m_name : {se?.m_name}");
-        // Jotunn.Logger.LogDebug($"se?.m_speedModifier : {se?.m_speedModifier}");
-        // Jotunn.Logger.LogDebug($"se?.m_addMaxCarryWeight : {se?.m_addMaxCarryWeight}");
-        // Jotunn.Logger.LogDebug($"se?.m_mods == null : {se?.m_mods == null}");
-        // Jotunn.Logger.LogDebug($"se?.m_mods?.Count : {se?.m_mods?.Count}");
-        //
-        // if (se?.m_mods != null)
-        // {
-        //   foreach (var damageModPair in se.m_mods)
-        //   {
-        //     Jotunn.Logger.LogDebug($"damageModPair.m_type : {damageModPair.m_type}");
-        //     Jotunn.Logger.LogDebug($"damageModPair.m_modifier : {damageModPair.m_modifier}");
-        //   }
-        // }
+        var itemDrop = prefab.GetComponent<ItemDrop>();
+        var statusEffect = itemDrop.m_itemData.m_shared.m_equipStatusEffect as SE_Stats;
+        AddRaiseSkillModifier(ref statusEffect);
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
@@ -938,6 +933,10 @@ namespace PotionsPlus
         {
           throw new NullReferenceException(nameof(prefab));
         }
+
+        var itemDrop = prefab.GetComponent<ItemDrop>();
+        var statusEffect = itemDrop.m_itemData.m_shared.m_equipStatusEffect as SE_Stats;
+        AddRaiseSkillModifier(ref statusEffect);
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false));
       }
