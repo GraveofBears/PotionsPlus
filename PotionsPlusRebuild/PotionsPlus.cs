@@ -22,12 +22,11 @@ namespace PotionsPlus
   {
     private const string PluginGuid = "com.odinplus.potionsplus";
     public const string PluginName = "PotionsPlus";
-    public const string PluginVersion = "2.2.0";
+    public const string PluginVersion = "2.2.1";
 
     private AssetBundle _assetBundle;
     public static PotionsPlus Instance;
     private Harmony _harmony;
-    private Skills.SkillType _potionsPlusAlchemySkill;
 
     public PotionsPlus()
     {
@@ -75,6 +74,7 @@ namespace PotionsPlus
 
         PotionMeadbase();
         AddToSkills();
+        AlchemySkillProc(); 
         PhilosopherStoneGreen();
         PhilosopherStoneRed();
         PhilosopherStoneBlue();

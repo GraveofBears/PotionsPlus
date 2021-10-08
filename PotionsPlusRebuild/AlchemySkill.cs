@@ -10,6 +10,9 @@ namespace PotionsPlus
 {
   public partial class PotionsPlus
   {
+    private Skills.SkillType _potionsPlusAlchemySkill;
+    private SE_Stats _se_AlchSkillProc;
+
     /// <summary>
     /// Adds the Alchemy skill to the game.
     /// </summary>
@@ -82,7 +85,7 @@ namespace PotionsPlus
         return currentCraftingStationName switch
         {
           CraftingStationNames.AlchemyTable + "(Clone)" => true
-          , CraftingStationNames.AlchemyCauldron + "(Clone)" => true
+          // , CraftingStationNames.AlchemyCauldron + "(Clone)" => true
           , _ => false
         };
       }
@@ -232,6 +235,7 @@ namespace PotionsPlus
       try
       {
         _isAddingExtraItem = true; // Recursive loop flag.
+        Player.m_localPlayer.GetSEMan().AddStatusEffect(_se_AlchSkillProc);
         Player.m_localPlayer.GetInventory().AddItem(itemName, 1, 1, 0, Player.m_localPlayer.GetPlayerID(), Player.m_localPlayer.GetPlayerName());
         _isAddingExtraItem = false; // Reset flag.
       }
@@ -267,6 +271,19 @@ namespace PotionsPlus
     {
       statusEffect.m_raiseSkill = _potionsPlusAlchemySkill;
       statusEffect.m_raiseSkillModifier = PhilosopherStoneXpGain.Value;
+    }
+
+    private void AlchemySkillProc()
+    {
+      try
+      {
+        if (!AlchemySkillEnable.Value) return;
+        _se_AlchSkillProc = _assetBundle.LoadAsset<SE_Stats>("AlcSkillProc");
+      }
+      catch (Exception e)
+      {
+        Jotunn.Logger.LogError(e);
+      }
     }
   }
 }
