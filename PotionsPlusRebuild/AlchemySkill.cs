@@ -262,5 +262,11 @@ namespace PotionsPlus
         return false;
       }
     }
+
+    private void AddRaiseSkillModifier(ref SE_Stats statusEffect)
+    {
+      statusEffect.m_raiseSkill = _potionsPlusAlchemySkill;
+      statusEffect.m_raiseSkillModifier = PhilosopherStoneXpGain.Value;
+    }
   }
 }
