@@ -86,6 +86,7 @@ namespace PotionsPlus
         return currentCraftingStationName switch
         {
           CraftingStationNames.AlchemyTable + "(Clone)" => true
+          , CraftingStationNames.AlchemyTable => true
           // , CraftingStationNames.AlchemyCauldron + "(Clone)" => true
           , _ => false
         };
@@ -309,6 +310,7 @@ namespace PotionsPlus
           health = character.GetMaxHealth();
         }
 
+        // ReSharper disable once InconsistentNaming
         var se_pp_philstone = Player.m_localPlayer.GetSEMan().GetStatusEffects().FirstOrDefault(se => se.m_category == category);
         if (se_pp_philstone != null)
         {
