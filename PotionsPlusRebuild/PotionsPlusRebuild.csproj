@@ -94,17 +94,41 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AssetsEmbedded\potions" />
+    <None Include=".ts\manifest.json" />
+    <None Include=".ts\README.md" />
     <None Include="Assets\Translations\English\translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="DoPrebuild.props" />
     <None Include="Environment.props" />
+    <None Include="imgs\1561-1633921434-243460906.webp" />
     <None Include="packages.config" />
     <None Include="Package\manifest.json" />
     <None Include="Package\README.md" />
     <None Include="Potions Plus Unity.unitypackage" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".nx\description.bbcode.txt" />
+    <Content Include=".ts\icon.png" />
+    <Content Include="imgs\1561-1633907540-1474601071.png" />
+    <Content Include="imgs\1561-1633907602-1486314391.png" />
+    <Content Include="imgs\1561-1633907603-2071107406.png" />
+    <Content Include="imgs\1561-1633907608-1301011368.png" />
+    <Content Include="imgs\1561-1633907609-235483659.png" />
+    <Content Include="imgs\1561-1633907615-165096406.png" />
+    <Content Include="imgs\1561-1633907615-28835884.png" />
+    <Content Include="imgs\1561-1633907620-451811970.png" />
+    <Content Include="imgs\1561-1633907621-959246869.png" />
+    <Content Include="imgs\5Zlwc1q.png" />
+    <Content Include="imgs\giphy.gif" />
+    <Content Include="imgs\hcXOQJQ.png" />
+    <Content Include="imgs\header.jpg" />
+    <Content Include="imgs\index.png" />
+    <Content Include="imgs\QdnDQCJ.png" />
+    <Content Include="imgs\UsyzCmi.png" />
+    <Content Include="imgs\WgErsLa.png" />
+    <Content Include="imgs\WqzZlAo.png" />
+    <Content Include="imgs\XHrLtEl.png" />
     <Content Include="Package\icon.png" />
   </ItemGroup>
   <ItemGroup>
