@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		DoPrebuild.props = DoPrebuild.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotionsPlusRebuild", "PotionsPlusRebuild\PotionsPlusRebuild.csproj", "{E2CAA4E9-505B-4F77-B96D-D1616D4A8178}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotionsPlus", "PotionsPlusRebuild\PotionsPlus.csproj", "{E2CAA4E9-505B-4F77-B96D-D1616D4A8178}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{E8EB4B03-81E2-43AA-82A8-2D39348A9233}"
 EndProject
