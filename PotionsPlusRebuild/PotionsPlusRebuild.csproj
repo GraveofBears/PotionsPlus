@@ -152,6 +152,79 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\JotunnLib.2.3.4\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.3.4\build\JotunnLib.props'))" />
   </Target>
+
+  <Target Name="BeforeBuild" Condition="'$(Configuration)' == 'Release'">
+    <Message Text="BeforeBuild Called" Importance="high" />
+    <ItemGroup>
+      <BuildFiles Include="$(TargetDir)..\$(ProjectName)\$(ProjectName)\$(ProjectName).dll" />
+    </ItemGroup>
+    <Message Text="@(BuildFiles)" Importance="high" />
+    <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)\$(ProjectName)" Importance="high" />
+    <Delete Files="@(BuildFiles)" />
+  </Target>
+  <Target Name="RefreshVars" AfterTargets="PostBuildEvent" Label="MyRefreshVars">
+    <Message Text="RefreshVars Called" Importance="high" />
+    <ItemGroup>
+      <DigitalrootSourceFiles Include="$(TargetDir)**\*.*" />
+      <DigitalrootBuildFiles  Include="$(TargetDir)..\$(ProjectName)\$(ProjectName)\$(ProjectName).dll" />
+      <DigitalrootTSIOFiles   Include="$(ProjectDir).ts\*.*" />
+      <DigitalrootReadMeFile  Include="$(SolutionDir)\docs\README.md" />
+    </ItemGroup>
+  </Target>
+  <Target Name="DebugPostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'" DependsOnTargets="RefreshVars">
+    <Message Text="DebugPostBuild Called" Importance="high" />
+    <Message Text="Copying assemblies to C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\" Importance="high" />
+    <CallTarget Targets="RefreshVars" />
+    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+  </Target>
+  <Target Name="ReleasePostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="RefreshVars">
+    <Message Text="ReleasePostBuild Called" Importance="high" />
+    <CallTarget Targets="RefreshVars" />
+    <MakeDir Directories="$(TargetDir)..\$(ProjectName)\$(ProjectName)" />
+    <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)" Importance="high" />
+    <Delete Files="$(TargetDir)..\$(ProjectName)\**\*.*" />
+    <Message Text="Copying @(DigitalrootSourceFiles) to $(TargetDir)..\$(ProjectName)\$(ProjectName)" Importance="high" />
+    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'$(TargetDir)..\$(ProjectName)\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <GetAssemblyIdentity AssemblyFiles="$(TargetDir)$(TargetFileName)">
+      <Output TaskParameter="Assemblies" ItemName="DigitalrootAssemblyIdentities" />
+    </GetAssemblyIdentity>
+    <Message Text="Version = $([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))" Importance="high" />
+    <Message Text="Deleting $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" Importance="high" />
+    <Delete Files="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" />
+    <Message Text="Creating Zip file $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" Importance="high" />
+    <ZipDirectory SourceDirectory="$(TargetDir)..\$(ProjectName)" DestinationFile="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" />
+  </Target>
+  <Target Name="ReleasePostBuildTS" AfterTargets="ReleasePostBuild" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="RefreshVars">
+    <Message Text="ReleasePostBuildTS Called" Importance="high" />
+    <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)TS" Importance="high" />
+    <Delete Files="$(TargetDir)..\$(ProjectName)TS\**\*.*" />
+    <MakeDir Directories="$(TargetDir)..\$(ProjectName)TS\plugins" />
+    <Message Text="Copying @(DigitalrootSourceFiles) to $(TargetDir)..\$(ProjectName)TS\plugins" Importance="high" />
+    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'$(TargetDir)..\$(ProjectName)TS\plugins\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copying @(DigitalrootTSIOFiles) to $(TargetDir)..\$(ProjectName)TS" Importance="high" />
+    <Copy SourceFiles="@(DigitalrootTSIOFiles)"  DestinationFiles="@(DigitalrootTSIOFiles->'$(TargetDir)..\$(ProjectName)TS\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(DigitalrootReadMeFile)" DestinationFiles="@(DigitalrootReadMeFile->'$(TargetDir)..\$(ProjectName)TS\%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <GetAssemblyIdentity AssemblyFiles="$(TargetDir)$(TargetFileName)">
+      <Output TaskParameter="Assemblies" ItemName="DigitalrootAssemblyIdentities" />
+    </GetAssemblyIdentity>
+    <Message Text="Version = $([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))" Importance="high" />
+    <Message Text="Deleting $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" Importance="high" />
+    <Delete Files="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" />
+    <Message Text="Updating Thunderstore manifest.json" Importance="high" />
+    <PropertyGroup>
+      <InputFile>$(TargetDir)..\$(ProjectName)TS\manifest.json</InputFile>
+      <OutputFile>$(TargetDir)..\$(ProjectName)TS\manifest.json</OutputFile>
+    </PropertyGroup>
+    <WriteLinesToFile
+      File="$(OutputFile)"
+      Lines="$([System.IO.File]::ReadAllText($(InputFile)).Replace('%VERSION_NUMBER%','$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))'))"
+      Overwrite="true"
+      Encoding="ASCII"/>
+    <Message Text="Creating Zip file $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" Importance="high" />
+    <ZipDirectory SourceDirectory="$(TargetDir)..\$(ProjectName)TS" DestinationFile="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" />
+  </Target>
+
+
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(TargetDir)PotionsPlus.dll" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\PotionsPlus.dll
 copy /Y "$(TargetDir)Assets\Translations\English\translations.json" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\PotionsPlus\Assets\Translations\English\translations.json
