@@ -22,7 +22,7 @@ namespace PotionsPlus
   {
     private const string PluginGuid = "com.odinplus.potionsplus";
     public const string PluginName = "PotionsPlus";
-    public const string PluginVersion = "2.2.1";
+    public const string PluginVersion = "3.0.1";
 
     private AssetBundle _assetBundle;
     public static PotionsPlus Instance;
