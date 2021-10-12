@@ -94,8 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AssetsEmbedded\potions" />
+    <None Include="..\docs\README.md">
+      <Link>.ts\README.md</Link>
+    </None>
     <None Include=".ts\manifest.json" />
-    <None Include=".ts\README.md" />
     <None Include="Assets\Translations\English\translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

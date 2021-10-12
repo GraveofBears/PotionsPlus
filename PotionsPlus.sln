@@ -21,6 +21,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\tag-versionadjust.yml = .github\workflows\tag-versionadjust.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4920A072-1E4C-44D8-AD3F-5661F1428E1E}"
+	ProjectSection(SolutionItems) = preProject
+		docs\LICENSE = docs\LICENSE
+		docs\README.md = docs\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E8EB4B03-81E2-43AA-82A8-2D39348A9233} = {0F65B9A8-B9DA-4F04-8DF6-8B9F20BCD0E7}
 		{2ACA204F-1B02-4216-B350-F8DCBCC408ED} = {E8EB4B03-81E2-43AA-82A8-2D39348A9233}
+		{4920A072-1E4C-44D8-AD3F-5661F1428E1E} = {0F65B9A8-B9DA-4F04-8DF6-8B9F20BCD0E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04FA40AF-91D5-4CE8-92ED-7530C8DF0D5E}
