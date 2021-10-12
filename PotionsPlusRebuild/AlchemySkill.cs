@@ -304,7 +304,7 @@ namespace PotionsPlus
         {
           ((Humanoid)character).GetInventory().RemoveOneItem(equippedPhilosopherStone);
           var se = _se_CheatDeath;
-          se.m_ttl = 10f;
+          se.m_ttl = 6f;
           Player.m_localPlayer.GetSEMan().AddStatusEffect(se);
           // character.Heal(character.GetMaxHealth());
           health = character.GetMaxHealth();
