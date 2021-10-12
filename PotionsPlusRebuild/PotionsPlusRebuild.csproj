@@ -101,6 +101,9 @@
     <None Include="Assets\Translations\English\translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Assets\Translations\Russian\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="DoPrebuild.props" />
     <None Include="Environment.props" />
     <None Include="imgs\1561-1633921434-243460906.webp" />
