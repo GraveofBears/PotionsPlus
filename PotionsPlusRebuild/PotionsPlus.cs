@@ -1,4 +1,5 @@
 using BepInEx;
+using BepInEx.Configuration;
 using HarmonyLib;
 using JetBrains.Annotations;
 using Jotunn;
@@ -22,8 +23,8 @@ namespace PotionsPlus
   {
     private const string PluginGuid = "com.odinplus.potionsplus";
     public const string PluginName = "PotionsPlus";
-    public const string PluginVersion = "3.0.1";
-
+    public const string PluginVersion = "3.0.2";
+    [UsedImplicitly] public static ConfigEntry<int> NexusId;
     private AssetBundle _assetBundle;
     public static PotionsPlus Instance;
     private Harmony _harmony;
@@ -31,6 +32,7 @@ namespace PotionsPlus
     public PotionsPlus()
     {
       Instance = this;
+      NexusId = Config.Bind("General", "NexusID", 1561, new ConfigDescription("Nexus mod ID for updates", null, new ConfigurationManagerAttributes { IsAdminOnly = false, Browsable = false, ReadOnly = true }));
     }
 
     [UsedImplicitly]
