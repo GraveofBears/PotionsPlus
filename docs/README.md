@@ -4,7 +4,7 @@
 
 <p>
 
->﻿Long ago the great Alchemist Zoe traveled the lands, gathering all the items she could find and testing them in her Alchemy Lab. Her research proved to be successful. She found methods to cure those who were near death.. some believed she had the power to bring back those who are beyond death...
+>Long ago the great Alchemist Zoe traveled the lands, gathering all the items she could find and testing them in her Alchemy Lab. Her research proved to be successful. She found methods to cure those who were near death...There were even some who believed she had the power to bring back those who were beyond the grave...
 
 >Her healing methods were also criticized by many, saying she was dealing with forces of evil and her soul was taken by the elder gods as a curse. Zoe hid her findings, she locked herself in a stone tower to keep herself from being hunted by those who found her to be evil. Whispers of her teachings and items passed down from generations, you now have the power to follow in the footsteps of the great Alchemist Zoe!
 
@@ -24,13 +24,13 @@
 <p align="center"><h2>Zoe, the Legendary Alchemist's Table</h2></p>
 
 
->Alchemy Skill will increase your chances to craft additional potions.﻿
->Lesser Potions are crafted with early stage items, the ZOE's Alchemy Table is something that you can craft early >game.
+>Alchemy Skill will increase your chances to craft additional potions.
+>Lesser Potions are crafted with early stage items, the ZOE's Alchemy Table is something that you can craft early game.
 >You will unlock the Medium and Grand Potions as you adventure through Valheim, gathering new materials.
 
 
 <p align="center"><img src="https://i.imgur.com/UsyzCmi.png"></p>
-    ﻿﻿
+
 <p align="center"><b>Lesser, Medium, and Grand potions can be crafted without Potion Base!</b></p>
 
 <p align="center"><img src="https://i.imgur.com/WqzZlAo.png"></p>
@@ -43,18 +43,18 @@
 >To craft the Flasks we need to first make a Potion Cauldron, place 1 Grand 
 >Potion of any type into the Cauldron, then pull the lever.
 >This will create a Potion Base mead that is then used to craft your Flask at the Alchemy table.
-﻿>The Potion Cauldron creates, Potion Base, Philosopher's Stones.
+>The Potion Cauldron creates, Potion Base, Philosopher's Stones.
 >(The Cauldron will also destroy any item that isn't a requirement for Alchemy Recipes)
 
 <p align="center"><b>Potion Base Mead is required for Flasks!></b></p>
-﻿
+
 <p align="center"><img src="https://i.imgur.com/QdnDQCJ.png"></p>
 
 >Once we have our Flasks we can then use those to transmute a Philosopher's Stone.
 >Crafting 5 flasks and placing them into the Potion Cauldron will produce the Philosopher's Stone
 >Stones are Utility items that will grant Resistance, additional Alchemy Skill, and 75 + weight when worn.
 >Stones will destroy themselves and bring you back to life if you die with them equipped.
->Note: Magelight will not create any Stone Type. ﻿
+>Note: Magelight will not create any Stone Type. 
 
 <p align="center"><img src="https://i.imgur.com/WgErsLa.png"></p>
 
@@ -101,7 +101,7 @@ Each level of Alchemy = 1% chance to craft an additional potion. after level 25,
 <p align="center"><a href="https://github.com/GraveofBears/PotionsPlus"><img src="https://i.imgur.com/Jb3FCYm.png"></p></a>
 
 </a></p>
-  ﻿﻿
+
 
 </div>
 
