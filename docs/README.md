@@ -73,7 +73,7 @@
 
 <h2> How the crafting bonus works: </h2>
 
-Each level of Alchemy = 1% chance to craft an additional potion. after level 25, your total Alchemy level is divided by 4 and the results is the % chance to crafted a 2nd additional potion. At level 100, you have 100% chance to craft an additional potion and 25% chance to craft a 2nd additional potion on top of that. At 100 a potion that crafts in stacks of x5, if you are lucky could output 7 total items.
+>Each level of Alchemy = 1% chance to craft an additional potion. after level 25, your total Alchemy level is divided by 4 and the results is the % chance to crafted a 2nd additional potion. At level 100, you have 100% chance to craft an additional potion and 25% chance to craft a 2nd additional potion on top of that. At 100 a potion that crafts in stacks of x5, if you are lucky could output 7 total items.
 
 </details>
 
