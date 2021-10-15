@@ -80,24 +80,7 @@
    
   </p>
   
-  <p align="center">
-   
-  <img src="https://media3.giphy.com/media/QyGo11Vi8SHVHFQR1b/giphy.gif" alt="CauldronPotions">
-   
-  </p>
-
-  <p align="center">
-    
-  <img src="https://media2.giphy.com/media/7IXXM4MqKd9c3lh2v7/giphy.gif" alt="CauldronStones">
-   
-  </p>
-
-  <p align="center">
   
-  <img src="https://media0.giphy.com/media/qK12zmdb4MQQPlinEo/giphy.gif" alt="StoneDeath">
-
-</p>
-
 <h2>  Credits: </h2>
 
 >PotionsPlus is the creation of the OdinPlus Mod Team,
