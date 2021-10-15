@@ -60,9 +60,20 @@
 
 </details>
 
-<details>
-<summary>Cauldron Details:</summary>
+<details><summary>Alchemy Skill Details:</summary>
+
+<h2> How the Alchmey Skill crafting bonus works: </h2>
+
+>Each level of Alchemy = 1% chance to craft an additional potion. after level 25, your total Alchemy level is divided by 4 and the results is the % chance to crafted a 2nd additional potion. At level 100, you have 100% chance to craft an additional potion and 25% chance to craft a 2nd additional potion on top of that. At 100 a potion that crafts in stacks of x5, if you are lucky could output 7 total items.
+
+</details>
   
+<p>
+
+  <h2> About: </h2>
+
+>Potions are scaled in a crafting order to fit right in with the progression of Valheim. Starting with crafting the Alchemy Table and you will be on your way to unlocking the art of potion crafting. Potions will require various materials that you unlock as you progress through Valheim. The new Cauldron allows you to craft advanced potions known as Flasks. By breaking down a "Greater Potion" in the Potion Cauldron you can create a PotionBase Mead that is used to craft the end tier Flasks. You can also place five Flasks, of the same type, into the Potion Cauldron to create a Philosopher's Stone. The Philosopher's Stones will grant additional Alchemy XP gain when crafting, resist of the elemental matching the stone type, and bring you back from the dead consuming the Stone. The Alchemy Skill grants a chance to craft "extra" potions based on your skill level.
+
  <p align="center">
 
   <img src="https://media3.giphy.com/media/pyIertIbM0HNZT7Gp8/giphy.gif" alt="Cauldron">
@@ -86,24 +97,6 @@
   <img src="https://media0.giphy.com/media/qK12zmdb4MQQPlinEo/giphy.gif" alt="StoneDeath">
 
 </p>
-
-</details>
-  
-<details>
-<summary>Alchemy Skill Details:</summary>
-
-<h2> How the Alchmey Skill crafting bonus works: </h2>
-
->Each level of Alchemy = 1% chance to craft an additional potion. after level 25, your total Alchemy level is divided by 4 and the results is the % chance to crafted a 2nd additional potion. At level 100, you have 100% chance to craft an additional potion and 25% chance to craft a 2nd additional potion on top of that. At 100 a potion that crafts in stacks of x5, if you are lucky could output 7 total items.
-
-</details>
-  
-<p>
-
-  <h2> About: </h2>
-
->Potions are scaled in a crafting order to fit right in with the progression of Valheim. Starting with crafting the Alchemy Table and you will be on your way to unlocking the art of potion crafting. Potions will require various materials that you unlock as you progress through Valheim. The new Cauldron allows you to craft advanced potions known as Flasks. By breaking down a "Greater Potion" in the Potion Cauldron you can create a PotionBase Mead that is used to craft the end tier Flasks. You can also place five Flasks, of the same type, into the Potion Cauldron to create a Philosopher's Stone. The Philosopher's Stones will grant additional Alchemy XP gain when crafting, resist of the elemental matching the stone type, and bring you back from the dead consuming the Stone. The Alchemy Skill grants a chance to craft "extra" potions based on your skill level.
-
 
 <h2>  Credits: </h2>
 
