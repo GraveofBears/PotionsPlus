@@ -74,21 +74,6 @@
 
 >Potions are scaled in a crafting order to fit right in with the progression of Valheim. Starting with crafting the Alchemy Table and you will be on your way to unlocking the art of potion crafting. Potions will require various materials that you unlock as you progress through Valheim. The new Cauldron allows you to craft advanced potions known as Flasks. By breaking down a "Greater Potion" in the Potion Cauldron you can create a PotionBase Mead that is used to craft the end tier Flasks. You can also place five Flasks, of the same type, into the Potion Cauldron to create a Philosopher's Stone. The Philosopher's Stones will grant additional Alchemy XP gain when crafting, resist of the elemental matching the stone type, and bring you back from the dead consuming the Stone. The Alchemy Skill grants a chance to craft "extra" potions based on your skill level.
 
- <p align="center">
-
-  <img src="https://media3.giphy.com/media/pyIertIbM0HNZT7Gp8/giphy.gif" alt="Cauldron"></p>
-  
-  <p align="center">
-   
-  <img src="https://media3.giphy.com/media/QyGo11Vi8SHVHFQR1b/giphy.gif" alt="CauldronPotions"></p>
-
-  <p align="center"><img src="https://media2.giphy.com/media/7IXXM4MqKd9c3lh2v7/giphy.gif" alt="CauldronStones"></p>
-
-  <p align="center">
-  
-  <img src="https://media0.giphy.com/media/qK12zmdb4MQQPlinEo/giphy.gif" alt="StoneDeath">
-
-</p>
   
   
 <h2>  Credits: </h2>
