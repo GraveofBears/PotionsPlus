@@ -76,21 +76,13 @@
 
  <p align="center">
 
-  <img src="https://media3.giphy.com/media/pyIertIbM0HNZT7Gp8/giphy.gif" alt="Cauldron">
-   
-  </p>
+  <img src="https://media3.giphy.com/media/pyIertIbM0HNZT7Gp8/giphy.gif" alt="Cauldron"></p>
   
   <p align="center">
    
-  <img src="https://media3.giphy.com/media/QyGo11Vi8SHVHFQR1b/giphy.gif" alt="CauldronPotions">
-   
-  </p>
+  <img src="https://media3.giphy.com/media/QyGo11Vi8SHVHFQR1b/giphy.gif" alt="CauldronPotions"></p>
 
-  <p align="center">
-    
-  <img src="https://media2.giphy.com/media/7IXXM4MqKd9c3lh2v7/giphy.gif" alt="CauldronStones">
-   
-  </p>
+  <p align="center"><img src="https://media2.giphy.com/media/7IXXM4MqKd9c3lh2v7/giphy.gif" alt="CauldronStones"></p>
 
   <p align="center">
   
