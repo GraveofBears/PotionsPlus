@@ -199,6 +199,7 @@ namespace PotionsPlus
         FlaskOfFortificationSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _fortificationSe;
+        _fortificationSe.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -248,6 +249,7 @@ namespace PotionsPlus
         GodsSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _godsSestat;
+        _godsSestat.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -297,6 +299,7 @@ namespace PotionsPlus
         MagelightSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _magelightSestat;
+        _magelightSestat.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -366,6 +369,7 @@ namespace PotionsPlus
         SecondWindSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _secondWindSestat;
+        _secondWindSestat.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -745,6 +749,7 @@ namespace PotionsPlus
         LesserTideSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _lessertideSe;
+        _lessertideSe.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -784,6 +789,7 @@ namespace PotionsPlus
         LesserSpiritualSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _lesserSpiritualSe;
+        _lesserSpiritualSe.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -823,6 +829,7 @@ namespace PotionsPlus
         LesserStaminaSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _lesserstamSe;
+        _lesserstamSe.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
