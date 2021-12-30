@@ -5,6 +5,7 @@ namespace PotionsPlus
 {
   public partial class PotionsPlus
   {
+    private ConfigEntry<float> PhilosopherStoneXpGain;
     private static ConfigEntry<float> _tick;
     private static ConfigEntry<int> _healthtime;
     private static ConfigEntry<int> _healthtick;
@@ -41,7 +42,7 @@ namespace PotionsPlus
     private ConfigEntry<int> _grandHoTtimer;
     private ConfigEntry<int> _grandHotTimeTickHp;
 
-    private ConfigEntry<int> _grandSpTtl;
+    private ConfigEntry<int> _grandSpHTtl;
     private ConfigEntry<int> _grandSpCooldown;
     private ConfigEntry<int> _grandSpHot;
     private ConfigEntry<int> _grandSphotDur;
@@ -81,7 +82,7 @@ namespace PotionsPlus
     private ConfigEntry<int> _medstamrun;
     private ConfigEntry<int> _medstamregen;
 
-    private ConfigEntry<int> _medSpTtl;
+    private ConfigEntry<int> _medSpHtl;
     private ConfigEntry<int> _medSpCooldown;
     private ConfigEntry<int> _medSpHot;
     private ConfigEntry<int> _medSphotDur;
@@ -101,7 +102,7 @@ namespace PotionsPlus
     private ConfigEntry<int> _lesserHoTtimer;
     private ConfigEntry<int> _lesserHotTimeTickHp;
 
-    private ConfigEntry<int> _lesserSpTtl;
+    private ConfigEntry<int> _lesserSpHtl;
     private ConfigEntry<int> _lesserSpCooldown;
     private ConfigEntry<int> _lesserSpHot;
     private ConfigEntry<int> _lesserSphotDur;
@@ -118,26 +119,35 @@ namespace PotionsPlus
     private ConfigEntry<int> _lesserstamrun;
     private ConfigEntry<int> _lesserstamregen;
 
+    public ConfigEntry<bool> AlchemySkillEnable;
+    public ConfigEntry<bool> AlchemySkillBonusWhenCraftingEnabled;
+
     private void ConfigEntries()
     {
       Jotunn.Logger.LogDebug($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}()");
       _elementsTtl = Config.Bind(PotionNames.FlaskOfElements, ConfigKeyNames.Duration, 300, $"Duration for the {PotionNames.FlaskOfElements}");
       _fortificationTtl = Config.Bind(PotionNames.FlaskOfFortification, ConfigKeyNames.Duration, 300, $"Duration for the {PotionNames.FlaskOfFortification}");
       _magelightTtl = Config.Bind(PotionNames.FlaskOfMagelight, ConfigKeyNames.Duration, 300, $"Duration for {PotionNames.FlaskOfMagelight}");
-      
+
       _godsTTl = Config.Bind(PotionNames.FlaskOfTheGods, ConfigKeyNames.Duration, 300, $"Duration for {PotionNames.FlaskOfTheGods}");
       _grandTideTtl = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.GrandHealingTideElixir}");
-      _grandSpTtl = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.Duration, 240, $"Duration for {PotionNames.GrandSpiritualTideElixir}");
+      _grandSpHTtl = Config.Bind(PotionNames.GrandSpiritualHealingElixir, ConfigKeyNames.Duration, 240, $"Duration for {PotionNames.GrandSpiritualHealingElixir}");
       _grandstamTtl = Config.Bind(PotionNames.GrandStaminaElixir, ConfigKeyNames.Duration, 240, $"Duration for {PotionNames.GrandStaminaElixir}");
       _grandStealthTtl = Config.Bind(PotionNames.GrandStealthElixir, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.GrandStealthElixir}");
       _medTideTtl = Config.Bind(PotionNames.MediumHealingTidePotion, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.MediumHealingTidePotion}");
-      _medSpTtl = Config.Bind(PotionNames.MediumSpiritualTidePotion, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.MediumSpiritualTidePotion}");
+      _medSpHtl = Config.Bind(PotionNames.MediumSpiritualHealingPotion, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.MediumSpiritualHealingPotion}");
       _medstamTtl = Config.Bind(PotionNames.MediumStaminaPotion, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.MediumStaminaPotion}");
       _lesserTideTtl = Config.Bind(PotionNames.LesserHealingTideVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserHealingTideVial}");
-      _lesserSpTtl = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserSpiritualTideVial}");
+      _lesserSpHtl = Config.Bind(PotionNames.LesserSpiritualHealingVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserSpiritualHealingVial}");
       _lesserstamTtl = Config.Bind(PotionNames.LesserStaminaVial, ConfigKeyNames.Duration, 120, $"Duration for {PotionNames.LesserStaminaVial}");
 
+      AlchemySkillEnable = Config.Bind("Alchemy Skill", "Enable Alchemy Skill", true, new ConfigDescription("Enable Alchemy skill.", null, new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 1 }));
+      AlchemySkillBonusWhenCraftingEnabled = Config.Bind("Alchemy Skill", "Enable Alchemy Bonus", true, new ConfigDescription("Enable Alchemy Bonus when crafting.", null, new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 2 }));
+      PhilosopherStoneXpGain = Config.Bind("Alchemy Skill", "Philosopher Stone XP Gain", 5f, new ConfigDescription("XP Gain multiplier when brewing while using a Philosopher Stone.", new AcceptableValueRange<float>(0f, 100f), new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 3 }));
+
+
       #region Second Wind Config
+
       _secondWindTtl = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.Duration, 120, $"Duration");
       _secondWindCooldown = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.Cooldown, 0, "Cooldown Timer");
       _secondWindjumpDrain = Config.Bind(PotionNames.FlaskOfSecondWind, ConfigKeyNames.JumpDrain, -0.25f, "Jump drain multiplicative factor for stamina drain");
@@ -159,7 +169,8 @@ namespace PotionsPlus
       #endregion
 
       #region GrandHealingTideElixir
-      _grandTideCooldownTimer = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.Cooldown, 0, "Cooldown Timer for Second Wind");
+
+      _grandTideCooldownTimer = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.Cooldown, 0, "Cooldown Timer for Second Wind");
 
       _grandTideregen = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.HealthRegenFactor, 1f, "The multiplier used for health regeneration during consumption");
       _grandHealovertime = Config.Bind(PotionNames.GrandHealingTideElixir, ConfigKeyNames.HealOverTime, 95, "The volume of health to heal");
@@ -171,15 +182,15 @@ namespace PotionsPlus
 
       #endregion
 
-      #region Grand Spiritual Tide
+      #region Grand Spiritual Healing
 
-      _grandSpCooldown = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.Cooldown, 0, "The cooldown timer for this potion after consumption");
-      _grandSpHot = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.HealOverTime, 100, "The Health value you over time");
-      _grandSphotDur = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.HealthOverTimeDuration, 0, "The duration of which health over time is applied");
-      _grandspHotInt = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.HealthOverTimeInterval, 0, "Don't play with this one ");
-      _grandSphoTticks = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.HeathOverTimeTicks, 0, "Dont mess with this unless setting up advanced use case");
-      _grandSphoTtimer = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.HealthOverTimeTimer, 0, "The timer for Health over time");
-      _grandSphoTtimeTickHp = Config.Bind(PotionNames.GrandSpiritualTideElixir, ConfigKeyNames.HeathOverTimeTickPerHp, 0, "For advanced users only");
+      _grandSpCooldown = Config.Bind(PotionNames.GrandSpiritualHealingElixir, ConfigKeyNames.Cooldown, 0, "The cooldown timer for this potion after consumption");
+      _grandSpHot = Config.Bind(PotionNames.GrandSpiritualHealingElixir, ConfigKeyNames.HealOverTime, 100, "The Health value you over time");
+      _grandSphotDur = Config.Bind(PotionNames.GrandSpiritualHealingElixir, ConfigKeyNames.HealthOverTimeDuration, 0, "The duration of which health over time is applied");
+      _grandspHotInt = Config.Bind(PotionNames.GrandSpiritualHealingElixir, ConfigKeyNames.HealthOverTimeInterval, 0, "Don't play with this one ");
+      _grandSphoTticks = Config.Bind(PotionNames.GrandSpiritualHealingElixir, ConfigKeyNames.HeathOverTimeTicks, 0, "Dont mess with this unless setting up advanced use case");
+      _grandSphoTtimer = Config.Bind(PotionNames.GrandSpiritualHealingElixir, ConfigKeyNames.HealthOverTimeTimer, 0, "The timer for Health over time");
+      _grandSphoTtimeTickHp = Config.Bind(PotionNames.GrandSpiritualHealingElixir, ConfigKeyNames.HeathOverTimeTickPerHp, 0, "For advanced users only");
 
       #endregion
 
@@ -214,15 +225,15 @@ namespace PotionsPlus
 
       #endregion
 
-      #region Medium Spiritual Tide
+      #region Medium Spiritual Healing
 
-      _medSpCooldown = Config.Bind(PotionNames.MediumSpiritualTidePotion, ConfigKeyNames.Cooldown, 0, "The cooldown timer for this potion after consumption");
-      _medSpHot = Config.Bind(PotionNames.MediumSpiritualTidePotion, ConfigKeyNames.HealOverTime, 100, "The Health value you over time");
-      _medSphotDur = Config.Bind(PotionNames.MediumSpiritualTidePotion, ConfigKeyNames.HealthOverTimeDuration, 0, "The duration of which health over time is applied");
-      _medspHotInt = Config.Bind(PotionNames.MediumSpiritualTidePotion, ConfigKeyNames.HealthOverTimeInterval, 0, "Don't play with this one ");
-      _medSphoTticks = Config.Bind(PotionNames.MediumSpiritualTidePotion, ConfigKeyNames.HeathOverTimeTicks, 0, "Don't mess with this unless setting up advanced use case");
-      _medSphoTtimer = Config.Bind(PotionNames.MediumSpiritualTidePotion, ConfigKeyNames.HealthOverTimeTimer, 0, "The timer for Health over time");
-      _medSphoTtimeTickHp = Config.Bind(PotionNames.MediumSpiritualTidePotion, ConfigKeyNames.HeathOverTimeTickPerHp, 0, "For advanced users only");
+      _medSpCooldown = Config.Bind(PotionNames.MediumSpiritualHealingPotion, ConfigKeyNames.Cooldown, 0, "The cooldown timer for this potion after consumption");
+      _medSpHot = Config.Bind(PotionNames.MediumSpiritualHealingPotion, ConfigKeyNames.HealOverTime, 100, "The Health value you over time");
+      _medSphotDur = Config.Bind(PotionNames.MediumSpiritualHealingPotion, ConfigKeyNames.HealthOverTimeDuration, 0, "The duration of which health over time is applied");
+      _medspHotInt = Config.Bind(PotionNames.MediumSpiritualHealingPotion, ConfigKeyNames.HealthOverTimeInterval, 0, "Don't play with this one ");
+      _medSphoTticks = Config.Bind(PotionNames.MediumSpiritualHealingPotion, ConfigKeyNames.HeathOverTimeTicks, 0, "Don't mess with this unless setting up advanced use case");
+      _medSphoTtimer = Config.Bind(PotionNames.MediumSpiritualHealingPotion, ConfigKeyNames.HealthOverTimeTimer, 0, "The timer for Health over time");
+      _medSphoTtimeTickHp = Config.Bind(PotionNames.MediumSpiritualHealingPotion, ConfigKeyNames.HeathOverTimeTickPerHp, 0, "For advanced users only");
 
       #endregion
 
@@ -239,7 +250,7 @@ namespace PotionsPlus
 
       #region Lesser Tide
 
-      _lesserTideCooldownTimer = Config.Bind(PotionNames.LesserHealingTideVial, ConfigKeyNames.Cooldown, 100, "Cooldown timer for the stamina elixir");
+      _lesserTideCooldownTimer = Config.Bind(PotionNames.LesserHealingTideVial, ConfigKeyNames.Cooldown, 100, "The cooldown timer for this potion after consumption");
       _lesserTideregen = Config.Bind(PotionNames.LesserHealingTideVial, ConfigKeyNames.HealthRegenFactor, 1f, "The multiplier used for health regeneration during consumption");
       _lesserHealovertime = Config.Bind(PotionNames.LesserHealingTideVial, ConfigKeyNames.HealOverTime, 95, "The volume of health to heal");
       _lesserHotDuration = Config.Bind(PotionNames.LesserHealingTideVial, ConfigKeyNames.HealthOverTimeDuration, 10, "The health over time duration");
@@ -250,15 +261,15 @@ namespace PotionsPlus
 
       #endregion
 
-      #region Lesser Spiritual Tide
+      #region Lesser Spiritual Healing
 
-      _lesserSpCooldown = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.Cooldown, 0, "The cooldown timer for this potion after consumption");
-      _lesserSpHot = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.HealOverTime, 100, "The Health value you over time");
-      _lesserSphotDur = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.HealthOverTimeDuration, 0, "The duration of which health over time is applied");
-      _lesserspHotInt = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.HealthOverTimeInterval, 0, "Don't play with this one ");
-      _lesserSphoTticks = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.HeathOverTimeTicks, 0, "Don't mess with this unless setting up advanced use case");
-      _lesserSphoTtimer = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.HealthOverTimeTimer, 0, "The timer for Health over time");
-      _lesserSphoTtimeTickHp = Config.Bind(PotionNames.LesserSpiritualTideVial, ConfigKeyNames.HeathOverTimeTickPerHp, 0, "For advanced users only");
+      _lesserSpCooldown = Config.Bind(PotionNames.LesserSpiritualHealingVial, ConfigKeyNames.Cooldown, 0, "The cooldown timer for this potion after consumption");
+      _lesserSpHot = Config.Bind(PotionNames.LesserSpiritualHealingVial, ConfigKeyNames.HealOverTime, 100, "The Health value you over time");
+      _lesserSphotDur = Config.Bind(PotionNames.LesserSpiritualHealingVial, ConfigKeyNames.HealthOverTimeDuration, 0, "The duration of which health over time is applied");
+      _lesserspHotInt = Config.Bind(PotionNames.LesserSpiritualHealingVial, ConfigKeyNames.HealthOverTimeInterval, 0, "Don't play with this one ");
+      _lesserSphoTticks = Config.Bind(PotionNames.LesserSpiritualHealingVial, ConfigKeyNames.HeathOverTimeTicks, 0, "Don't mess with this unless setting up advanced use case");
+      _lesserSphoTtimer = Config.Bind(PotionNames.LesserSpiritualHealingVial, ConfigKeyNames.HealthOverTimeTimer, 0, "The timer for Health over time");
+      _lesserSphoTtimeTickHp = Config.Bind(PotionNames.LesserSpiritualHealingVial, ConfigKeyNames.HeathOverTimeTickPerHp, 0, "For advanced users only");
 
       #endregion
 
@@ -276,23 +287,23 @@ namespace PotionsPlus
 
     public static class PotionNames
     {
-      public static string FlaskOfElements = "Flask of Elements";    
+      public static string FlaskOfElements = "Flask of Elements";
       public static string FlaskOfFortification = "Flask of Fortification";
       public static string FlaskOfMagelight = "Flask of Magelight";
       public static string FlaskOfSecondWind = "Flask of Second Wind";
       public static string FlaskOfTheGods = "Flask of the Gods";
 
       public static string GrandHealingTideElixir = "Grand Healing Tide Potion";
-      public static string GrandSpiritualTideElixir = "Grand Spiritual Healing Potion";
+      public static string GrandSpiritualHealingElixir = "Grand Spiritual Healing Potion";
       public static string GrandStaminaElixir = "Grand Stamina Elixir";
       public static string GrandStealthElixir = "Grand Stealth Elixir";
 
       public static string MediumHealingTidePotion = "Medium Healing Tide Flask";
-      public static string MediumSpiritualTidePotion = "Medium Spiritual Healing Flask";
+      public static string MediumSpiritualHealingPotion = "Medium Spiritual Healing Flask";
       public static string MediumStaminaPotion = "Medium Stamina Flask";
 
       public static string LesserHealingTideVial = "Lesser Healing Tide Vial";
-      public static string LesserSpiritualTideVial = "Lesser Spiritual Healing Vial";
+      public static string LesserSpiritualHealingVial = "Lesser Spiritual Healing Vial";
       public static string LesserStaminaVial = "Lesser Stamina Vial";
     }
 
