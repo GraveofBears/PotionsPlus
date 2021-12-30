@@ -196,6 +196,7 @@ namespace PotionsPlus
             }
           }
         }));
+        FlaskOfFortificationSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _fortificationSe;
       }
@@ -244,6 +245,7 @@ namespace PotionsPlus
             }
           }
         }));
+        GodsSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _godsSestat;
       }
@@ -292,6 +294,7 @@ namespace PotionsPlus
             }
           }
         }));
+        MagelightSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _magelightSestat;
       }
@@ -360,6 +363,7 @@ namespace PotionsPlus
             }
           }
         }));
+        SecondWindSe();
         var drop = prefab.GetComponent<ItemDrop>();
         drop.m_itemData.m_shared.m_consumeStatusEffect = _secondWindSestat;
       }
@@ -413,6 +417,8 @@ namespace PotionsPlus
           }
         }));
         GrandTideSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _grandSPHTide;
       }
       catch (Exception e)
       {
@@ -459,6 +465,9 @@ namespace PotionsPlus
             }
           }
         }));
+        GrandSpiritualSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _grandSPHTide;
       }
       catch (Exception e)
       {
@@ -505,6 +514,9 @@ namespace PotionsPlus
             }
           }
         }));
+        GrandStaminaSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _grandstamSE;
       }
       catch (Exception e)
       {
@@ -551,6 +563,9 @@ namespace PotionsPlus
             }
           }
         }));
+        GrandStealthSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _grandstealthSE;
       }
       catch (Exception e)
       {
@@ -596,6 +611,9 @@ namespace PotionsPlus
             }
           }
         }));
+        MediumTideSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _mediumtideSE;
       }
       catch (Exception e)
       {
@@ -637,6 +655,9 @@ namespace PotionsPlus
             }
           }
         }));
+        MedSpiritualSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _mediumSpiritualSe;
       }
       catch (Exception e)
       {
@@ -678,6 +699,9 @@ namespace PotionsPlus
             }
           }
         }));
+        MedStaminaSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _mediumstamSe;
       }
       catch (Exception e)
       {
@@ -718,6 +742,9 @@ namespace PotionsPlus
             }
           }
         }));
+        LesserTideSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _lessertideSe;
       }
       catch (Exception e)
       {
@@ -754,6 +781,9 @@ namespace PotionsPlus
             }
           }
         }));
+        LesserSpiritualSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _lesserSpiritualSe;
       }
       catch (Exception e)
       {
@@ -790,6 +820,9 @@ namespace PotionsPlus
             }
           }
         }));
+        LesserStaminaSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _lesserstamSe;
       }
       catch (Exception e)
       {
@@ -1045,7 +1078,7 @@ namespace PotionsPlus
         private EffectList _buildsounds;
         
         private CustomStatusEffect _sePotion1;
-        private SE_Stats _potion1 = ScriptableObject.CreateInstance<SE_Stats>();
+        private SE_Stats _grandSPHTide = ScriptableObject.CreateInstance<SE_Stats>();
         
         private CustomStatusEffect _fortification;
         private SE_Stats _fortificationSe = ScriptableObject.CreateInstance<SE_Stats>();
