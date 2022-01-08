@@ -102,7 +102,13 @@
     <None Include="Assets\Translations\English\translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Assets\Translations\German\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Assets\Translations\Russian\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Translations\Swedish\translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="DoPrebuild.props" />
@@ -137,9 +143,7 @@
     <Content Include="imgs\XHrLtEl.png" />
     <Content Include="Package\icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StatusEffects\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureEnvironmentPropsImport" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
