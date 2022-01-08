@@ -196,6 +196,10 @@ namespace PotionsPlus
             }
           }
         }));
+        FlaskOfFortificationSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _fortificationSe;
+        _fortificationSe.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -242,6 +246,10 @@ namespace PotionsPlus
             }
           }
         }));
+        GodsSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _godsSestat;
+        _godsSestat.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -288,6 +296,10 @@ namespace PotionsPlus
             }
           }
         }));
+        MagelightSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _magelightSestat;
+        _magelightSestat.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -354,6 +366,10 @@ namespace PotionsPlus
             }
           }
         }));
+        SecondWindSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _secondWindSestat;
+        _secondWindSestat.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -404,6 +420,9 @@ namespace PotionsPlus
             }
           }
         }));
+        GrandTideSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _grandSPHTide;
       }
       catch (Exception e)
       {
@@ -450,6 +469,9 @@ namespace PotionsPlus
             }
           }
         }));
+        GrandSpiritualSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _grandSPHTide;
       }
       catch (Exception e)
       {
@@ -496,6 +518,9 @@ namespace PotionsPlus
             }
           }
         }));
+        GrandStaminaSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _grandstamSE;
       }
       catch (Exception e)
       {
@@ -542,6 +567,9 @@ namespace PotionsPlus
             }
           }
         }));
+        GrandStealthSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _grandstealthSE;
       }
       catch (Exception e)
       {
@@ -587,6 +615,9 @@ namespace PotionsPlus
             }
           }
         }));
+        MediumTideSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _mediumtideSE;
       }
       catch (Exception e)
       {
@@ -628,6 +659,9 @@ namespace PotionsPlus
             }
           }
         }));
+        MedSpiritualSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _mediumSpiritualSe;
       }
       catch (Exception e)
       {
@@ -669,6 +703,9 @@ namespace PotionsPlus
             }
           }
         }));
+        MedStaminaSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _mediumstamSe;
       }
       catch (Exception e)
       {
@@ -709,6 +746,10 @@ namespace PotionsPlus
             }
           }
         }));
+        LesserTideSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _lessertideSe;
+        _lessertideSe.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -745,6 +786,10 @@ namespace PotionsPlus
             }
           }
         }));
+        LesserSpiritualSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _lesserSpiritualSe;
+        _lesserSpiritualSe.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -781,6 +826,10 @@ namespace PotionsPlus
             }
           }
         }));
+        LesserStaminaSe();
+        var drop = prefab.GetComponent<ItemDrop>();
+        drop.m_itemData.m_shared.m_consumeStatusEffect = _lesserstamSe;
+        _lesserstamSe.m_icon = drop.m_itemData.GetIcon();
       }
       catch (Exception e)
       {
@@ -1030,5 +1079,54 @@ namespace PotionsPlus
     }
 
     #endregion
+    
+        # region SE Configuration items
+        
+        private EffectList _buildsounds;
+        
+        private CustomStatusEffect _sePotion1;
+        private SE_Stats _grandSPHTide = ScriptableObject.CreateInstance<SE_Stats>();
+        
+        private CustomStatusEffect _fortification;
+        private SE_Stats _fortificationSe = ScriptableObject.CreateInstance<SE_Stats>();
+
+        private CustomStatusEffect _seMagelight;
+        private SE_Stats _magelightSestat = ScriptableObject.CreateInstance<SE_Stats>();
+
+        private CustomStatusEffect _seSecondWind;
+        private SE_Stats _secondWindSestat = ScriptableObject.CreateInstance<SE_Stats>();
+
+        private CustomStatusEffect _seGods;
+        private SE_Stats _godsSestat = ScriptableObject.CreateInstance<SE_Stats>();
+
+        private CustomStatusEffect _seGrandSpiritual;
+        private SE_Stats _grandSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
+        
+        private SE_Stats _grandstamSE = ScriptableObject.CreateInstance<SE_Stats>();
+        private CustomStatusEffect _seGrandStam;
+
+        private SE_Stats _grandstealthSE = ScriptableObject.CreateInstance<SE_Stats>();
+        private CustomStatusEffect _seGrandStealth;
+        
+        private SE_Stats _mediumtideSE = ScriptableObject.CreateInstance<SE_Stats>();
+        private CustomStatusEffect _seMediumTide;
+        
+        private SE_Stats _mediumSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
+        private CustomStatusEffect _seMediumSpiritual;
+        
+        private SE_Stats _mediumstamSe = ScriptableObject.CreateInstance<SE_Stats>();
+        private CustomStatusEffect _seMediumStam;
+        
+        private SE_Stats _lessertideSe = ScriptableObject.CreateInstance<SE_Stats>();
+        private CustomStatusEffect _seLesserTide;
+        
+        private SE_Stats _lesserSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
+        private CustomStatusEffect _seLesserSpiritual;
+        
+        private SE_Stats _lesserstamSe = ScriptableObject.CreateInstance<SE_Stats>();
+        private CustomStatusEffect _seLesserStam;
+        
+
+        #endregion
   }
 }
