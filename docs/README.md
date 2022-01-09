@@ -77,7 +77,9 @@
   <h2> Update Notes: </h2>
   
 >3.1.1 Hotfix to restore SE_Stat Scripts
+
 >3.1.0 worked on Config Pipeline for SE_Stats
+
 >3.0.3 Alchemist Stones, Alchemy Table, and Potion Cauldron added (Cauldron recipies listed above)
 
   <h2>  Credits: </h2>
