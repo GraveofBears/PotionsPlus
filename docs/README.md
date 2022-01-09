@@ -74,9 +74,12 @@
 
 >Potions are scaled in a crafting order to fit right in with the progression of Valheim. Starting with crafting the Alchemy Table and you will be on your way to unlocking the art of potion crafting. Potions will require various materials that you unlock as you progress through Valheim. The new Cauldron allows you to craft advanced potions known as Flasks. By breaking down a "Greater Potion" in the Potion Cauldron you can create a PotionBase Mead that is used to craft the end tier Flasks. You can also place five Flasks, of the same type, into the Potion Cauldron to create a Philosopher's Stone. The Philosopher's Stones will grant additional Alchemy XP gain when crafting, resist of the elemental matching the stone type, and bring you back from the dead consuming the Stone. The Alchemy Skill grants a chance to craft "extra" potions based on your skill level.
 
-  
-  
-<h2>  Credits: </h2>
+  <h2> Update Notes: </h2>
+   > 3.1.1 Hotfix to restore SE_Stat Scripts
+   > 3.1.0 worked on Config Pipeline for SE_Stats
+   > 3.0.3 Alchemist Stones, Alchemy Table, and Potion Cauldron added (Cauldron recipies listed above)
+
+  <h2>  Credits: </h2>
 
 >PotionsPlus is the creation of the OdinPlus Mod Team,
 >Development rights: Digitalroot(coder) and GraveBear(models and effects) 
