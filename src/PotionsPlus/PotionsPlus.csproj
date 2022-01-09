@@ -1,230 +1,76 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\JotunnLib.2.3.4\build\JotunnLib.props" Condition="Exists('..\packages\JotunnLib.2.3.4\build\JotunnLib.props')" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E2CAA4E9-505B-4F77-B96D-D1616D4A8178}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PotionsPlus</RootNamespace>
     <AssemblyName>PotionsPlus</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <TargetFramework>net462</TargetFramework>
     <LangVersion>9</LangVersion>
+    <RootNamespace>PotionsPlus</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+    <Copyright>Copyright © GraveBear and Digitalroot 2021 - 2022</Copyright>
+    <PackageProjectUrl>https://github.com/GraveofBears/PotionsPlus</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GraveofBears/PotionsPlus</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Authors>OdinPlus Team, Digitalroot, GraveBear, zarboz</Authors>
+    <Company>OdinPlus Team</Company>
+    <Product>GraveBear's PotionsPlus</Product>
+    <Description>Adds several simple potions to Valheim. New Alchemy Skill, Cauldron and Alchemy Table, and ALL NEW PHILOSOPHER'S STONES!</Description>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <DebugType>embedded</DebugType>
+    <RestoreAdditionalProjectSources>
+      https://nuget.bepinex.dev/v3/index.json;
+      https://digitalroot-valheim-nuget.s3.us-west-2.amazonaws.com/index.json
+    </RestoreAdditionalProjectSources>
+    <IsPublishable>False</IsPublishable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>none</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.5.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HarmonyX.2.5.5\lib\net45\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Jotunn, Version=2.3.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\JotunnLib.2.3.4\lib\net462\Jotunn.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Cecil.0.11.4\lib\net40\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Mdb, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Cecil.0.11.4\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Pdb, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Cecil.0.11.4\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Rocks, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Cecil.0.11.4\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod, Version=21.9.19.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoMod.21.9.19.1\lib\net40\MonoMod.exe</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod.RuntimeDetour, Version=21.9.19.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoMod.RuntimeDetour.21.9.19.1\lib\net40\MonoMod.RuntimeDetour.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod.Utils, Version=21.9.19.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoMod.Utils.21.9.19.1\lib\net40\MonoMod.Utils.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <None Remove="AssetsEmbedded\potions" />
+    <None Remove="AssetsEmbedded\potions.manifest" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AlchemySkill.cs" />
-    <Compile Include="ConfigEntries.cs" />
-    <Compile Include="Names\CraftingStationNames.cs" />
-    <Compile Include="Names\ItemDropNames.cs" />
-    <Compile Include="Patch.cs" />
-    <Compile Include="PotionsPlus.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatusEffects\Status_Effect.cs" />
-    <Compile Include="Utils.cs" />
-  </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="AssetsEmbedded\potions" />
-    <None Include="..\docs\README.md">
-      <Link>.ts\README.md</Link>
-    </None>
-    <None Include=".ts\manifest.json" />
-    <None Include="Assets\Translations\English\translations.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Translations\German\translations.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Translations\Russian\translations.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Translations\Swedish\translations.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DoPrebuild.props" />
-    <None Include="Environment.props" />
-    <None Include="imgs\1561-1633921434-243460906.webp" />
-    <None Include="packages.config" />
-    <None Include="Package\manifest.json" />
-    <None Include="Package\README.md" />
-    <None Include="Potions Plus Unity.unitypackage" />
+    <EmbeddedResource Include="AssetsEmbedded\potions.manifest" />
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include=".nx\description.bbcode.txt" />
-    <Content Include=".ts\icon.png" />
-    <Content Include="imgs\1561-1633907540-1474601071.png" />
-    <Content Include="imgs\1561-1633907602-1486314391.png" />
-    <Content Include="imgs\1561-1633907603-2071107406.png" />
-    <Content Include="imgs\1561-1633907608-1301011368.png" />
-    <Content Include="imgs\1561-1633907609-235483659.png" />
-    <Content Include="imgs\1561-1633907615-165096406.png" />
-    <Content Include="imgs\1561-1633907615-28835884.png" />
-    <Content Include="imgs\1561-1633907620-451811970.png" />
-    <Content Include="imgs\1561-1633907621-959246869.png" />
-    <Content Include="imgs\5Zlwc1q.png" />
-    <Content Include="imgs\giphy.gif" />
-    <Content Include="imgs\hcXOQJQ.png" />
-    <Content Include="imgs\header.jpg" />
-    <Content Include="imgs\index.png" />
-    <Content Include="imgs\QdnDQCJ.png" />
-    <Content Include="imgs\UsyzCmi.png" />
-    <Content Include="imgs\WgErsLa.png" />
-    <Content Include="imgs\WqzZlAo.png" />
-    <Content Include="imgs\XHrLtEl.png" />
-    <Content Include="Package\icon.png" />
+    <PackageReference Include="BepInEx.Core" Version="5.4.17" />
+    <PackageReference Include="Digitalroot.Valheim.Build.Targets" Version="1.0.6" />
+    <PackageReference Include="Digitalroot.Valheim.Common.References" Version="0.205.7" />
+    <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="JotunnLib" Version="2.4.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="UnityEngine.Modules" Version="[2019.4.31]">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureEnvironmentPropsImport" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project needs a Environment.props file with the path to your Valheim installation. See https://github.com/Valheim-Modding/JotunnModStub. {0} is missing.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)Environment.props')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)Environment.props'))" />
-  </Target>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\JotunnLib.2.3.4\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.3.4\build\JotunnLib.props'))" />
-  </Target>
-  <Target Name="BeforeBuild" Condition="'$(Configuration)' == 'Release'">
-    <Message Text="BeforeBuild Called" Importance="high" />
-    <ItemGroup>
-      <BuildFiles Include="$(TargetDir)..\$(ProjectName)\$(ProjectName)\$(ProjectName).dll" />
-    </ItemGroup>
-    <Message Text="@(BuildFiles)" Importance="high" />
-    <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)\$(ProjectName)" Importance="high" />
-    <Delete Files="@(BuildFiles)" />
-  </Target>
-  <Target Name="RefreshVars" AfterTargets="PostBuildEvent" Label="MyRefreshVars">
-    <Message Text="RefreshVars Called" Importance="high" />
-    <ItemGroup>
-      <DigitalrootSourceFiles Include="$(TargetDir)**\*.*" />
-      <DigitalrootBuildFiles Include="$(TargetDir)..\$(ProjectName)\$(ProjectName)\$(ProjectName).dll" />
-      <DigitalrootTSIOFiles Include="$(ProjectDir).ts\*.*" />
-      <DigitalrootReadMeFile Include="$(SolutionDir)\docs\README.md" />
-    </ItemGroup>
-  </Target>
-  <Target Name="DebugPostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'" DependsOnTargets="RefreshVars">
-    <Message Text="DebugPostBuild Called" Importance="high" />
-    <Message Text="Copying assemblies to C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\" Importance="high" />
-    <CallTarget Targets="RefreshVars" />
-    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
-  </Target>
-  <Target Name="ReleasePostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="RefreshVars">
-    <Message Text="ReleasePostBuild Called" Importance="high" />
-    <CallTarget Targets="RefreshVars" />
-    <MakeDir Directories="$(TargetDir)..\$(ProjectName)\$(ProjectName)" />
-    <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)" Importance="high" />
-    <Delete Files="$(TargetDir)..\$(ProjectName)\**\*.*" />
-    <Message Text="Copying @(DigitalrootSourceFiles) to $(TargetDir)..\$(ProjectName)\$(ProjectName)" Importance="high" />
-    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'$(TargetDir)..\$(ProjectName)\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
-    <GetAssemblyIdentity AssemblyFiles="$(TargetDir)$(TargetFileName)">
-      <Output TaskParameter="Assemblies" ItemName="DigitalrootAssemblyIdentities" />
-    </GetAssemblyIdentity>
-    <Message Text="Version = $([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))" Importance="high" />
-    <Message Text="Deleting $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" Importance="high" />
-    <Delete Files="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" />
-    <Message Text="Creating Zip file $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" Importance="high" />
-    <ZipDirectory SourceDirectory="$(TargetDir)..\$(ProjectName)" DestinationFile="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" />
-  </Target>
-  <Target Name="ReleasePostBuildTS" AfterTargets="ReleasePostBuild" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="RefreshVars">
-    <Message Text="ReleasePostBuildTS Called" Importance="high" />
-    <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)TS" Importance="high" />
-    <Delete Files="$(TargetDir)..\$(ProjectName)TS\**\*.*" />
-    <MakeDir Directories="$(TargetDir)..\$(ProjectName)TS\plugins" />
-    <Message Text="Copying @(DigitalrootSourceFiles) to $(TargetDir)..\$(ProjectName)TS\plugins" Importance="high" />
-    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'$(TargetDir)..\$(ProjectName)TS\plugins\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
-    <Message Text="Copying @(DigitalrootTSIOFiles) to $(TargetDir)..\$(ProjectName)TS" Importance="high" />
-    <Copy SourceFiles="@(DigitalrootTSIOFiles)" DestinationFiles="@(DigitalrootTSIOFiles->'$(TargetDir)..\$(ProjectName)TS\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
-    <Copy SourceFiles="@(DigitalrootReadMeFile)" DestinationFiles="@(DigitalrootReadMeFile->'$(TargetDir)..\$(ProjectName)TS\%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
-    <GetAssemblyIdentity AssemblyFiles="$(TargetDir)$(TargetFileName)">
-      <Output TaskParameter="Assemblies" ItemName="DigitalrootAssemblyIdentities" />
-    </GetAssemblyIdentity>
-    <Message Text="Version = $([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))" Importance="high" />
-    <Message Text="Deleting $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" Importance="high" />
-    <Delete Files="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" />
-    <Message Text="Updating Thunderstore manifest.json" Importance="high" />
-    <PropertyGroup>
-      <InputFile>$(TargetDir)..\$(ProjectName)TS\manifest.json</InputFile>
-      <OutputFile>$(TargetDir)..\$(ProjectName)TS\manifest.json</OutputFile>
-    </PropertyGroup>
-    <WriteLinesToFile File="$(OutputFile)" Lines="$([System.IO.File]::ReadAllText($(InputFile)).Replace('%VERSION_NUMBER%','$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))'))" Overwrite="true" Encoding="ASCII" />
-    <Message Text="Creating Zip file $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" Importance="high" />
-    <ZipDirectory SourceDirectory="$(TargetDir)..\$(ProjectName)TS" DestinationFile="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" />
-  </Target>
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Translations\English\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Translations\German\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Translations\Russian\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Translations\Swedish\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
