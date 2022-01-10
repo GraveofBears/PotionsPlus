@@ -12,7 +12,7 @@
 
 <p align="center">
 
-  <img src="https://media3.giphy.com/media/waYK1IuOtOCQakC8ZR/giphy.gif" alt="ALCHEMY STATIONS">
+  <img src="https://media.giphy.com/media/mrlehxQ3O3OWL6nEmM/giphy-downsized-large.gif" alt="GoodestBoy">
 
 </p>
 
