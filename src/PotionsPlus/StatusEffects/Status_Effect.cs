@@ -10,25 +10,27 @@ namespace PotionsPlus
     {
         private void GrandTideSe()
         {
-            _grandSPHTide.name = "Grand Spiritual Healing Tide";
-            _grandSPHTide.m_name = "Grand Spiritual Healing Tide";
-            _grandSPHTide.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Grand_Healing_Tide_Potion").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
-            _grandSPHTide.m_cooldownIcon = true;
-            _grandSPHTide.m_cooldown = _grandTideCooldownTimer.Value;
-            _grandSPHTide.m_tooltip = "Grand Spiritual Healing Tide Flask";
-            _grandSPHTide.m_ttl = _grandTideTtl.Value;
-            _grandSPHTide.m_tickTimer = 10;
-            _grandSPHTide.m_healthOverTime = _grandHealovertime.Value; // this is piped to health config.value
-            _grandSPHTide.m_healthPerTick = _grandHotTicks.Value; // piped to cfg
-            _grandSPHTide.m_healthRegenMultiplier = _grandTideregen.Value; //piped to cfg
-            _grandSPHTide.m_healthOverTimeDuration = _grandHotDuration.Value; //config pipe
-            _grandSPHTide.m_healthOverTimeInterval = _grandHotInterval.Value;
-            _grandSPHTide.m_healthOverTimeTicks = _grandHotTicks.Value;
-            _grandSPHTide.m_healthOverTimeTimer = _grandHoTtimer.Value;
-            _grandSPHTide.m_healthOverTimeTickHP = _grandHotTimeTickHp.Value;
-            _grandSPHTide.ModifyHealthRegen(ref _grandSPHTide.m_healthRegenMultiplier);
-            _grandSPHTide.m_activationAnimation = "gpower";
-            _sePotion1 = new CustomStatusEffect(_grandSPHTide, true);
+            _potion1.name = "Grand Spiritual Healing Tide";
+            _potion1.m_name = "Grand Spiritual Healing Tide";
+            _potion1.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Grand_Healing_Tide_Potion").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
+            _potion1.m_cooldownIcon = true;
+            _potion1.m_cooldown = _grandTideCooldownTimer.Value;
+            _potion1.m_tooltip = "Grand Spiritual Healing Tide Flask";
+            _potion1.m_ttl = _grandTideTtl.Value;
+            _potion1.m_tickTimer = 10;
+            _potion1.m_healthOverTime = _grandHealovertime.Value; // this is piped to health config.value
+            _potion1.m_healthPerTick = _grandHotTicks.Value; // piped to cfg
+            _potion1.m_healthRegenMultiplier = _grandTideregen.Value; //piped to cfg
+            _potion1.m_healthOverTimeDuration = _grandHotDuration.Value; //config pipe
+            _potion1.m_healthOverTimeInterval = _grandHotInterval.Value;
+            _potion1.m_healthOverTimeTicks = _grandHotTicks.Value;
+            _potion1.m_healthOverTimeTimer = _grandHoTtimer.Value;
+            _potion1.m_healthOverTimeTickHP = _grandHotTimeTickHp.Value;
+            _potion1.ModifyHealthRegen(ref _potion1.m_healthRegenMultiplier);
+            _potion1.m_activationAnimation = "gpower";
+            _sePotion1 = new CustomStatusEffect(_potion1, true);
+            var drop = PrefabManager.Cache.GetPrefab<GameObject>("Grand_Healing_Tide_Potion").GetComponent<ItemDrop>();
+            drop.m_itemData.m_shared.m_consumeStatusEffect = _potion1;
             ItemManager.Instance.AddStatusEffect(_sePotion1);
         }
         private void FlaskOfFortificationSe()
