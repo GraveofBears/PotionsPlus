@@ -196,8 +196,6 @@ namespace PotionsPlus
             }
           }
         }));
-        var drop = prefab.GetComponent<ItemDrop>();
-        drop.m_itemData.m_shared.m_consumeStatusEffect = _fortificationSe;
       }
       catch (Exception e)
       {
@@ -244,8 +242,6 @@ namespace PotionsPlus
             }
           }
         }));
-        var drop = prefab.GetComponent<ItemDrop>();
-        drop.m_itemData.m_shared.m_consumeStatusEffect = _godsSestat;
       }
       catch (Exception e)
       {
@@ -292,8 +288,6 @@ namespace PotionsPlus
             }
           }
         }));
-        var drop = prefab.GetComponent<ItemDrop>();
-        drop.m_itemData.m_shared.m_consumeStatusEffect = _magelightSestat;
       }
       catch (Exception e)
       {
@@ -360,8 +354,6 @@ namespace PotionsPlus
             }
           }
         }));
-        var drop = prefab.GetComponent<ItemDrop>();
-        drop.m_itemData.m_shared.m_consumeStatusEffect = _secondWindSestat;
       }
       catch (Exception e)
       {
@@ -412,7 +404,6 @@ namespace PotionsPlus
             }
           }
         }));
-        GrandTideSe();
       }
       catch (Exception e)
       {
@@ -1039,54 +1030,5 @@ namespace PotionsPlus
     }
 
     #endregion
-    
-        # region SE Configuration items
-        
-        private EffectList _buildsounds;
-        
-        private CustomStatusEffect _sePotion1;
-        private SE_Stats _potion1 = ScriptableObject.CreateInstance<SE_Stats>();
-        
-        private CustomStatusEffect _fortification;
-        private SE_Stats _fortificationSe = ScriptableObject.CreateInstance<SE_Stats>();
-
-        private CustomStatusEffect _seMagelight;
-        private SE_Stats _magelightSestat = ScriptableObject.CreateInstance<SE_Stats>();
-
-        private CustomStatusEffect _seSecondWind;
-        private SE_Stats _secondWindSestat = ScriptableObject.CreateInstance<SE_Stats>();
-
-        private CustomStatusEffect _seGods;
-        private SE_Stats _godsSestat = ScriptableObject.CreateInstance<SE_Stats>();
-
-        private CustomStatusEffect _seGrandSpiritual;
-        private SE_Stats _grandSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
-        
-        private SE_Stats _grandstamSE = ScriptableObject.CreateInstance<SE_Stats>();
-        private CustomStatusEffect _seGrandStam;
-
-        private SE_Stats _grandstealthSE = ScriptableObject.CreateInstance<SE_Stats>();
-        private CustomStatusEffect _seGrandStealth;
-        
-        private SE_Stats _mediumtideSE = ScriptableObject.CreateInstance<SE_Stats>();
-        private CustomStatusEffect _seMediumTide;
-        
-        private SE_Stats _mediumSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
-        private CustomStatusEffect _seMediumSpiritual;
-        
-        private SE_Stats _mediumstamSe = ScriptableObject.CreateInstance<SE_Stats>();
-        private CustomStatusEffect _seMediumStam;
-        
-        private SE_Stats _lessertideSe = ScriptableObject.CreateInstance<SE_Stats>();
-        private CustomStatusEffect _seLesserTide;
-        
-        private SE_Stats _lesserSpiritualSe = ScriptableObject.CreateInstance<SE_Stats>();
-        private CustomStatusEffect _seLesserSpiritual;
-        
-        private SE_Stats _lesserstamSe = ScriptableObject.CreateInstance<SE_Stats>();
-        private CustomStatusEffect _seLesserStam;
-        
-
-        #endregion
   }
 }
