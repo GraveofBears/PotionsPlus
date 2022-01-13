@@ -31,6 +31,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ConfigEntries.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="AssetsEmbedded\potions" />
     <None Remove="AssetsEmbedded\potions.manifest" />
   </ItemGroup>
