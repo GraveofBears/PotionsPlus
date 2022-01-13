@@ -12,7 +12,8 @@ namespace PotionsPlus
         {
             _grandSPHTide.name = "Grand Spiritual Healing Tide";
             _grandSPHTide.m_name = "Grand Spiritual Healing Tide";
-           _grandSPHTide.m_cooldownIcon = true;
+            _grandSPHTide.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Grand_Healing_Tide_Potion").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
+            _grandSPHTide.m_cooldownIcon = true;
             _grandSPHTide.m_cooldown = _grandTideCooldownTimer.Value;
             _grandSPHTide.m_tooltip = "Grand Spiritual Healing Tide Flask";
             _grandSPHTide.m_ttl = _grandTideTtl.Value;
@@ -182,6 +183,7 @@ namespace PotionsPlus
             _grandSpiritualSe.m_name = "Grand Spiritual Tide";
             _grandSpiritualSe.m_tooltip = "A Grand Spiritual Tide washes over you";
             _grandSpiritualSe.m_activationAnimation = "gpower";
+            _grandSpiritualSe.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Grand_Spiritual_Healing_Potion").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _grandSpiritualSe.m_startEffects = new EffectList
             {
                 m_effectPrefabs = new EffectList.EffectData[]
@@ -229,6 +231,7 @@ namespace PotionsPlus
                 _grandstamSE.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _grandstamSE.m_runStaminaDrainModifier);
 
             }
+            _grandstamSE.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Grand_Stamina_Elixir").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _grandstamSE.m_tooltip = "A boost of stamina over time";
             _grandstamSE.m_cooldownIcon = true;
             _grandstamSE.m_cooldown = _grandstamcooldown.Value;
@@ -251,6 +254,7 @@ namespace PotionsPlus
             _grandstealthSE.m_ttl = _grandStealthTtl.Value;
             _grandstealthSE.m_cooldown = _grandstealthcooldown.Value;
             _grandstealthSE.m_cooldownIcon = true;
+            _grandstealthSE.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Grand_Stealth_Elixir").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _seGrandStealth = new CustomStatusEffect(_grandstealthSE, true);
             ItemManager.Instance.AddStatusEffect(_seGrandStealth);
         }
@@ -259,6 +263,7 @@ namespace PotionsPlus
             _mediumtideSE.name = "Medium Healing Tide Vial";
             _mediumtideSE.m_name = "Medium Healing Tide Vial";
             _mediumtideSE.m_tooltip = "A medium size health increase over a short time";
+            _mediumtideSE.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Medium_Healing_Tide_Flask").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _mediumtideSE.m_cooldownIcon = true;
             _mediumtideSE.m_activationAnimation = "gpower";
             _mediumtideSE.m_cooldown = _medTideCooldownTimer.Value;
@@ -283,6 +288,7 @@ namespace PotionsPlus
             _mediumSpiritualSe.m_name = "Medium Spiritual Tide";
             _mediumSpiritualSe.m_tooltip = "A Medium Spiritual Tide washes over you";
             _mediumSpiritualSe.m_activationAnimation = "gpower";
+            _mediumSpiritualSe.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Medium_Spiritual_Healing_Flask").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _mediumSpiritualSe.m_startEffects = new EffectList
             {
                 m_effectPrefabs = new EffectList.EffectData[]
@@ -330,6 +336,7 @@ namespace PotionsPlus
 
             }
             _mediumstamSe.ModifyStaminaRegen(ref _mediumstamSe.m_staminaRegenMultiplier);
+            _mediumstamSe.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Medium_Stamina_Flask").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _mediumstamSe.m_tooltip = "A boost of stamina over time";
             _mediumstamSe.m_cooldownIcon = true;
             _mediumstamSe.m_cooldown =_medstamcooldown.Value;
@@ -377,13 +384,13 @@ namespace PotionsPlus
                         m_attach = true,
                         m_enabled = true
 
-                    },
+                    }/*,
                     new()
                     {
                         m_prefab = PrefabManager.Cache.GetPrefab<GameObject>("potionaudio"),
                         m_attach = true,
                         m_enabled = true
-                    }
+                    }*/
                 }
             };
             _lesserSpiritualSe.m_ttl =_lesserSpHtl.Value;
@@ -414,6 +421,7 @@ namespace PotionsPlus
                 _lesserstamSe.ModifyRunStaminaDrain(Player.m_localPlayer.m_runStaminaDrain, ref _lesserstamSe.m_runStaminaDrainModifier);
 
             }
+            _lesserstamSe.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Lesser_Stamina_Vial").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _lesserstamSe.m_tooltip = "A boost of stamina over time";
             _lesserstamSe.m_cooldownIcon = true;
             _lesserstamSe.m_cooldown =_lesserstamcooldown.Value;
