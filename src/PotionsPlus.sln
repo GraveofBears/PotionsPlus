@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{E8EB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{2ACA204F-1B02-4216-B350-F8DCBCC408ED}"
 	ProjectSection(SolutionItems) = preProject
-		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
+		..\.github\workflows\build.yml = ..\.github\workflows\build.yml
 		..\.github\workflows\tag-versionadjust.yml = ..\.github\workflows\tag-versionadjust.yml
 	EndProjectSection
 EndProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4920A072-1
 		..\docs\README.md = ..\docs\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotionsPlus", "PotionsPlus\PotionsPlus.csproj", "{6FE9A097-1BCD-4029-A74C-0B0A04649819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PotionsPlus", "PotionsPlus\PotionsPlus.csproj", "{6FE9A097-1BCD-4029-A74C-0B0A04649819}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
