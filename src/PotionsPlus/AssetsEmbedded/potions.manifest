@@ -1,0 +1,112 @@
+ManifestFileVersion: 0
+CRC: 641222774
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 55d111cf65b1c9c51131caca0f12d146
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e40e5777a12fdda778b13bd8996dca80
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: a42a395137aba1d4a8a18bd46991fe33, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0e867cc11b62059459a82e91906c535c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df611843b85f22e469f85d4c9bf69d49, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a0cf37630a010144786c9634128c2d3f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3b32ac64dd55e36428440abd7d04a138, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f68439467fb4a94c90124d038f04524, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5faf1875996479846b4e5756d6330e8a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e42e5506c5d43954db7f135ab74fc286, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f6572a68b24d6a445a11bb858266a395, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3ca9f159be92ed141866d4e0963a4bf4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9b25a3a96835fd24b80122952590ce0a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a63b193c09bf10841843187acb97d5e7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1a19caed456925a48855fa67272eae6f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/PotionsPlus/Potion/FixedIcons/AlcSkill.png
+- Assets/PotionsPlus/Potion/Prefabs/Potion_Meadbase.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Grand_Stealth_Elixir.prefab
+- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStoneRed.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Elements.prefab
+- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStoneBlack.prefab
+- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStoneGreen.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Medium_Spiritual_Healing_Flask.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Second_Wind.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Lesser_Healing_Tide_Vial.prefab
+- Assets/PotionsPlus/Potion/Scriptables/CheatDeath.asset
+- Assets/PotionsPlus/Potion/Prefabs/Grand_Spiritual_Healing_Potion.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Medium_Healing_Tide_Flask.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Lesser_Stamina_Vial.prefab
+- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStoneBlue.prefab
+- Assets/PotionsPlus/Potion/Scriptables/AlcSkillProc.asset
+- Assets/PotionsPlus/Potion/Prefabs/Lesser_Spiritual_Healing_Vial.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_the_Gods.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Medium_Stamina_Flask.prefab
+- Assets/PotionsPlus/Potion/Prefabs/opalchemy.prefab
+- Assets/PotionsPlus/Potion/Prefabs/opcauldron.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Grand_Stamina_Elixir.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Grand_Healing_Tide_Potion.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Magelight.prefab
+- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Fortification.prefab
+- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStonePurple.prefab
+Dependencies: []
