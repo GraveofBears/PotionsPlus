@@ -90,7 +90,6 @@
     <Compile Include="Patch.cs" />
     <Compile Include="PotionsPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatusEffects\Status_Effect.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

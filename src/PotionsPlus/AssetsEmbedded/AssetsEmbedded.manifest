@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 1429600428
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: potions
+      Dependencies: {}

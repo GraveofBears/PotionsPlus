@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETFramework,Version=v4.6.2": {
+      "BepInEx.Core": {
+        "type": "Direct",
+        "requested": "[5.4.17, )",
+        "resolved": "5.4.17",
+        "contentHash": "f0UCf6tZxdhPrcHAgj/wQNz5V9RAAV0elgvgaFl8wFjaEdiKLxepkxdV0Y8Xuprm+AVrQUGcaSIhTBQvpRzk+g==",
+        "dependencies": {
+          "BepInEx.BaseLib": "5.4.17",
+          "HarmonyX": "2.5.5"
+        }
+      },
+      "Digitalroot.Valheim.Build.Targets": {
+        "type": "Direct",
+        "requested": "[1.0.6, )",
+        "resolved": "1.0.6",
+        "contentHash": "AQKLRxbRMaLH4IKyYkCPIoYhzCyNf6TJHyjW8bqOAdqTvX3Y7eCnx+MKhlKAwE6TC/gYN4F6P6Yh8OoYFEGDEQ=="
+      },
+      "Digitalroot.Valheim.Common.References": {
+        "type": "Direct",
+        "requested": "[0.205.7, )",
+        "resolved": "0.205.7",
+        "contentHash": "iUIYAsg5HXZj3S4yhUECEuZJk98X8RG75wkJrlmIvfriwIZgV57wt4S6ym3KQNHvx87sxSbU3raSPMPTSfi0hw=="
+      },
+      "ErrorProne.NET.CoreAnalyzers": {
+        "type": "Direct",
+        "requested": "[0.1.2, )",
+        "resolved": "0.1.2",
+        "contentHash": "RQdzUtFVhwLwisP2Du7Ugm7ldwAzc+QJrlZWNIwHXcgq4b5fLwZgdN1203RdYiHS8OOALophC6yWekxu3UgN2g=="
+      },
+      "JotunnLib": {
+        "type": "Direct",
+        "requested": "[2.4.5, )",
+        "resolved": "2.4.5",
+        "contentHash": "63xSYrrUmkBpzPXhGrxhYA34W2A5yVYDtdFHOJ4yQBH+4UZvf+4kR9RP1RwQGALtx68HlpK5oxCalfvPvTndUQ==",
+        "dependencies": {
+          "HarmonyX": "2.5.5",
+          "MonoMod": "21.9.19.1"
+        }
+      },
+      "UnityEngine.Modules": {
+        "type": "Direct",
+        "requested": "[2019.4.31, 2019.4.31]",
+        "resolved": "2019.4.31",
+        "contentHash": "xZjdfGGzZw6nnrn4auRNis6WnAlsvqY1XXioEGJnSku+CylESgEt/sTLYlrbrQ0srnLfSCfx80vR8z4SsI1EuQ=="
+      },
+      "BepInEx.BaseLib": {
+        "type": "Transitive",
+        "resolved": "5.4.17",
+        "contentHash": "92N4BKDiF9KO8kXbY2+zp7dHNXZP3WBKhzw7U8orcYncutD7peHtuLfUdMW4PGY/d0SsoA5eOcBeklFuh7OS8A=="
+      },
+      "HarmonyX": {
+        "type": "Transitive",
+        "resolved": "2.5.5",
+        "contentHash": "sQTQhNCwbob8JnnLsJibcorfjQGi2ziseb8uIOtyWrIv/RrbH1bJiwwX6hyLHCrgLMbzBd5Z15SukTXlmfcYLQ==",
+        "dependencies": {
+          "MonoMod.RuntimeDetour": "21.8.19.1"
+        }
+      },
+      "Mono.Cecil": {
+        "type": "Transitive",
+        "resolved": "0.11.4",
+        "contentHash": "IC1h5g0NeJGHIUgzM1P82ld57knhP0IcQfrYITDPXlNpMYGUrsG5TxuaWTjaeqDNQMBDNZkB8L0rBnwsY6JHuQ=="
+      },
+      "MonoMod": {
+        "type": "Transitive",
+        "resolved": "21.9.19.1",
+        "contentHash": "9qIjktFWIN+6snxPkII7kGxRZIXz/AEJ38syL7a0Ip/8PwUKc5uhChWeld10P3uDp3A1Zfs2ThFB8yrok9Uyxw==",
+        "dependencies": {
+          "Mono.Cecil": "0.11.4",
+          "MonoMod.Utils": "21.9.19.1"
+        }
+      },
+      "MonoMod.RuntimeDetour": {
+        "type": "Transitive",
+        "resolved": "21.8.19.1",
+        "contentHash": "fUEvDK4q9n+GAAB29vFKAsUIwhKAvZTVbn2WJemzLxbiTElutZ55ytUQxSSv6XhiRaJXrl5bSArO54PY0QNplw==",
+        "dependencies": {
+          "Mono.Cecil": "0.11.4",
+          "MonoMod.Utils": "21.8.19.1"
+        }
+      },
+      "MonoMod.Utils": {
+        "type": "Transitive",
+        "resolved": "21.9.19.1",
+        "contentHash": "quOZxK9G9dRFhOBq1b6L/MGIyYoL2HAsdv2aJTfu1p+TjMoMgEI7+nbeEv5iA/SpWW5j+xrFCc2hZZ02iGjC9g==",
+        "dependencies": {
+          "Mono.Cecil": "0.11.4"
+        }
+      }
+    }
+  }
+}

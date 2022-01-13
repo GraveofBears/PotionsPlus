@@ -1,0 +1,80 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>PotionsPlus</AssemblyName>
+    <TargetFramework>net462</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <RootNamespace>PotionsPlus</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+    <Copyright>Copyright © GraveBear and Digitalroot 2021 - 2022</Copyright>
+    <PackageProjectUrl>https://github.com/GraveofBears/PotionsPlus</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GraveofBears/PotionsPlus</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Authors>OdinPlus Team, Digitalroot, GraveBear, zarboz</Authors>
+    <Company>OdinPlus Team</Company>
+    <Product>GraveBear's PotionsPlus</Product>
+    <Description>Adds several simple potions to Valheim. New Alchemy Skill, Cauldron and Alchemy Table, and ALL NEW PHILOSOPHER'S STONES!</Description>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <DebugType>embedded</DebugType>
+    <RestoreAdditionalProjectSources>
+      https://nuget.bepinex.dev/v3/index.json;
+      https://digitalroot-valheim-nuget.s3.us-west-2.amazonaws.com/index.json
+    </RestoreAdditionalProjectSources>
+    <IsPublishable>False</IsPublishable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ConfigEntries.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="AssetsEmbedded\potions" />
+    <None Remove="AssetsEmbedded\potions.manifest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="AssetsEmbedded\potions" />
+    <EmbeddedResource Include="AssetsEmbedded\potions.manifest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Core" Version="5.4.17" />
+    <PackageReference Include="Digitalroot.Valheim.Build.Targets" Version="1.0.6" />
+    <PackageReference Include="Digitalroot.Valheim.Common.References" Version="0.205.7" />
+    <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="JotunnLib" Version="2.4.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="UnityEngine.Modules" Version="[2019.4.31]">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Translations\English\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Translations\German\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Translations\Russian\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Translations\Swedish\translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
