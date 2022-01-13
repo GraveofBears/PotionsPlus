@@ -35,6 +35,7 @@ namespace PotionsPlus
         {
             _fortificationSe.name = "Flask of Fortification";
             _fortificationSe.m_name = "Flask of Fortification";
+            _fortificationSe.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Flask_of_Fortification").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _fortificationSe.m_cooldownIcon = true;
             _fortificationSe.m_cooldown = 0;
             _fortificationSe.m_activationAnimation = "gpower";
@@ -71,6 +72,8 @@ namespace PotionsPlus
 
             _magelightSestat.m_name = "Flask of Magelight";
             _magelightSestat.name = "Flask of Magelight";
+            _magelightSestat.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Flask_of_Magelight").GetComponent<ItemDrop>().m_itemData
+                .m_shared.m_icons.FirstOrDefault();
             _magelightSestat.m_startEffects = new EffectList
             {
                 m_effectPrefabs = new EffectList.EffectData[]
@@ -119,13 +122,13 @@ namespace PotionsPlus
                                 m_prefab = PrefabManager.Cache.GetPrefab<GameObject>("VFX_PurplePotionDrink"),
                                 m_enabled = true,
                                 m_attach = true
-                            }/*,
+                            },
                             new()
                             {
                                 m_prefab = PrefabManager.Cache.GetPrefab<GameObject>("potionaudio"),
                                 m_enabled = true,
                                 m_attach = true
-                            }*/
+                            }
                         }
                     };
             _secondWindSestat.m_staminaRegenMultiplier = _secondWindRegen.Value;
@@ -151,6 +154,8 @@ namespace PotionsPlus
             _godsSestat.m_healthOverTimeTimer = _hoTtimer.Value;
             _godsSestat.m_healthOverTimeTickHP = _hotTimeTickHp.Value;
             _godsSestat.m_activationAnimation = "gpower";
+            _godsSestat.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Flask_of_the_Gods").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons
+                .FirstOrDefault();
             
             _godsSestat.m_startEffects = new EffectList
             {
@@ -194,13 +199,13 @@ namespace PotionsPlus
                         m_attach = true,
                         m_enabled = true
 
-                    }/*,
+                    },
                     new()
                     {
                         m_prefab = PrefabManager.Cache.GetPrefab<GameObject>("potionaudio"),
                         m_attach = true,
                         m_enabled = true
-                    }*/
+                    }
                 }
             };
             _grandSpiritualSe.m_ttl = _grandSpHTtl.Value;
@@ -299,13 +304,13 @@ namespace PotionsPlus
                         m_attach = true,
                         m_enabled = true
 
-                    }/*,
+                    },
                     new()
                     {
                         m_prefab = PrefabManager.Cache.GetPrefab<GameObject>("potionaudio"),
                         m_attach = true,
                         m_enabled = true
-                    }*/
+                    }
                 }
             };
             _mediumSpiritualSe.m_ttl =_medSpHtl.Value;
@@ -351,6 +356,7 @@ namespace PotionsPlus
             _lessertideSe.m_name = "Lesser Healing Tide Vial";
             _lessertideSe.m_tooltip = "A lesser size health increase over a short time";
             _lessertideSe.m_activationAnimation = "gpower";
+            _lessertideSe.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Lesser_Healing_Tide_Vial").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _lessertideSe.m_cooldownIcon = true;
             _lessertideSe.m_cooldown = _lesserTideCooldownTimer.Value;
             _lessertideSe.m_ttl = _lesserTideTtl.Value;
@@ -374,6 +380,7 @@ namespace PotionsPlus
             _lesserSpiritualSe.m_name = "Lesser Spiritual Tide";
             _lesserSpiritualSe.m_tooltip = "A Lesser Spiritual Tide washes over you";
             _lesserSpiritualSe.m_activationAnimation = "gpower";
+            _lesserSpiritualSe.m_icon = PrefabManager.Cache.GetPrefab<GameObject>("Lesser_Spiritual_Healing_Vial").GetComponent<ItemDrop>().m_itemData.m_shared.m_icons.FirstOrDefault();
             _lesserSpiritualSe.m_startEffects = new EffectList
             {
                 m_effectPrefabs = new EffectList.EffectData[]
@@ -384,13 +391,13 @@ namespace PotionsPlus
                         m_attach = true,
                         m_enabled = true
 
-                    }/*,
+                    },
                     new()
                     {
                         m_prefab = PrefabManager.Cache.GetPrefab<GameObject>("potionaudio"),
                         m_attach = true,
                         m_enabled = true
-                    }*/
+                    }
                 }
             };
             _lesserSpiritualSe.m_ttl =_lesserSpHtl.Value;
