@@ -26,17 +26,23 @@
     </RestoreAdditionalProjectSources>
     <IsPublishable>False</IsPublishable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionPrefix>3.2.0</VersionPrefix>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ConfigEntries.cs" />
+    <Compile Remove="StatusEffects\Status_Effect.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="AssetsEmbedded\potions" />
     <None Remove="AssetsEmbedded\potions.manifest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".nx\description.bbcode.txt" />
+    <Content Include=".ts\icon.png" />
+    <Content Include=".ts\manifest.json" />
   </ItemGroup>
 
   <ItemGroup>
