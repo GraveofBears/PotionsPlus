@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3021401336
+CRC: 1428154982
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8a0c02f78bf431404acbc79433f42ce5
+    Hash: eece928c18233bdd35cc6796a2f49fbf
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6ec7f55461f23e6ee409bf0c138a9f13
@@ -98,6 +98,7 @@ Assets:
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/Flaskpurple.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/PhilosopherStoneGreen.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/StoneGreen.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Audio/sfx_stoneuse.ogg
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Grand_Healing_Tide_Potion.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Medium_Spiritual_Healing_Flask.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/cauld.png
@@ -108,6 +109,7 @@ Assets:
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Medium_Stamina_Flask.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/FlaskRed.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/LesserHealingTide.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Audio/sfx_placepotion2.ogg
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/lesserblue.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Flask_of_Second_Wind.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/FlaskBlue2.png
@@ -116,6 +118,7 @@ Assets:
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Grand_Spiritual_Healing_Potion.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Medium_Healing_Tide_Flask.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Lesser_Stamina_Vial.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Audio/sfx_alcbuild.ogg
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/PhilosopherStoneBlue.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Flask_of_Second_Wind.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Medium_Spiritual_Healing_Flask.asset
@@ -126,6 +129,7 @@ Assets:
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcStoneGreen.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcSkillProc.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Lesser_Spiritual_Healing_Vial.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Audio/sfx_potionbrew.ogg
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcStoneBlack.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Flask_of_the_Gods.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/Grandred.png
@@ -133,11 +137,13 @@ Assets:
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/FlaskBlue.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/mediumgreen.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/StoneRed.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Audio/sfx_heartbeat.ogg
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Medium_Healing_Tide_Flask.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/opalchemy.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/potionbase.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/mediumblue.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/opcauldron.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Audio/sfx_bigboom.ogg
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Grand_Stamina_Elixir.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Grand_Healing_Tide_Potion.prefab
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/Grandpurple.png
@@ -146,6 +152,7 @@ Assets:
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Flask_of_the_Gods.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/StoneBlack.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Flask_of_Fortification.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Audio/effectpotion.ogg
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/GrandStam.png
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Grand_Spiritual_Healing_Potion.asset
 - Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/PhilosopherStonePurple.prefab
