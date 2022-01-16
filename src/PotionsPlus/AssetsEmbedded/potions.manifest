@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 641222774
+CRC: 3021401336
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 55d111cf65b1c9c51131caca0f12d146
+    Hash: 8a0c02f78bf431404acbc79433f42ce5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: e40e5777a12fdda778b13bd8996dca80
+    Hash: 6ec7f55461f23e6ee409bf0c138a9f13
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -44,31 +44,31 @@ ClassTypes:
 - Class: 108
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: a42a395137aba1d4a8a18bd46991fe33, type: 3}
+  Script: {fileID: 1790797106, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 0e867cc11b62059459a82e91906c535c, type: 3}
+  Script: {fileID: 963225042, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: df611843b85f22e469f85d4c9bf69d49, type: 3}
+  Script: {fileID: 130663047, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: a0cf37630a010144786c9634128c2d3f, type: 3}
+  Script: {fileID: -861398580, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 3b32ac64dd55e36428440abd7d04a138, type: 3}
+  Script: {fileID: 825357479, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 4f68439467fb4a94c90124d038f04524, type: 3}
+  Script: {fileID: 2094620348, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 5faf1875996479846b4e5756d6330e8a, type: 3}
+  Script: {fileID: 1345532120, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: e42e5506c5d43954db7f135ab74fc286, type: 3}
+  Script: {fileID: 1863081269, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: f6572a68b24d6a445a11bb858266a395, type: 3}
+  Script: {fileID: 469224316, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 3ca9f159be92ed141866d4e0963a4bf4, type: 3}
+  Script: {fileID: 895252998, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 9b25a3a96835fd24b80122952590ce0a, type: 3}
+  Script: {fileID: 1521249158, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: a63b193c09bf10841843187acb97d5e7, type: 3}
+  Script: {fileID: 313648218, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 1a19caed456925a48855fa67272eae6f, type: 3}
+  Script: {fileID: 1109157524, guid: 2084f10f14e890740a4930b4e3a745dc, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 135
@@ -83,30 +83,73 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/PotionsPlus/Potion/FixedIcons/AlcSkill.png
-- Assets/PotionsPlus/Potion/Prefabs/Potion_Meadbase.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Grand_Stealth_Elixir.prefab
-- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStoneRed.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Elements.prefab
-- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStoneBlack.prefab
-- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStoneGreen.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Medium_Spiritual_Healing_Flask.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Second_Wind.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Lesser_Healing_Tide_Vial.prefab
-- Assets/PotionsPlus/Potion/Scriptables/CheatDeath.asset
-- Assets/PotionsPlus/Potion/Prefabs/Grand_Spiritual_Healing_Potion.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Medium_Healing_Tide_Flask.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Lesser_Stamina_Vial.prefab
-- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStoneBlue.prefab
-- Assets/PotionsPlus/Potion/Scriptables/AlcSkillProc.asset
-- Assets/PotionsPlus/Potion/Prefabs/Lesser_Spiritual_Healing_Vial.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Flask_of_the_Gods.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Medium_Stamina_Flask.prefab
-- Assets/PotionsPlus/Potion/Prefabs/opalchemy.prefab
-- Assets/PotionsPlus/Potion/Prefabs/opcauldron.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Grand_Stamina_Elixir.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Grand_Healing_Tide_Potion.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Magelight.prefab
-- Assets/PotionsPlus/Potion/Prefabs/Flask_of_Fortification.prefab
-- Assets/PotionsPlus/Potion/Prefabs/PhilosopherStonePurple.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Flask_of_Elements.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/Flaskgreen.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Flask_of_Magelight.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Flask_of_Fortification.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/AlcSkill.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Potion_Meadbase.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Grand_Stealth_Elixir.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/mediumred.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/lessergreen.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/PhilosopherStoneRed.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Flask_of_Elements.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/PhilosopherStoneBlack.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/Flaskpurple.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/PhilosopherStoneGreen.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/StoneGreen.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Grand_Healing_Tide_Potion.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Medium_Spiritual_Healing_Flask.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/cauld.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Lesser_Spiritual_Healing_Vial.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Lesser_Stamina_Vial.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/lesserred.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Grand_Stamina_Elixir.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Medium_Stamina_Flask.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/FlaskRed.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/LesserHealingTide.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/lesserblue.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Flask_of_Second_Wind.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/FlaskBlue2.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Lesser_Healing_Tide_Vial.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/CheatDeath.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Grand_Spiritual_Healing_Potion.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Medium_Healing_Tide_Flask.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Lesser_Stamina_Vial.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/PhilosopherStoneBlue.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Flask_of_Second_Wind.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Medium_Spiritual_Healing_Flask.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcStoneRed.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/StoneBlue.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/StonePurple.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/Grandblue.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcStoneGreen.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcSkillProc.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Lesser_Spiritual_Healing_Vial.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcStoneBlack.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Flask_of_the_Gods.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/Grandred.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Medium_Stamina_Flask.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/FlaskBlue.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/mediumgreen.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/StoneRed.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Medium_Healing_Tide_Flask.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/opalchemy.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/potionbase.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/mediumblue.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/opcauldron.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Grand_Stamina_Elixir.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Grand_Healing_Tide_Potion.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/Grandpurple.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcStonePurple.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Flask_of_Magelight.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Flask_of_the_Gods.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/StoneBlack.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/Flask_of_Fortification.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/GrandStam.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Grand_Spiritual_Healing_Potion.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Prefabs/PhilosopherStonePurple.prefab
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/FixedIcons/alchemySprite.png
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/Grand_Stealth_Elixir.asset
+- Assets/_OdinPlusTeam/Projects/PotionsPlus/Potion/Scriptables/AlcStoneBlue.asset
 Dependencies: []
