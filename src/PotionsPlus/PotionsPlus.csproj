@@ -69,16 +69,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\Translations\English\translations.json">
+    <None Update="Assets\Translations\English\potionsPlus-translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Translations\German\translations.json">
+    <None Update="Assets\Translations\German\potionsPlus-translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Translations\Russian\translations.json">
+    <None Update="Assets\Translations\Russian\potionsPlus-translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Translations\Swedish\translations.json">
+    <None Update="Assets\Translations\Swedish\potionsPlus-translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
