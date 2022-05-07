@@ -29,7 +29,7 @@ namespace PotionsPlus
         private ConfigEntry<int> _medStaminaTtl, _medStaminaCooldown, _medStaminaOvertime, _medStaminaDrainPS, _medStaminaJump, _medStaminaRun, _medStaminaRegen;
         private ConfigEntry<int> _medSpHtl, _medSpCooldown, _medSpHotOvertime, _medSphotDuration, _medSpHotInterval, _medSphoTticks, _medSphoTtimer, _medSphoTtimeTickHp;
 
-        private ConfigEntry<int> _lesserTideTtl, _lesserTideCooldownTimer, _lesserTideCooldown, _lesserHealthOvertime, _lesserHealthOvertimeDuration, _lesserHealthOvertimeInterval, _lesserHealthOvertimeTicks, _lesserHealthOverTimeTimer, _lesserHealthOvertimeTickHp;
+        private ConfigEntry<int> _lesserTideTtl, _lesserTideCooldownTimer, _lesserHealthOvertime, _lesserHealthOvertimeDuration, _lesserHealthOvertimeInterval, _lesserHealthOvertimeTicks, _lesserHealthOverTimeTimer, _lesserHealthOvertimeTickHp;
         private ConfigEntry<float> _lesserTideRegen;
 
         private ConfigEntry<int> _lesserSpHtl, _lesserSpCooldown, _lesserSpHot, _lesserSpHotDuration, _lesserSpHotInterval, _lesserSpHoTticks, _lesserSpHoTtimer, _lesserSpHoTtimeTickHp;
@@ -45,9 +45,9 @@ namespace PotionsPlus
             _fortificationTtl = Config.Bind(PotionNames.FlaskOfFortification, ConfigKeyNames.Duration, 300, $"Duration for the {PotionNames.FlaskOfFortification}");
             _magelightTtl = Config.Bind(PotionNames.FlaskOfMagelight, ConfigKeyNames.Duration, 300, $"Duration for {PotionNames.FlaskOfMagelight}");
 
-            AlchemySkillEnable = Config.Bind("Alchemy Skill", "Enable Alchemy Skill", true, new ConfigDescription("Enable Alchemy skill.", null, new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 1 }));
-            AlchemySkillBonusWhenCraftingEnabled = Config.Bind("Alchemy Skill", "Enable Alchemy Bonus", true, new ConfigDescription("Enable Alchemy Bonus when crafting.", null, new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 2 }));
-            PhilosopherStoneXpGain = Config.Bind("Alchemy Skill", "Philosopher Stone XP Gain", 5f, new ConfigDescription("XP Gain multiplier when brewing while using a Philosopher Stone.", new AcceptableValueRange<float>(0f, 100f), new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 3 }));
+            AlchemySkillEnable = Config.Bind("Alchemy Skill", "Enable Alchemy Skill", true, new ConfigDescription("Enable Alchemy skill.", null, new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 1, Browsable = false }));
+            AlchemySkillBonusWhenCraftingEnabled = Config.Bind("Alchemy Skill", "Enable Alchemy Bonus", true, new ConfigDescription("Enable Alchemy Bonus when crafting.", null, new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 2, Browsable = false }));
+            PhilosopherStoneXpGain = Config.Bind("Alchemy Skill", "Philosopher Stone XP Gain", 5f, new ConfigDescription("XP Gain multiplier when brewing while using a Philosopher Stone.", new AcceptableValueRange<float>(0f, 100f), new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 3, Browsable = false }));
 
 
             #region Second Wind Config
