@@ -75,6 +75,9 @@
     <None Update="Assets\Translations\German\potionsPlus-translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Translations\Portuguese_Brazilian\potionsPlus-translations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Translations\Russian\potionsPlus-translations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
